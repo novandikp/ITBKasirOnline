@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">Auth App</string>
+
+    <string-array name="jenisUsaha">
+        <item>Toko</item>
+        <item>Restoran</item>
+    </string-array>
+
+    <string-array name="ukuranPrinter">
+        <item>56mm</item>
+        <item>70mm</item>
+        <item>80mm</item>
+    </string-array>
+
+    <string name="title_activity_home_page">HomeHalo</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Kasir</string>
+    <string name="menu_penjualan">Penjualan</string>
+    <string name="menu_laporan">Laporan</string>
+    <string name="menu_pengaturan">Pengaturan</string>
+    <string name="menu_logout_toko">Logout Toko</string>
+    <string name="menu_logout_pegawai">Logout Pegawai</string>
+    <string name="tab_text_1">-</string>
+
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string-array name="mode_print">
+        <item>Bluetooth</item>
+        <item>USB</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="error_kategori_message">Kategori telah dipakai tidak dapat dihapus</string>
+    <string name="error_satuan_message">Satuan telah dipakai tidak dapat dihapus</string>
+    <string name="error_pelanggan_message">Data Pelanggan tidak dapat dihapus</string>
+    <string name="error_pegawai_message">Data Pegawai tidak dapat dihapus</string>
+    <string name="error_produk_message">Data Barang tidak dapat dihapus</string>
+    <string name="add_kategori_error">Data gagal ditambahkan</string>
+    <string name="success_added">Data Berhasil ditambahkan</string>
+    <string name="deleted_success">Data berhasil dihapus</string>
+    <string name="error_fetch">Terjadi kesalahan harap coba lagi</string>
+    <string name="updated_success">Data Berhasil diubah</string>
+    <string name="updated_error">Data gagal diubah</string>
+    <string name="login_success">Login berhasil</string>
+    <string name="login_error">Login gagal</string>
+</resources>

@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.home.bottom_nav.shopping.Payment">
+
+    <LinearLayout
+        android:id="@+id/viewTotal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:weightSum="4"
+        android:layout_weight="1"
+        android:layout_marginTop="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/tcBack"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="18dp"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-medium"
+            android:text="Back"
+            android:textAlignment="textStart"
+            android:textColor="@color/teal_700"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textviewtotal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginRight="2dp"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-black"
+            android:text="Rp."
+            android:textSize="18sp"
+            android:textAlignment="textEnd"
+            android:textColor="@color/darkergrey" />
+
+        <TextView
+            android:id="@+id/tvTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="18dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-black"
+            android:textAlignment="textStart"
+            android:text="0"
+            android:textColor="@color/darkergrey"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvNext"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="18dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:fontFamily="sans-serif-medium"
+            android:text="OK"
+            android:textAlignment="textEnd"
+            android:textColor="@color/darkgrey"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+<!--    inputan bayar-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="3">
+
+        <TextView
+            android:id="@+id/inBayar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="65dp"
+            android:layout_weight="1"
+            android:textColor="@color/darkgrey"
+            android:text="Rp 0"
+            android:textAlignment="center"
+            android:textSize="45sp"
+            />
+
+    </LinearLayout>
+
+<!--Quick Pay-->
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/quickPayRow1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/uangPas"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:onClick="uangPas"
+            android:background="@color/teal_700"
+            android:text="Uang Pas"
+            android:textColor="@color/white"
+            app:cornerRadius="50dp" />
+
+        <Button
+            android:layout_margin="8dp"
+            android:id="@+id/txtTwenty"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:text="20.000"
+            android:onClick="txtTwenty"
+            android:background="@color/teal_700"
+            app:cornerRadius="50dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/quickPayRow2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/txtFifty"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:background="@color/teal_700"
+            android:text="50.000"
+            android:onClick="txtFifty"
+            android:textColor="@color/white"
+            app:cornerRadius="50dp" />
+
+        <Button
+            android:layout_margin="8dp"
+            android:id="@+id/txtHundret"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:text="100.000"
+            android:onClick="txtHundret"
+            android:background="@color/teal_700"
+            app:cornerRadius="50dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/quickPayRow3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <Button
+            android:layout_margin="8dp"
+            android:id="@+id/txtManual"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:text="Ketik Manual"
+            android:background="@color/teal_700"
+            app:cornerRadius="50dp" />
+
+
+    </LinearLayout>
+
+<!--Manual Pay-->
+    <LinearLayout
+            android:id="@+id/manualPay1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/txtSeven"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/darkergrey"
+                android:text="7"
+                android:onClick="txtSeven"
+                android:background="@null"
+                android:textSize="25sp"
+                />
+
+            <Button
+                android:id="@+id/txtEight"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:text="8"
+                android:onClick="txtEight"
+                android:textColor="@color/darkergrey"
+                android:textSize="25sp" />
+            <Button
+                android:id="@+id/txtNine"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/darkergrey"
+                android:text="9"
+                android:onClick="txtNine"
+                android:background="@null"
+                android:textSize="25sp"
+                />
+            <Button
+                android:id="@+id/clearAll"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/teal_700"
+                android:text="C"
+                android:background="@null"
+                android:textSize="25sp"
+                />
+        </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/manualPay2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/txtFour"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/darkergrey"
+                android:text="4"
+                android:onClick="txtFour"
+                android:background="@null"
+                android:textSize="25sp"
+                />
+
+            <Button
+                android:id="@+id/txtFive"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/darkergrey"
+                android:text="5"
+                android:onClick="txtFive"
+                android:background="@null"
+                android:textSize="25sp"
+                />
+            <Button
+                android:id="@+id/txtSix"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/darkergrey"
+                android:text="6"
+                android:onClick="txtSix"
+                android:background="@null"
+                android:textSize="25sp"
+                />
+            <Button
+                android:id="@+id/clear"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/darkergrey"
+                android:background="@null"
+                android:onClick="Del"
+                android:textSize="25sp"
+                android:text="del"
+                />
+        </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/manualPay3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/txtOne"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/darkergrey"
+                android:text="1"
+                android:onClick="txtOne"
+                android:background="@null"
+                android:textSize="25sp"
+                />
+
+            <Button
+                android:id="@+id/txtTwo"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/darkergrey"
+                android:text="2"
+                android:onClick="txtTwo"
+                android:background="@null"
+                android:textSize="25sp"
+                />
+            <Button
+                android:id="@+id/txtThree"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/darkergrey"
+                android:text="3"
+                android:onClick="txtThree"
+                android:background="@null"
+                android:textSize="25sp"
+                />
+            <Button
+                android:id="@+id/txtPoint"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="txtPoint"
+                android:textColor="@color/darkergrey"
+                android:background="@null"
+                android:textSize="25sp"
+                android:text="."
+                />
+        </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/manualPay4"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/txtZero"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/darkergrey"
+                android:text="0"
+                android:onClick="txtZero"
+                android:background="@null"
+                android:textSize="25sp"
+                />
+
+            <Button
+                android:id="@+id/txtTripleZero"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/darkergrey"
+                android:text="000"
+                android:onClick="txtTripleZero"
+                android:background="@null"
+                android:textSize="25sp"
+                />
+            <Button
+                android:id="@+id/shortcut"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:text="Quick Pay"
+                android:background="@color/teal_700"
+                android:textSize="18sp"
+                />
+        </LinearLayout>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
+
+

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:title="Share"
+        android:id="@+id/share"
+        android:icon="@drawable/ic_icon_share"
+        app:showAsAction="always"/>
+
+    <item
+        android:title="Unduh"
+        android:id="@+id/unduh"
+        android:icon="@drawable/ic_icon_download"
+        app:showAsAction="always"/>
+
+    <item
+        android:title="Print"
+        android:icon="@drawable/ic_white_print"
+        android:id="@+id/print"/>
+
+</menu>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/activity_pelanggan_order.xml" value="0.16750756811301715" />
+        <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/activity_print_struk.xml" value="0.1381340579710145" />
+        <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/activity_rekap_pelanggan.xml" value="0.16750756811301715" />
+        <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/fragment_print_penjualan.xml" value="0.16750756811301715" />
+        <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/item_print_penjualan.xml" value="0.25" />
+        <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/login_pegawai.xml" value="0.16750756811301715" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

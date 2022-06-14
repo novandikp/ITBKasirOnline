@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!--    untuk : item master pegawai-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:cardElevation="1.5dp"
+        app:cardCornerRadius="2dp"
+        app:cardBackgroundColor="#FFFFFF">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp">
+
+            <TextView
+                android:id="@+id/txtPegawai"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nama Pegawai"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginBottom="0dp"
+                android:paddingLeft="7dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="7dp"
+                    android:layout_marginTop="5dp">
+
+                    <TextView
+                        android:id="@+id/txtTelp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Nomor Telepon"
+                        android:fontFamily="sans-serif-medium"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:id="@+id/txtAlamat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Alamat"
+                        android:fontFamily="sans-serif-medium"
+                        android:textSize="14sp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="0.5dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="0dp">
+
+                    <TextView
+                        android:id="@+id/txtEdit"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Edit"
+                        android:textStyle="bold"
+                        android:textSize="13sp"
+                        android:textColor="@color/success"
+                        android:textAlignment="textEnd"
+                        android:layout_marginRight="7dp"/>
+                    <TextView
+                        android:id="@+id/txtHapus"
+                        android:layout_weight="2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Hapus"
+                        android:textStyle="bold"
+                        android:textSize="13sp"
+                        android:textColor="@color/error"
+                        android:textAlignment="center"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.appcompat.widget.LinearLayoutCompat>

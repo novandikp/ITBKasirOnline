@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "456330792253",
+    "project_id": "simple-auth-app-e5525",
+    "storage_bucket": "simple-auth-app-e5525.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:456330792253:android:178e744812fbb83eaf4954",
+        "android_client_info": {
+          "package_name": "com.itb.aplikasitoko"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "456330792253-0doj7ibnfofjcqcot0l0mp37jmgbtg87.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC17iWrpLZRB0AQWduHVxtDCaHZnThTzHQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "456330792253-0doj7ibnfofjcqcot0l0mp37jmgbtg87.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
