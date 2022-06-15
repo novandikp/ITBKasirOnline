@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.itb.aplikasitoko.Api;
@@ -34,6 +35,12 @@ public class TambahPelanggan extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         bind = InsertPelangganBinding.inflate(getLayoutInflater());
         super.onCreate(savedInstanceState);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Tambah Pelanggan");
+        actionBar.setDisplayShowHomeEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
         setContentView(bind.getRoot());
 
         inNama = bind.inNama;

@@ -51,10 +51,10 @@
                             android:id="@+id/txtKategori"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-medium"
                             android:text="Kategori"
                             android:textColor="@color/black"
-                            android:fontFamily="sans-serif-medium"
-                            android:textSize="14sp"/>
+                            android:textSize="@dimen/FS_type1a" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -70,15 +70,15 @@
 
                     <TextView
                         android:id="@+id/txtEdit"
-                        android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginRight="7dp"
+                        android:layout_weight="1"
                         android:text="Edit"
-                        android:textStyle="bold"
-                        android:textSize="13sp"
-                        android:textColor="@color/success"
                         android:textAlignment="textEnd"
-                        android:layout_marginRight="7dp"/>
+                        android:textColor="@color/success"
+                        android:textSize="@dimen/FS_type1a"
+                        android:textStyle="bold" />
                     <TextView
                         android:id="@+id/txtHapus"
                         android:layout_weight="2"
@@ -86,7 +86,7 @@
                         android:layout_height="wrap_content"
                         android:text="Hapus"
                         android:textStyle="bold"
-                        android:textSize="13sp"
+                        android:textSize="@dimen/FS_type1a"
                         android:textColor="@color/error"
                         android:textAlignment="center"/>
                 </LinearLayout>

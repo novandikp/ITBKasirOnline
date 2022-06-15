@@ -52,6 +52,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:text="09766877777"
+                    android:textSize="@dimen/FS_type1a"
                     android:textColor="@color/white"/>
 
                 <TextView
@@ -63,6 +64,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:text="Sidoarjo"
+                    android:textSize="@dimen/FS_type1a"
                     android:textColor="@color/white"/>
 
             </LinearLayout>
@@ -97,7 +99,7 @@
                             android:text="Tanggal Jual"
                             android:textColor="@color/primary1"
                             android:textStyle="bold"
-                            android:textSize="12sp" />
+                            android:textSize="@dimen/FS_type1a" />
 
                         <TextView
                             android:id="@+id/isitanggal"
@@ -107,7 +109,8 @@
                             android:layout_marginBottom="0dp"
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="10dp"
-                            android:text="18 Mei 2022" />
+                            android:text="18 Mei 2022"
+                            android:textSize="@dimen/FS_type1a" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -126,7 +129,7 @@
                             android:text="Total terjual"
                             android:textColor="@color/primary1"
                             android:textStyle="bold"
-                            android:textSize="12sp" />
+                            android:textSize="@dimen/FS_type1a" />
 
                         <TextView
                             android:id="@+id/isitotaljual"
@@ -136,7 +139,8 @@
                             android:layout_marginBottom="10dp"
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="10dp"
-                            android:text="Ivanna" />
+                            android:text="Ivanna"
+                            android:textSize="@dimen/FS_type1a" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -163,7 +167,7 @@
                             android:text="Total Pendapatan"
                             android:textColor="@color/primary1"
                             android:textStyle="bold"
-                            android:textSize="12sp" />
+                            android:textSize="@dimen/FS_type1a" />
 
                         <TextView
                             android:id="@+id/isipendapatan"
@@ -173,7 +177,8 @@
                             android:layout_marginBottom="0dp"
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="10dp"
-                            android:text="Rp. 0" />
+                            android:text="Rp. 0"
+                            android:textSize="@dimen/FS_type1a" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -192,7 +197,7 @@
                             android:text="Total Keuntungan"
                             android:textColor="@color/primary1"
                             android:textStyle="bold"
-                            android:textSize="12sp" />
+                            android:textSize="@dimen/FS_type1a" />
 
                         <TextView
                             android:id="@+id/isiKeuntungan"
@@ -202,7 +207,8 @@
                             android:layout_marginBottom="10dp"
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="10dp"
-                            android:text="1 pcs" />
+                            android:text="1 pcs"
+                            android:textSize="@dimen/FS_type1a" />
                     </LinearLayout>
                 </LinearLayout>
 

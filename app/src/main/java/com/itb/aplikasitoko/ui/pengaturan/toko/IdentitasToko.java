@@ -6,6 +6,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.itb.aplikasitoko.Api;
@@ -30,6 +31,12 @@ public class IdentitasToko extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         bind = ActivityIdentitasBinding.inflate(getLayoutInflater());
         super.onCreate(savedInstanceState);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Identitas Toko");
+        actionBar.setDisplayShowHomeEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
         setContentView(bind.getRoot());
         SpHelper sp = new SpHelper(IdentitasToko.this);
         bind.ukuranPrinter.setText(sp.getPrinter());

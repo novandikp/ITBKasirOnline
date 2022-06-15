@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.widget.SearchView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -33,6 +34,12 @@ public class PelangganOrder extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         bind = ActivityPelangganOrderBinding.inflate(getLayoutInflater());
         super.onCreate(savedInstanceState);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Pelanggan");
+        actionBar.setDisplayShowHomeEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
         setContentView(bind.getRoot());
 
         //inisiasi repositoy / db

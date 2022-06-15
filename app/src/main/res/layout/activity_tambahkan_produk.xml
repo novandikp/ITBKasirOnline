@@ -49,7 +49,7 @@
                     android:text="Tambah Produk"
                     android:textColor="@color/black"
                     android:textAlignment="textStart"
-                    android:textSize="30sp"/>
+                    android:textSize="@dimen/FS_type2a"/>
 
                 <EditText
                     android:id="@+id/kodeProduk"
@@ -62,7 +62,7 @@
                     android:hint="Kode Produk"
                     android:inputType="text"
                     android:minHeight="48dp"
-                    android:textSize="18sp" />
+                    android:textSize="@dimen/FS_type1a" />
 
                 <EditText
                     android:id="@+id/namaProduk"
@@ -75,7 +75,7 @@
                     android:hint="Nama Produk"
                     android:inputType="text"
                     android:minHeight="48dp"
-                    android:textSize="18sp" />
+                    android:textSize="@dimen/FS_type1a" />
 
                 <EditText
                     android:id="@+id/kategori"
@@ -88,7 +88,7 @@
                     android:hint="Kategori"
                     android:inputType="text"
                     android:minHeight="48dp"
-                    android:textSize="18sp" />
+                    android:textSize="@dimen/FS_type1a" />
 
                 <EditText
                     android:id="@+id/satuan"
@@ -101,7 +101,7 @@
                     android:hint="Satuan (pcs, kg, dll)"
                     android:inputType="text"
                     android:minHeight="48dp"
-                    android:textSize="18sp" />
+                    android:textSize="@dimen/FS_type1a" />
 
                 <EditText
                     android:id="@+id/harga"
@@ -114,7 +114,7 @@
                     android:hint="Harga Awal"
                     android:inputType="text"
                     android:minHeight="48dp"
-                    android:textSize="18sp" />
+                    android:textSize="@dimen/FS_type1a" />
 
                 <EditText
                     android:id="@+id/hargaJual"
@@ -127,7 +127,7 @@
                     android:hint="Harga Jual"
                     android:inputType="text"
                     android:minHeight="48dp"
-                    android:textSize="18sp" />
+                    android:textSize="@dimen/FS_type1a" />
 
                 <EditText
                     android:id="@+id/stokAwal"
@@ -165,8 +165,7 @@
                     android:layout_height="55dp"
                     android:backgroundTint="#2F4F4F"
                     android:text="Next"
-                    android:textColor="#FFFFFF"
-                    android:textSize="15sp"/>
+                    android:textColor="#FFFFFF"/>
             </LinearLayout>
 
             <!--                <ProgressBar-->

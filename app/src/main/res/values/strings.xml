@@ -51,4 +51,5 @@
     <string name="updated_error">Data gagal diubah</string>
     <string name="login_success">Login berhasil</string>
     <string name="login_error">Login gagal</string>
+
 </resources>

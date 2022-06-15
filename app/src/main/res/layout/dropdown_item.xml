@@ -7,5 +7,5 @@
     android:text="TextView"
     android:textColor="@color/black"
     android:textStyle="bold"
-    android:textSize="16sp"
+    android:textSize="@dimen/FS_type1a"
     />

@@ -6,6 +6,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.itb.aplikasitoko.Api;
@@ -31,6 +32,12 @@ public class EditPegawai extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         bind = EditPegawaiBinding.inflate(getLayoutInflater());
         super.onCreate(savedInstanceState);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Edit Data Pegawai");
+        actionBar.setDisplayShowHomeEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
         setContentView(bind.getRoot());
 
         //inisiasi database

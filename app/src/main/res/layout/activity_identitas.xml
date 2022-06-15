@@ -65,7 +65,7 @@
                             android:fontFamily="sans-serif-medium"
                             android:text="Identitas Toko"
                             android:textAlignment="center"
-                            android:textSize="30sp"/>
+                            android:textSize="@dimen/FS_type2a"/>
 
                         <EditText
                             android:id="@+id/namaPemilik"
@@ -78,7 +78,7 @@
                             android:hint="Nama Pemilik"
                             android:inputType="text"
                             android:minHeight="48dp"
-                            android:textSize="18sp" />
+                            android:textSize="@dimen/FS_type1a" />
 
                         <EditText
                             android:id="@+id/namaUsaha"
@@ -91,7 +91,7 @@
                             android:hint="Nama Usaha"
                             android:inputType="text"
                             android:minHeight="48dp"
-                            android:textSize="18sp" />
+                            android:textSize="@dimen/FS_type1a" />
 
 
 
@@ -131,6 +131,7 @@
                                     android:layout_weight="1"
                                     android:text="Restoran"
                                     android:hint="Jenis Usaha"
+                                    android:textSize="@dimen/FS_type1a"
                                     android:inputType="none"/>
                             </com.google.android.material.textfield.TextInputLayout>
 
@@ -179,7 +180,7 @@
                             android:fontFamily="sans-serif-medium"
                             android:text="Informasi Printer"
                             android:textAlignment="center"
-                            android:textSize="30sp"/>
+                            android:textSize="@dimen/FS_type2a"/>
 
 
 
@@ -219,6 +220,7 @@
                                     android:layout_weight="1"
                                     android:text="56mm"
                                     android:hint="Ukuran Printer"
+                                    android:textSize="@dimen/FS_type1a"
                                     android:inputType="none"/>
                             </com.google.android.material.textfield.TextInputLayout>
 
@@ -267,7 +269,7 @@
                             android:fontFamily="sans-serif-medium"
                             android:text="Lokasi Toko"
                             android:textAlignment="center"
-                            android:textSize="30sp"/>
+                            android:textSize="@dimen/FS_type2a"/>
 
 
                         <EditText
@@ -281,7 +283,7 @@
                             android:hint="Lokasi Usaha"
                             android:inputType="text"
                             android:minHeight="48dp"
-                            android:textSize="18sp" />
+                            android:textSize="@dimen/FS_type1a" />
 
                         <!--                    <Spinner-->
                         <!--                        android:id="@+id/jenisUsaha"-->
@@ -306,11 +308,10 @@
                             <Button
                                 android:id="@+id/btnSubmit"
                                 android:layout_width="match_parent"
-                                android:layout_height="70dp"
+                                android:layout_height="55dp"
                                 android:backgroundTint="@color/default1"
-                                android:text="Submit"
+                                android:text="Save"
                                 android:textColor="#FFFFFF"
-                                android:textSize="15sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"

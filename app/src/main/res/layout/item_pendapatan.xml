@@ -74,7 +74,7 @@
                             android:text="Faktur Jual"
                             android:textColor="@color/primary1"
                             android:textStyle="bold"
-                            android:textSize="12sp" />
+                            android:textSize="@dimen/FS_type1a" />
 
                         <TextView
                             android:id="@+id/isiFakturJual"
@@ -84,7 +84,8 @@
                             android:layout_marginBottom="0dp"
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="10dp"
-                            android:text="000" />
+                            android:text="000"
+                            android:textSize="@dimen/FS_type1a" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -103,7 +104,7 @@
                             android:text="Pelanggan"
                             android:textColor="@color/primary1"
                             android:textStyle="bold"
-                            android:textSize="12sp" />
+                            android:textSize="@dimen/FS_type1a" />
 
                         <TextView
                             android:id="@+id/isipelanggan"
@@ -113,7 +114,8 @@
                             android:layout_marginBottom="10dp"
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="10dp"
-                            android:text="Ivanna" />
+                            android:text="Ivanna"
+                            android:textSize="@dimen/FS_type1a" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -139,7 +141,7 @@
                             android:text="Pegawai"
                             android:textColor="@color/primary1"
                             android:textStyle="bold"
-                            android:textSize="12sp" />
+                            android:textSize="@dimen/FS_type1a" />
 
                         <TextView
                             android:id="@+id/isiPegawai"
@@ -149,7 +151,8 @@
                             android:layout_marginBottom="0dp"
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="10dp"
-                            android:text="Rossa" />
+                            android:text="Rossa"
+                            android:textSize="@dimen/FS_type1a" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -168,7 +171,7 @@
                             android:text="Pendapatan"
                             android:textColor="@color/primary1"
                             android:textStyle="bold"
-                            android:textSize="12sp" />
+                            android:textSize="@dimen/FS_type1a" />
 
                         <TextView
                             android:id="@+id/isiPendapatan"
@@ -178,7 +181,8 @@
                             android:layout_marginBottom="10dp"
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="10dp"
-                            android:text="Rp. 150.000" />
+                            android:text="Rp. 150.000"
+                            android:textSize="@dimen/FS_type1a" />
                     </LinearLayout>
                 </LinearLayout>
 

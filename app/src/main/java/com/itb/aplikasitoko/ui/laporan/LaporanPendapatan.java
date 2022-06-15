@@ -9,6 +9,7 @@ import android.widget.DatePicker;
 import android.widget.SearchView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -52,6 +53,12 @@ public class LaporanPendapatan extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         bind = ActivityLaporanPendapatanBinding.inflate(getLayoutInflater());
         super.onCreate(savedInstanceState);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Laporan Pendapatan");
+        actionBar.setDisplayShowHomeEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
         setContentView(bind.getRoot());
 
         init();

@@ -37,7 +37,7 @@
                 android:paddingLeft="7dp"
                 android:text="Produk"
                 android:textColor="@color/black"
-                android:textSize="17sp" />
+                android:textSize="17dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -65,7 +65,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-medium"
                             android:text="Kode"
-                            android:textSize="14sp" />
+                            android:textSize="@dimen/FS_type1a" />
 
                         <TextView
                             android:id="@+id/LHargaBeli"
@@ -73,7 +73,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-medium"
                             android:text="Harga Awal"
-                            android:textSize="14sp" />
+                            android:textSize="@dimen/FS_type1a" />
 
                         <TextView
                             android:id="@+id/LHargaJual"
@@ -81,7 +81,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-medium"
                             android:text="Harga Jual"
-                            android:textSize="14sp" />
+                            android:textSize="@dimen/FS_type1a" />
                     </LinearLayout>
 
 
@@ -97,23 +97,23 @@
                             android:layout_height="wrap_content"
                             android:text="12"
                             android:textAlignment="textEnd"
-                            android:textSize="14sp" />
+                            android:textSize="@dimen/FS_type1a" />
 
                         <TextView
                             android:id="@+id/txtHargaBeli"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="10000"
+                            android:text="100.000.000"
                             android:textAlignment="textEnd"
-                            android:textSize="14sp" />
+                            android:textSize="@dimen/FS_type1a" />
 
                         <TextView
                             android:id="@+id/txtHargaJual"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="20000"
+                            android:text="150.000.000"
                             android:textAlignment="textEnd"
-                            android:textSize="14sp" />
+                            android:textSize="@dimen/FS_type1a" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -136,7 +136,7 @@
                         android:text="Edit"
                         android:textAlignment="textEnd"
                         android:textColor="@color/success"
-                        android:textSize="13sp"
+                        android:textSize="@dimen/FS_type1a"
                         android:textStyle="bold" />
 
                     <TextView
@@ -147,7 +147,7 @@
                         android:text="Hapus"
                         android:textAlignment="center"
                         android:textColor="@color/error"
-                        android:textSize="13sp"
+                        android:textSize="@dimen/FS_type1a"
                         android:textStyle="bold" />
                 </LinearLayout>
 

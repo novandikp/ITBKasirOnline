@@ -68,7 +68,7 @@
                     android:hint="Kode Produk"
                     android:inputType="text"
                     android:minHeight="48dp"
-                    android:textSize="18sp" />
+                    android:textSize="@dimen/FS_type1a" />
 
                 <EditText
                     android:id="@+id/namaProduk"
@@ -81,7 +81,7 @@
                     android:hint="Nama Produk"
                     android:inputType="text"
                     android:minHeight="48dp"
-                    android:textSize="18sp" />
+                    android:textSize="@dimen/FS_type1a" />
 
                 <!-- ganti dari spinner -->
                 <com.google.android.material.textfield.TextInputLayout
@@ -102,6 +102,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:text="Pilih Kategori"
+                        android:textSize="@dimen/FS_type1a"
                         android:clickable="true"
                         android:focusable="false"
                         android:focusableInTouchMode="false"
@@ -128,6 +129,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:text="Pilih Satuan"
+                        android:textSize="@dimen/FS_type1a"
                         android:hint="Satuan"
                         android:inputType="none"/>
                 </com.google.android.material.textfield.TextInputLayout>
@@ -143,7 +145,7 @@
                     android:hint="Harga Awal"
                     android:inputType="text"
                     android:minHeight="48dp"
-                    android:textSize="18sp" />
+                    android:textSize="@dimen/FS_type1a" />
 
                 <EditText
                     android:id="@+id/hargaJual"
@@ -156,7 +158,7 @@
                     android:hint="Harga Jual"
                     android:inputType="text"
                     android:minHeight="48dp"
-                    android:textSize="18sp" />
+                    android:textSize="@dimen/FS_type1a" />
 
                 <EditText
                     android:id="@+id/stokAwal"
@@ -169,7 +171,7 @@
                     android:hint="Stok Awal"
                     android:inputType="text"
                     android:minHeight="48dp"
-                    android:textSize="18sp" />
+                    android:textSize="@dimen/FS_type1a" />
             </LinearLayout>
 
             <LinearLayout
@@ -192,8 +194,7 @@
                     android:layout_height="55dp"
                     android:backgroundTint="#2F4F4F"
                     android:text="Save"
-                    android:textColor="#FFFFFF"
-                    android:textSize="15sp"/>
+                    android:textColor="#FFFFFF"/>
             </LinearLayout>
 
             <!--                <ProgressBar-->

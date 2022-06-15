@@ -49,7 +49,7 @@
                     android:text="Proteksi Akun"
                     android:textColor="@color/black"
                     android:textAlignment="textStart"
-                    android:textSize="30sp"/>
+                    android:textSize="@dimen/FS_type2a"/>
 
                 <TextView
                     android:id="@+id/bannerDescription"
@@ -60,7 +60,7 @@
                     android:text="Masukkan Nomor telefon untuk menjaga keamanan akun"
                     android:textFontWeight="450"
                     android:textAlignment="textStart"
-                    android:textSize="18sp"
+                    android:textSize="@dimen/FS_type1a"
                     android:textStyle="italic" />
 
                 <EditText
@@ -73,7 +73,7 @@
                     android:ems="10"
                     android:hint="Nomor Telepon"
                     android:inputType="number|phone"
-                    android:textSize="18sp" />
+                    android:textSize="@dimen/FS_type1a" />
             </LinearLayout>
 
             <LinearLayout
@@ -96,8 +96,7 @@
                     android:layout_height="55dp"
                     android:backgroundTint="#2F4F4F"
                     android:text="Send OTP Code"
-                    android:textColor="#FFFFFF"
-                    android:textSize="15sp"/>
+                    android:textColor="#FFFFFF"/>
             </LinearLayout>
 
             <!--                <ProgressBar-->
