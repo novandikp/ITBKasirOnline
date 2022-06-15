@@ -4,10 +4,13 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.SearchView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
@@ -20,11 +23,14 @@ import com.itb.aplikasitoko.Api;
 import com.itb.aplikasitoko.Component.LoadingDialog;
 import com.itb.aplikasitoko.Component.SuccessDialog;
 import com.itb.aplikasitoko.Database.Repository.BarangRepository;
+import com.itb.aplikasitoko.HomePage;
 import com.itb.aplikasitoko.Model.ModelBarang;
 import com.itb.aplikasitoko.R;
 import com.itb.aplikasitoko.Response.BarangGetResp;
 import com.itb.aplikasitoko.Response.BarangResponse;
 import com.itb.aplikasitoko.databinding.ActivityMasterProdukBinding;
+import com.itb.aplikasitoko.ui.pengaturan.PengaturanFragment;
+import com.itb.aplikasitoko.ui.pengaturan.kategori.MasterDaftarKategori;
 import com.itb.aplikasitoko.util.Modul;
 import com.itb.aplikasitoko.util.ModulExcel;
 
@@ -220,4 +226,24 @@ public class MasterProduk extends AppCompatActivity {
         Toast.makeText(this, "Berhasil disimpan di "+file.getPath(), Toast.LENGTH_SHORT).show();
 
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_export,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        if (item.getItemId() == android.R.id.home) {
+            Intent intent = new Intent(this, HomePage.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            finish();
+        } else if (id == R.id.export) {
+                Toast.makeText(getApplicationContext(), "Exported", Toast.LENGTH_SHORT).show();
+        } return true;
+    }
+
 }

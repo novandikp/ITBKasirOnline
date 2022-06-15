@@ -47,7 +47,7 @@
                         android:text="Aplikasi Toko"
                         android:textAlignment="center"
                         android:textColor="@color/black"
-                        android:textSize="25dp" />
+                        android:textSize="@dimen/FS_type2a" />
 
                     <TextView
                         android:id="@+id/bannerDescription"
@@ -58,7 +58,7 @@
                         android:text="Kelola Toko Super Mudah"
                         android:textAlignment="center"
                         android:textFontWeight="450"
-                        android:textSize="15dp"
+                        android:textSize="@dimen/FS_type1a"
                         android:textStyle="normal" />
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -74,7 +74,7 @@
                             android:layout_marginRight="40dp"
                             android:hint="Email"
                             android:inputType="textEmailAddress"
-                            android:textSize="15dp" />
+                            android:textSize="@dimen/FS_type1a" />
                     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -93,7 +93,7 @@
                             android:ems="10"
                             android:hint="Password"
                             android:inputType="textPassword"
-                            android:textSize="15dp" />
+                            android:textSize="@dimen/FS_type1a" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                 </LinearLayout>
@@ -146,8 +146,7 @@
                         android:layout_height="55dp"
                         android:backgroundTint="#2F4F4F"
                         android:text="Login"
-                        android:textColor="#FFFFFF"
-                        android:textSize="15dp" />
+                        android:textColor="#FFFFFF"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -163,7 +162,7 @@
                             android:layout_marginRight="10dp"
                             android:onClick="register"
                             android:text="Belum punya akun?"
-                            android:textSize="15dp" />
+                            android:textSize="@dimen/FS_type1a" />
 
                         <TextView
                             android:id="@+id/register"
@@ -172,7 +171,7 @@
                             android:onClick="register"
                             android:text="Register"
                             android:textColor="@color/teal_800"
-                            android:textSize="15dp" />
+                            android:textSize="@dimen/FS_type1a" />
                     </LinearLayout>
 
 

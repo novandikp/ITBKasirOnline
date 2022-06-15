@@ -35,13 +35,13 @@
                     android:id="@+id/txtKategori"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="0dp"
                     android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginRight="10dp"
+                    android:layout_marginBottom="0dp"
                     android:text="Kategori"
                     android:textColor="@color/white"
-                    android:textSize="12sp" />
+                    android:textSize="@dimen/FS_type1a" />
 
                 <TextView
                     android:id="@+id/isiKategori"
@@ -82,24 +82,25 @@
                             android:id="@+id/txtJumlahjual"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="0dp"
                             android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
                             android:layout_marginRight="10dp"
+                            android:layout_marginBottom="0dp"
                             android:text="Jumlah Terjual"
                             android:textColor="@color/primary1"
-                            android:textStyle="bold"
-                            android:textSize="12sp" />
+                            android:textSize="@dimen/FS_type1a"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/isijumlahjual"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="0dp"
-                            android:layout_marginBottom="0dp"
                             android:layout_marginLeft="10dp"
+                            android:layout_marginTop="0dp"
                             android:layout_marginRight="10dp"
-                            android:text="0" />
+                            android:layout_marginBottom="0dp"
+                            android:text="0"
+                            android:textSize="@dimen/FS_type1a" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -111,24 +112,25 @@
                             android:id="@+id/txtpendapatan"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="0dp"
-                            android:layout_marginBottom="0dp"
                             android:layout_marginLeft="10dp"
+                            android:layout_marginTop="0dp"
                             android:layout_marginRight="10dp"
+                            android:layout_marginBottom="0dp"
                             android:text="Total Pendapatan"
                             android:textColor="@color/primary1"
-                            android:textStyle="bold"
-                            android:textSize="12sp" />
+                            android:textSize="@dimen/FS_type1a"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/isipendapatan"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="0dp"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginLeft="10dp"
+                            android:layout_marginTop="0dp"
                             android:layout_marginRight="10dp"
-                            android:text="Rp. 0" />
+                            android:layout_marginBottom="10dp"
+                            android:text="Rp. 0"
+                            android:textSize="@dimen/FS_type1a" />
                     </LinearLayout>
 
                 </LinearLayout>

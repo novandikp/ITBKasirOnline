@@ -55,7 +55,8 @@
                     android:fontFamily="sans-serif-medium"
                     android:text="Login Pegawai"
                     android:textAlignment="center"
-                    android:textSize="30sp"/>
+                    android:textSize="@dimen/FS_type2a"
+                    android:textColor="@color/black"/>
 
                 <Spinner
                     android:id="@+id/namaPegawai"
@@ -67,6 +68,7 @@
                     android:layout_weight="1"
                     android:text="Rossa"
                     android:hint="Pegawai"
+                    android:textSize="@dimen/FS_type1a"
                     android:inputType="none"/>
 
                 <EditText
@@ -79,7 +81,7 @@
                     android:ems="10"
                     android:hint="Pin Pegawai"
                     android:inputType="number"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/FS_type1a"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/idpegawai" />
@@ -93,7 +95,7 @@
                     android:paddingLeft="5dp"
                     android:ems="10"
                     android:hint="default : 1234"
-                    android:textSize="15sp"
+                    android:textSize="13sp"
                     android:textStyle="italic"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
@@ -110,11 +112,10 @@
                     <Button
                         android:id="@+id/btnSubmit"
                         android:layout_width="match_parent"
-                        android:layout_height="70dp"
+                        android:layout_height="55dp"
                         android:backgroundTint="@color/default1"
                         android:text="Submit"
                         android:textColor="#FFFFFF"
-                        android:textSize="15sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"

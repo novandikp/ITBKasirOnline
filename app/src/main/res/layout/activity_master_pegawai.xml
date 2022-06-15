@@ -51,7 +51,8 @@
                 app:layout_constraintTop_toTopOf="parent"
                 android:background="@drawable/searchview_bg"
                 android:iconifiedByDefault="false"
-                android:queryHint="Cari Nama Pegawai..."/>
+                android:queryHint="Cari Nama Pegawai..."
+                app:theme="@style/FS_SearchView" />
 
         </LinearLayout>
 

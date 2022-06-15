@@ -45,7 +45,8 @@
             android:theme="@style/Theme.AuthApp.NoActionBar"/>
         <activity
             android:name="com.itb.aplikasitoko.ui.laporan.LaporanPendapatan"
-            android:exported="false"/>
+            android:exported="false"
+            android:parentActivityName=".ui.laporan.LaporanPendapatan"/>
         <activity
             android:name="com.itb.aplikasitoko.ui.pengaturan.kategori.MasterDaftarKategori"
             android:exported="false"
@@ -98,35 +99,73 @@
             android:name="com.itb.aplikasitoko.LoginActivity"
             android:exported="false"
             android:theme="@style/Theme.AuthApp.NoActionBar" />
-        <activity android:name="com.itb.aplikasitoko.ui.pengaturan.satuan.MasterSatuan"
+        <activity
+            android:name="com.itb.aplikasitoko.ui.pengaturan.satuan.MasterSatuan"
             android:exported="false"
-            android:parentActivityName="com.itb.aplikasitoko.ui.pengaturan.kategori.MasterDaftarKategori"/>
-        <activity android:name="com.itb.aplikasitoko.ui.pengaturan.pelanggan.MasterPelanggan"
+            android:parentActivityName="com.itb.aplikasitoko.ui.pengaturan.satuan.MasterSatuan"/>
+        <activity
+            android:name="com.itb.aplikasitoko.ui.pengaturan.pelanggan.MasterPelanggan"
             android:exported="false"
-            android:parentActivityName="com.itb.aplikasitoko.ui.pengaturan.kategori.MasterDaftarKategori"/>
-        <activity android:name="com.itb.aplikasitoko.ui.pengaturan.pelanggan.TambahPelanggan"/>
-        <activity android:name="com.itb.aplikasitoko.ui.pengaturan.pelanggan.EditPelanggan"/>
-        <activity android:name="com.itb.aplikasitoko.ui.pengaturan.pegawai.MasterPegawai"
+            android:parentActivityName="com.itb.aplikasitoko.ui.pengaturan.pelanggan.MasterPelanggan"/>
+        <activity android:name="com.itb.aplikasitoko.ui.pengaturan.pelanggan.TambahPelanggan"
             android:exported="false"
-            android:parentActivityName="com.itb.aplikasitoko.ui.pengaturan.kategori.MasterDaftarKategori"/>
-        <activity android:name="com.itb.aplikasitoko.ui.pengaturan.pegawai.EditPegawai"/>
-        <activity android:name="com.itb.aplikasitoko.ui.pengaturan.pegawai.TambahPegawai"/>
+            android:parentActivityName="com.itb.aplikasitoko.ui.pengaturan.pelanggan.MasterPelanggan" />
+        <activity android:name="com.itb.aplikasitoko.ui.pengaturan.pelanggan.EditPelanggan"
+            android:exported="false"
+            android:parentActivityName="com.itb.aplikasitoko.ui.pengaturan.pelanggan.MasterPelanggan"/>
+        <activity
+            android:name="com.itb.aplikasitoko.ui.pengaturan.pegawai.MasterPegawai"
+            android:exported="false"
+            android:parentActivityName="com.itb.aplikasitoko.ui.pengaturan.pegawai.MasterPegawai"/>
+        <activity android:name="com.itb.aplikasitoko.ui.pengaturan.pegawai.EditPegawai"
+            android:exported="false"
+            android:parentActivityName="com.itb.aplikasitoko.ui.pengaturan.pegawai.MasterPegawai"/>
+        <activity
+            android:name="com.itb.aplikasitoko.ui.pengaturan.pegawai.TambahPegawai"
+            android:exported="false"
+            android:parentActivityName="com.itb.aplikasitoko.ui.pengaturan.pegawai.MasterPegawai"/>
         <activity android:name="com.itb.aplikasitoko.ui.pengaturan.pegawai.LoginPegawai" android:theme="@style/Theme.AuthApp.NoActionBar"/>
-        <activity android:name="com.itb.aplikasitoko.ui.pengaturan.produk.MasterProduk"
+        <activity
+            android:name="com.itb.aplikasitoko.ui.pengaturan.produk.MasterProduk"
             android:exported="false"
-            android:parentActivityName="com.itb.aplikasitoko.ui.pengaturan.kategori.MasterDaftarKategori"/>
-        <activity android:name="com.itb.aplikasitoko.ui.pengaturan.produk.TambahProduk" />
-        <activity android:name="com.itb.aplikasitoko.ui.pengaturan.produk.EditProduk" />
-        <activity android:name="com.itb.aplikasitoko.ui.home.bottom_nav.PelangganOrder" />
-        <activity android:name="com.itb.aplikasitoko.ui.home.bottom_nav.shopping.ShoppingCart"  />
-        <activity android:name="com.itb.aplikasitoko.ui.home.bottom_nav.shopping.Payment" android:theme="@style/Theme.AuthApp.NoActionBar" />
-        <activity android:name="com.itb.aplikasitoko.ui.home.bottom_nav.shopping.TransactionSuccess" android:theme="@style/Theme.AuthApp.NoActionBar"/>
-        <activity android:name="com.itb.aplikasitoko.ui.laporan.LaporanPenjualan" />
-        <activity android:name="com.itb.aplikasitoko.ui.laporan.RekapBarang" />
-        <activity android:name="com.itb.aplikasitoko.ui.laporan.RekapKategori" />
-        <activity android:name="com.itb.aplikasitoko.ui.laporan.RekapPegawai" />
-        <activity android:name="com.itb.aplikasitoko.ui.laporan.RekapPelanggan" />
-        <activity android:name="com.itb.aplikasitoko.ui.pengaturan.toko.IdentitasToko" />
+            android:parentActivityName="com.itb.aplikasitoko.ui.pengaturan.produk.MasterProduk"/>
+        <activity
+            android:name="com.itb.aplikasitoko.ui.pengaturan.produk.TambahProduk"
+            android:exported="false"
+            android:parentActivityName="com.itb.aplikasitoko.ui.pengaturan.produk.MasterProduk" />
+        <activity android:name="com.itb.aplikasitoko.ui.pengaturan.produk.EditProduk"
+            android:exported="false"
+            android:parentActivityName="com.itb.aplikasitoko.ui.pengaturan.produk.MasterProduk" />
+        <activity android:name="com.itb.aplikasitoko.ui.home.bottom_nav.PelangganOrder"
+            android:exported="false"
+            android:parentActivityName=".ui.home.bottom_nav.PelangganOrder"/>
+        <activity android:name="com.itb.aplikasitoko.ui.home.bottom_nav.shopping.ShoppingCart"
+            android:exported="false"
+            android:parentActivityName=".ui.home.bottom_nav.shopping.ShoppingCart"/>
+        <activity
+            android:name="com.itb.aplikasitoko.ui.home.bottom_nav.shopping.Payment"
+            android:theme="@style/Theme.AuthApp.NoActionBar" />
+        <activity
+            android:name="com.itb.aplikasitoko.ui.home.bottom_nav.shopping.TransactionSuccess"
+            android:theme="@style/Theme.AuthApp.NoActionBar"/>
+        <activity android:name="com.itb.aplikasitoko.ui.laporan.LaporanPenjualan"
+            android:exported="false"
+            android:parentActivityName=".ui.laporan.LaporanPenjualan"/>
+        <activity android:name="com.itb.aplikasitoko.ui.laporan.RekapBarang"
+            android:exported="false"
+            android:parentActivityName=".ui.laporan.RekapBarang"/>
+        <activity android:name="com.itb.aplikasitoko.ui.laporan.RekapKategori"
+            android:exported="false"
+            android:parentActivityName=".ui.laporan.RekapKategori"/>
+        <activity android:name="com.itb.aplikasitoko.ui.laporan.RekapPegawai"
+            android:exported="false"
+            android:parentActivityName=".ui.laporan.RekapPegawai"/>
+        <activity android:name="com.itb.aplikasitoko.ui.laporan.RekapPelanggan"
+            android:exported="false"
+            android:parentActivityName=".ui.laporan.RekapPelanggan"/>
+        <activity android:name="com.itb.aplikasitoko.ui.pengaturan.toko.IdentitasToko"
+            android:exported="false"
+            android:parentActivityName="com.itb.aplikasitoko.ui.pengaturan.toko.IdentitasToko" />
         <activity android:name="com.itb.aplikasitoko.ui.logout.LogoutToko" />
         <activity android:name="com.itb.aplikasitoko.ui.logout.LogoutPegawai" />
     </application>

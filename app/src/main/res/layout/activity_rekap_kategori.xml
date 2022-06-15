@@ -48,7 +48,7 @@
                 android:text="Rp. 0"
                 android:textAlignment="center"
                 android:textColor="#3F4F4F"
-                android:textSize="18sp"
+                android:textSize="@dimen/FS_type1a"
                 android:textStyle="italic"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -78,6 +78,7 @@
                 android:background="@drawable/searchview_bg"
                 android:iconifiedByDefault="false"
                 android:queryHint="Cari Nama Produk..."
+                app:theme="@style/FS_SearchView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
@@ -115,7 +116,7 @@
                         android:layout_height="wrap_content"
                         android:hint="Dari"
                         android:inputType="date"
-                        android:textSize="14sp" />
+                        android:textSize="@dimen/FS_type1a" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 
@@ -137,7 +138,7 @@
                         android:layout_height="wrap_content"
                         android:hint="Sampai"
                         android:inputType="date"
-                        android:textSize="14sp" />
+                        android:textSize="@dimen/FS_type1a" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 

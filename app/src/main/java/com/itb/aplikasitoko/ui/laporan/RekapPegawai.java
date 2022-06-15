@@ -10,6 +10,7 @@ import android.widget.Toast;
 import android.widget.DatePicker;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -50,6 +51,12 @@ public class RekapPegawai extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         bind = ActivityRekapPegawaiBinding.inflate(getLayoutInflater());
         super.onCreate(savedInstanceState);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Rekap per Pegawai");
+        actionBar.setDisplayShowHomeEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
         setContentView(bind.getRoot());
 
         bind.item.setLayoutManager(new LinearLayoutManager(this));

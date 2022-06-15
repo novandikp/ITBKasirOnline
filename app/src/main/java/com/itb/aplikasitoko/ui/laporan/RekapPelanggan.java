@@ -10,6 +10,7 @@ import android.widget.SearchView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -50,6 +51,12 @@ public class RekapPelanggan extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         bind = ActivityRekapPelangganBinding.inflate(getLayoutInflater());
         super.onCreate(savedInstanceState);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Rekap per Pelanggan");
+        actionBar.setDisplayShowHomeEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
         setContentView(bind.getRoot());
 
         bind.item.setLayoutManager(new LinearLayoutManager(this));

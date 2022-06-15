@@ -18,7 +18,8 @@
             app:layout_constraintEnd_toStartOf="@+id/QRCode"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:queryHint="Cari Disini..." />
+            app:queryHint="Cari Disini..."
+            app:theme="@style/FS_SearchView" />
 
         <ImageButton
             android:id="@+id/QRCode"
