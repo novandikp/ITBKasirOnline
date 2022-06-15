@@ -47,10 +47,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="50dp"
-            android:layout_marginBottom="60dp"
-            app:layout_constraintBottom_toTopOf="@+id/bottomHorizontalDivider"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/topHorizontalDivider">
@@ -59,14 +57,15 @@
                 android:id="@+id/item"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="60dp">
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
             </androidx.recyclerview.widget.RecyclerView>
 
             <TextView
                 android:id="@+id/txtKosong"
-                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -75,6 +74,7 @@
                 android:text="Tidak ada produk untuk ditampilkan"
                 android:textAlignment="center"
                 android:textSize="20sp"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -85,69 +85,70 @@
             android:id="@+id/bottomHorizontalDivider"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_marginBottom="55dp"
+            android:layout_marginBottom="2dp"
             android:background="?android:attr/listDivider"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="50dp"
-            android:layout_marginBottom="60dp"
+            android:layout_height="wrap_content"
             app:layout_constraintBottom_toTopOf="@+id/bottomHorizontalDivider"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/topHorizontalDivider">
+            app:layout_constraintStart_toStartOf="parent">
 
 
             <LinearLayout
                 android:id="@+id/viewTotal"
                 android:layout_width="0dp"
-                android:layout_height="60dp"
-                android:weightSum="1"
+                android:layout_height="wrap_content"
+                android:background="@color/teal_800"
+                android:gravity="center_horizontal|center_vertical"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="15dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                android:background="@color/teal_800">
+                app:layout_constraintStart_toStartOf="parent">
 
                 <TextView
                     android:id="@+id/tvJumlah"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_height="wrap_content"
+
                     android:layout_weight="1"
                     android:fontFamily="sans-serif-black"
                     android:text="0"
                     android:textColor="@color/white"
-                    android:textSize="30sp" />
+                    android:textSize="15dp" />
 
-                <TextView
-                    android:id="@+id/textviewtotal"
-                    android:layout_marginTop="18dp"
-                    android:layout_marginRight="2dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:fontFamily="sans-serif-black"
-                    android:text="Total  Rp."
-                    android:textSize="20sp"
-                    android:textColor="@color/white" />
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/tvTotal"
-                    android:layout_marginTop="18dp"
-                    android:layout_marginRight="18dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:fontFamily="sans-serif-black"
-                    android:text="0"
-                    android:textSize="20sp"
-                    android:textColor="@color/white" />
+                    <TextView
+                        android:id="@+id/textviewtotal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-black"
+                        android:text="Total  Rp."
+                        android:textColor="@color/white"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/tvTotal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="sans-serif-black"
+                        android:text="0"
+                        android:textColor="@color/white"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -155,17 +156,15 @@
             android:id="@+id/constraintLayout3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="0dp"
-            android:layout_marginEnd="0dp"
             android:layout_marginBottom="2dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+            app:layout_constraintStart_toStartOf="parent">
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:weightSum="3"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -181,7 +180,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:paddingVertical="6dp">
 
                         <ImageView
                             android:id="@+id/iconPelanggan"
@@ -217,7 +217,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:paddingVertical="6dp">
 
                         <ImageView
                             android:id="@+id/iconDaftar"
@@ -253,7 +254,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:paddingVertical="6dp">
 
                         <ImageView
                             android:id="@+id/iconHapus"

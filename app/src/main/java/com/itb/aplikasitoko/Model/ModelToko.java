@@ -1,7 +1,13 @@
 package com.itb.aplikasitoko.Model;
 
 
+import androidx.annotation.NonNull;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+@Entity(tableName = "tbltoko")
 public class ModelToko {
+    @NonNull
+    @PrimaryKey(autoGenerate = false)
     private String idtoko;
     private String nama_toko;
     private String alamat_toko;

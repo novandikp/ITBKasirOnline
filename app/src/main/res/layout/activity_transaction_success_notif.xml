@@ -32,17 +32,17 @@
             android:id="@+id/txtSuccess"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="0dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginRight="0dp"
-            android:textAlignment="center"
             android:layout_gravity="center_horizontal"
-            android:text="Transaction Success!"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginBottom="5dp"
             android:padding="0dp"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="@color/darkergrey"/>
+            android:text="Transaction Success!"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="17dp"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout

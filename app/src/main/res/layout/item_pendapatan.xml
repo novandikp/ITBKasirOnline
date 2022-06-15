@@ -34,158 +34,111 @@
                     android:id="@+id/txtDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
                     android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
                     android:text="18 May 2022"
                     android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:textSize="20sp" />
+                    android:textSize="13dp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:weightSum="2"
-                android:orientation="horizontal">
+                android:orientation="vertical"
+                android:padding="6dp"
+                android:weightSum="2">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
                     android:layout_weight="1"
-                    >
+                    android:orientation="horizontal">
 
                     <LinearLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginRight="4dp"
                         android:orientation="vertical">
 
                         <TextView
                             android:id="@+id/txtFakturJual"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="0dp"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"
                             android:text="Faktur Jual"
                             android:textColor="@color/primary1"
-                            android:textStyle="bold"
-                            android:textSize="@dimen/FS_type1a" />
-
-                        <TextView
-                            android:id="@+id/isiFakturJual"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="0dp"
-                            android:layout_marginBottom="0dp"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"
-                            android:text="000"
-                            android:textSize="@dimen/FS_type1a" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                            android:textSize="13dp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/txtPelanggan"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="0dp"
-                            android:layout_marginBottom="0dp"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"
+
                             android:text="Pelanggan"
                             android:textColor="@color/primary1"
-                            android:textStyle="bold"
-                            android:textSize="@dimen/FS_type1a" />
-
-                        <TextView
-                            android:id="@+id/isipelanggan"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="0dp"
-                            android:layout_marginBottom="10dp"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"
-                            android:text="Ivanna"
-                            android:textSize="@dimen/FS_type1a" />
-                    </LinearLayout>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_weight="1">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                            android:textSize="13dp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/txtPegawai"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="0dp"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"
                             android:text="Pegawai"
                             android:textColor="@color/primary1"
-                            android:textStyle="bold"
-                            android:textSize="@dimen/FS_type1a" />
-
-                        <TextView
-                            android:id="@+id/isiPegawai"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="0dp"
-                            android:layout_marginBottom="0dp"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"
-                            android:text="Rossa"
-                            android:textSize="@dimen/FS_type1a" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                            android:textSize="13dp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/txtPendapatan"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="0dp"
-                            android:layout_marginBottom="0dp"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"
                             android:text="Pendapatan"
                             android:textColor="@color/primary1"
-                            android:textStyle="bold"
-                            android:textSize="@dimen/FS_type1a" />
+                            android:textSize="13dp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/isiFakturJual"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:text="000"
+                            android:textSize="13dp" />
+
+                        <TextView
+                            android:id="@+id/isipelanggan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ivanna"
+                            android:textSize="13dp" />
 
                         <TextView
                             android:id="@+id/isiPendapatan"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="0dp"
-                            android:layout_marginBottom="10dp"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"
                             android:text="Rp. 150.000"
-                            android:textSize="@dimen/FS_type1a" />
+                            android:textSize="13dp" />
+
+                        <TextView
+                            android:id="@+id/isiPegawai"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rossa"
+                            android:textSize="13dp" />
                     </LinearLayout>
                 </LinearLayout>
-
 
 
             </LinearLayout>

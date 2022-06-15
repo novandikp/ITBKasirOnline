@@ -1,5 +1,6 @@
 package com.itb.aplikasitoko.ui.pengaturan.pegawai;
 
+import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -31,6 +32,7 @@ import com.itb.aplikasitoko.Response.PegawaiGetResp;
 import com.itb.aplikasitoko.Response.PegawaiResponse;
 import com.itb.aplikasitoko.Service.PegawaiService;
 import com.itb.aplikasitoko.databinding.ActivityMasterPegawaiBinding;
+import com.itb.aplikasitoko.ui.pengaturan.pelanggan.MasterPelanggan;
 import com.itb.aplikasitoko.util.Modul;
 import com.itb.aplikasitoko.util.ModulExcel;
 
@@ -81,7 +83,7 @@ public class MasterPegawai extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MasterPegawai.this, TambahPegawai.class));
-                finish();
+
             }
         });
 
@@ -237,12 +239,14 @@ public class MasterPegawai extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         if (item.getItemId() == android.R.id.home) {
-            Intent intent = new Intent(this, HomePage.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
-            finish();
+            onBackPressed();
         } else if (id == R.id.export) {
-            Toast.makeText(getApplicationContext(), "Exported", Toast.LENGTH_SHORT).show();
+            try {
+                ModulExcel.askForPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE,0, MasterPegawai.this,MasterPegawai.this);
+                ExportExcel();
+            }catch (Exception e){
+                Toast.makeText(MasterPegawai.this, "Terjadi kesalahan harap coba lagi", Toast.LENGTH_SHORT).show();
+            }
         } return true;
     }
 

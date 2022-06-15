@@ -28,9 +28,12 @@ import com.itb.aplikasitoko.Response.BarangResponse;
 import com.itb.aplikasitoko.Response.KategoriGetResp;
 import com.itb.aplikasitoko.Response.SatuanGetResp;
 import com.itb.aplikasitoko.databinding.InsertProdukBinding;
+import com.itb.aplikasitoko.util.Modul;
+import com.itb.aplikasitoko.util.NumberTextWatcher;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -65,6 +68,8 @@ public class TambahProduk extends AppCompatActivity {
         actionBar.setDisplayShowHomeEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
 
+        bind.hargaAwal.addTextChangedListener(new NumberTextWatcher(bind.hargaAwal, new Locale("id","ID"),0));
+        bind.hargaJual.addTextChangedListener(new NumberTextWatcher(bind.hargaJual, new Locale("id","ID"),0));
         setContentView(bind.getRoot());
 
 //        bind.kodeProduk.setFocusable(false);
@@ -156,8 +161,8 @@ public class TambahProduk extends AppCompatActivity {
                 String kode = inKode.getText().toString();
 //                String kategori = inKategori.getSelectedItem().toString();
 //                String satuan = inSatuan.getSelectedItem().toString();
-                String harga = inHarga.getText().toString();
-                String hargaBeli = inHargaBeli.getText().toString();
+                String harga = Modul.unnumberFormat(inHarga.getText().toString());
+                String hargaBeli = Modul.unnumberFormat(inHargaBeli.getText().toString());
                 String stok = inStok.getText().toString();
 
                 //ngambil value dr idkategori dan idsatuan

@@ -19,6 +19,7 @@ import com.itb.aplikasitoko.Model.ModelKategori;
 import com.itb.aplikasitoko.Model.ModelPegawai;
 import com.itb.aplikasitoko.Model.ModelPelanggan;
 import com.itb.aplikasitoko.Model.ModelSatuan;
+import com.itb.aplikasitoko.Model.ModelToko;
 import com.itb.aplikasitoko.ViewModel.ModelViewStruk;
 import com.itb.aplikasitoko.ViewModel.ViewModelJual;
 
@@ -29,8 +30,9 @@ import com.itb.aplikasitoko.ViewModel.ViewModelJual;
         ModelPegawai.class,
         ModelPelanggan.class,
         ModelJual.class,
-        ModelDetailJual.class
-}, views = {ModelViewStruk.class, ViewModelJual.class},version = 8)
+        ModelDetailJual.class,
+        ModelToko.class
+}, views = {ModelViewStruk.class, ViewModelJual.class},version = 9)
 public abstract class KasirDatabase extends RoomDatabase {
     private static final String name_database = "KasirDB";
 

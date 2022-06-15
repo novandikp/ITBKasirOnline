@@ -30,9 +30,11 @@ import com.itb.aplikasitoko.Response.KategoriGetResp;
 import com.itb.aplikasitoko.Response.SatuanGetResp;
 import com.itb.aplikasitoko.databinding.EditProdukBinding;
 import com.itb.aplikasitoko.util.Modul;
+import com.itb.aplikasitoko.util.NumberTextWatcher;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -64,7 +66,8 @@ public class EditProduk extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         bind = EditProdukBinding.inflate(getLayoutInflater());
         super.onCreate(savedInstanceState);
-
+        bind.hargaAwal.addTextChangedListener(new NumberTextWatcher(bind.hargaAwal, new Locale("id","ID"),0));
+        bind.hargaJual.addTextChangedListener(new NumberTextWatcher(bind.hargaJual, new Locale("id","ID"),0));
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Edit Detail Produk");
         actionBar.setDisplayShowHomeEnabled(true);
@@ -150,8 +153,8 @@ public class EditProduk extends AppCompatActivity {
             public void onClick(View view) {
                 String nama = inNama.getText().toString();
                 String kode = inKode.getText().toString();
-                String harga = inHarga.getText().toString();
-                String hargaBeli = inhargaBeli.getText().toString();
+                String harga = Modul.unnumberFormat(inHarga.getText().toString());
+                String hargaBeli = Modul.unnumberFormat(inhargaBeli.getText().toString());
                 String stok = inStok.getText().toString();
 
                 String idkategori = String.valueOf(KategoriSelected().getIdkategori());
