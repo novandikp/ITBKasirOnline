@@ -45,49 +45,79 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginRight="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
                     android:fontFamily="sans-serif-medium"
                     android:text="Edit Data Pelanggan"
                     android:visibility="gone"
                     android:textAlignment="textStart"
                     android:textSize="30sp"/>
 
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="Nama Pelanggan"
+                    android:textSize="13dp" />
+
                 <EditText
                     android:id="@+id/inNama"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginTop="25dp"
-                    android:layout_marginRight="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginRight="20dp"
                     android:ems="10"
-                    android:hint="Nama Pelanggan"
+                    android:hint="Masukkan Nama Pelanggan"
                     android:inputType="text"
                     android:minHeight="48dp"
                     android:textSize="@dimen/FS_type1a" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="Alamat"
+                    android:textSize="13dp" />
 
                 <EditText
                     android:id="@+id/inAlamat"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginRight="20dp"
                     android:ems="10"
-                    android:hint="Alamat"
+                    android:hint="Masukkan Alamat"
                     android:inputType="text"
                     android:minHeight="48dp"
                     android:textSize="@dimen/FS_type1a" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="Nomer Telepon"
+                    android:textSize="13dp" />
 
                 <EditText
                     android:id="@+id/inTelp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginRight="20dp"
                     android:ems="10"
-                    android:hint="Nomor Telepon"
+                    android:hint="Masukkan Telepon"
                     android:inputType="number"
                     android:minHeight="48dp"
                     android:textSize="@dimen/FS_type1a" />
@@ -99,8 +129,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="35dp"
                 android:layout_marginBottom="35dp"
-                android:paddingLeft="40dp"
-                android:paddingRight="40dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
                 android:gravity="center_horizontal"
                 android:orientation="vertical"
                 app:layout_constraintEnd_toEndOf="parent"

@@ -40,56 +40,84 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
+                    android:id="@+id/textView19"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="Nama Pelanggan"
+                    android:textSize="13dp" />
+
+                <EditText
+                    android:id="@+id/inNama"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:ems="10"
+                    android:hint="Masukkan Nama Pelanggan"
+                    android:inputType="text"
+                    android:minHeight="48dp"
+                    android:textSize="@dimen/FS_type1a" />
+
+                <TextView
+                    android:id="@+id/textView20"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="Alamat"
+                    android:textSize="13dp" />
+
+                <EditText
+                    android:id="@+id/inAlamat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:ems="10"
+                    android:hint="Masukkan Alamat"
+                    android:inputType="text"
+                    android:minHeight="48dp"
+                    android:textSize="@dimen/FS_type1a" />
+
+                <TextView
+                    android:id="@+id/textView21"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="Nomer Telepon"
+                    android:textSize="13dp" />
+
+                <EditText
+                    android:id="@+id/inTelp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:ems="10"
+                    android:hint="Masukkan Telepon"
+                    android:inputType="number"
+                    android:minHeight="48dp"
+                    android:textSize="@dimen/FS_type1a" />
+
+                <TextView
                     android:id="@+id/banner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
+                    android:layout_marginLeft="20dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginRight="40dp"
+                    android:layout_marginRight="20dp"
                     android:fontFamily="sans-serif-medium"
                     android:text="Tambah Pelanggan"
                     android:textAlignment="textStart"
                     android:textSize="30sp"
                     android:visibility="gone" />
 
-                <EditText
-                    android:id="@+id/inNama"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginTop="25dp"
-                    android:layout_marginRight="40dp"
-                    android:ems="10"
-                    android:hint="Nama Pelanggan"
-                    android:inputType="text"
-                    android:minHeight="48dp"
-                    android:textSize="@dimen/FS_type1a" />
-
-                <EditText
-                    android:id="@+id/inAlamat"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="40dp"
-                    android:ems="10"
-                    android:hint="Alamat"
-                    android:inputType="text"
-                    android:minHeight="48dp"
-                    android:textSize="@dimen/FS_type1a" />
-
-                <EditText
-                    android:id="@+id/inTelp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="40dp"
-                    android:ems="10"
-                    android:hint="Nomor Telepon"
-                    android:inputType="number"
-                    android:minHeight="48dp"
-                    android:textSize="@dimen/FS_type1a" />
             </LinearLayout>
 
             <LinearLayout
@@ -100,8 +128,8 @@
                 android:layout_marginBottom="35dp"
                 android:gravity="center_horizontal"
                 android:orientation="vertical"
-                android:paddingLeft="40dp"
-                android:paddingRight="40dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout1">
