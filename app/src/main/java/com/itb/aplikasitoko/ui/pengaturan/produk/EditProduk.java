@@ -173,13 +173,13 @@ public class EditProduk extends AppCompatActivity {
                     double StokAwal = Double.parseDouble(stok);
                     String id = getIntent().getStringExtra("idbarang");
                     ModelBarang modelBarang = new ModelBarang();
+                    modelBarang.setIdbarang(id);
                     modelBarang.setBarang(nama);
                     modelBarang.setIdkategori(idkategori);
                     modelBarang.setIdsatuan(idsatuan);
                     modelBarang.setHarga(Harga);
                     modelBarang.setHargabeli(HargaBeli);
                     modelBarang.setStok(StokAwal);
-                    Toast.makeText(EditProduk.this, modelBarang.getIdbarang(), Toast.LENGTH_SHORT).show();
                     UpdateBarang(id, modelBarang);
                 }
             }

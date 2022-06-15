@@ -4,12 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/activity_identitas.xml" value="0.33" />
+        <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/activity_load.xml" value="0.33" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/activity_pelanggan_order.xml" value="0.16750756811301715" />
-        <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/activity_print_struk.xml" value="0.1381340579710145" />
+        <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/activity_print_struk.xml" value="0.5776515151515151" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/activity_rekap_pegawai.xml" value="0.16750756811301715" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/activity_rekap_pelanggan.xml" value="0.16750756811301715" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/activity_transaction_success_notif.xml" value="0.22" />
+        <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/activity_user_register.xml" value="0.16750756811301715" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/app_bar_home_page.xml" value="0.16750756811301715" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/concept.xml" value="0.16750756811301715" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/concept_item.xml" value="0.16750756811301715" />
@@ -27,6 +29,7 @@
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/insert_pelanggan.xml" value="0.16750756811301715" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/insert_produk.xml" value="0.25" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/item_cart.xml" value="0.33" />
+        <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/item_device.xml" value="0.33" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/item_home.xml" value="0.16750756811301715" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/item_kategori.xml" value="0.33" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/item_pegawai.xml" value="0.33" />
@@ -40,6 +43,7 @@
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/item_rekap_pegawai.xml" value="0.25" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/item_rekap_pelanggan.xml" value="0.33" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/item_satuan.xml" value="0.16750756811301715" />
+        <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/item_struk.xml" value="0.16750756811301715" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/login_pegawai.xml" value="0.22" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/menu/activity_main_drawer.xml" value="0.3391215526046987" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/menu/home_page.xml" value="0.2824074074074074" />

@@ -8,10 +8,12 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
 
 import com.itb.aplikasitoko.Api;
 import com.itb.aplikasitoko.Component.ErrorDialog;
 import com.itb.aplikasitoko.Component.SuccessDialog;
+import com.itb.aplikasitoko.Database.Repository.TokoRepository;
 import com.itb.aplikasitoko.Model.ModelToko;
 import com.itb.aplikasitoko.R;
 import com.itb.aplikasitoko.Response.IdentitasGetResp;
@@ -26,12 +28,13 @@ import retrofit2.Response;
 public class IdentitasToko extends AppCompatActivity {
     ActivityIdentitasBinding bind;
     private ModelToko data;
-
+    private TokoRepository tokoRepository;
+        
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         bind = ActivityIdentitasBinding.inflate(getLayoutInflater());
         super.onCreate(savedInstanceState);
-
+        tokoRepository = new TokoRepository(getApplication());
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Identitas Toko");
         actionBar.setDisplayShowHomeEnabled(true);
@@ -41,6 +44,21 @@ public class IdentitasToko extends AppCompatActivity {
         SpHelper sp = new SpHelper(IdentitasToko.this);
         bind.ukuranPrinter.setText(sp.getPrinter());
 
+
+
+        tokoRepository.getToko().observe(this, new Observer<ModelToko>() {
+            @Override
+            public void onChanged(ModelToko modelToko) {
+                if(modelToko!=null){
+                    data = modelToko;
+                    bind.namaPemilik.setText(modelToko.getNama_pemilik());
+                    bind.namaUsaha.setText(modelToko.getNama_toko());
+
+                    bind.JenisUsaha.setText(modelToko.getJenis_toko());
+                    bind.lokasiUsaha.setText(modelToko.getAlamat_toko());
+                }
+            }
+        });
         refreshData();
 
         AutoCompleteTextView JenisUsaha = bind.JenisUsaha;
@@ -60,15 +78,18 @@ public class IdentitasToko extends AppCompatActivity {
             bind.ukuranPrinter.showDropDown();
             return true;
         });
-        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(IdentitasToko.this,
-                android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.jenisUsaha));
-        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        JenisUsaha.setAdapter(myAdapter);
+
 
         ArrayAdapter<String> myAdapter2 = new ArrayAdapter<String>(IdentitasToko.this,
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.ukuranPrinter));
-        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        myAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         ukuranPrinter.setAdapter(myAdapter2);
+        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(IdentitasToko.this,
+                android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.jenisUsaha));
+        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        bind.JenisUsaha.setAdapter(myAdapter);
+        myAdapter.notifyDataSetChanged();
+
 
         bind.btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,8 +132,10 @@ public class IdentitasToko extends AppCompatActivity {
             public void onResponse(Call<IdentitasGetResp> call, Response<IdentitasGetResp> response) {
                 if (response.isSuccessful()){
                     ModelToko modelToko = response.body().getData();
+                    tokoRepository.insert(modelToko);
                     bind.namaPemilik.setText(modelToko.getNama_pemilik());
                     bind.namaUsaha.setText(modelToko.getNama_toko());
+
                     bind.JenisUsaha.setText(modelToko.getJenis_toko());
                     bind.lokasiUsaha.setText(modelToko.getAlamat_toko());
 
@@ -131,6 +154,7 @@ public class IdentitasToko extends AppCompatActivity {
         identitasResponseCall.enqueue(new Callback<IdentitasResponse>() {
             @Override
             public void onResponse(Call<IdentitasResponse> call, Response<IdentitasResponse> response) {
+                tokoRepository.insert(modelToko);
                 if (response.isSuccessful()){
                     SuccessDialog.message(IdentitasToko.this,getString(R.string.updated_success),bind.getRoot());
                 } else {

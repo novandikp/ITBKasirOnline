@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -64,8 +65,9 @@ public class PrintPenjulanAdapter extends RecyclerView.Adapter<PrintPenjulanAdap
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         LoadingDialog.load(context);
+
                         Intent intent = new Intent(context, PrintStruk.class);
-                        intent.putExtra("idjual", viewModelJual.getFakturjual());
+                        intent.putExtra("idjual", viewModelJual.getIdjual());
                         context.startActivity(intent);
                     }
                 }).setNegativeButton("Tidak", new DialogInterface.OnClickListener() {

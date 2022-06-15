@@ -35,6 +35,8 @@ public class ViewModelJual {
     private String nama_pelanggan;
     private String nama_pegawai;
     private String tanggal_jual;
+    private String idjual;
+
 
     public ViewModelJual(String fakturjual, double bayar, double total, double kembali, double potongan, String nama_pelanggan, String nama_pegawai, String tanggal_jual) {
         this.fakturjual = fakturjual;
@@ -45,6 +47,15 @@ public class ViewModelJual {
         this.nama_pelanggan = nama_pelanggan;
         this.nama_pegawai = nama_pegawai;
         this.tanggal_jual = tanggal_jual;
+    }
+
+
+    public String getIdjual() {
+        return idjual;
+    }
+
+    public void setIdjual(String idjual) {
+        this.idjual = idjual;
     }
 
     public String getFakturjual() {

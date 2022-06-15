@@ -39,6 +39,7 @@ import com.itb.aplikasitoko.Component.ErrorDialog;
 import com.itb.aplikasitoko.Component.LoadingDialog;
 import com.itb.aplikasitoko.Database.Repository.DetailJualRepository;
 import com.itb.aplikasitoko.Database.Repository.JualRepository;
+import com.itb.aplikasitoko.Database.Repository.TokoRepository;
 import com.itb.aplikasitoko.HomePage;
 import com.itb.aplikasitoko.Model.ModelJual;
 import com.itb.aplikasitoko.Model.ModelToko;
@@ -87,7 +88,7 @@ public class PrintStruk extends AppCompatActivity {
     PrinterBTContext printerBTContext;
 
 
-
+    TokoRepository tokoRepository;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         LoadingDialog.close();
@@ -97,6 +98,7 @@ public class PrintStruk extends AppCompatActivity {
         setTitle("Print Struk");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+        tokoRepository = new TokoRepository(getApplication());
         printerUSBContext = PrinterUSBContext.getInstance(this);
         printerBTContext = PrinterBTContext.getInstance(this);
         requestPermission();
@@ -321,6 +323,17 @@ public class PrintStruk extends AppCompatActivity {
     }
     ModelToko modelToko;
     public void refreshData(){
+        tokoRepository.getToko().observe(this, new Observer<ModelToko>() {
+            @Override
+            public void onChanged(ModelToko res) {
+                if(res!=null){
+                    modelToko = res;
+
+                    bind.txtTitle1.setText(modelToko.getNama_toko());
+                    bind.txtTitle2.setText(modelToko.getAlamat_toko() +"\n"+ modelToko.getNomer_toko());
+                }
+            }
+        });
         Call<IdentitasGetResp> identitasGetRespCall = Api.Identitas(PrintStruk.this).getIdentitas();
         identitasGetRespCall.enqueue(new Callback<IdentitasGetResp>() {
             @Override
@@ -328,7 +341,7 @@ public class PrintStruk extends AppCompatActivity {
                 if (response.isSuccessful()){
                     modelToko = response.body().getData();
                     bind.txtTitle1.setText(modelToko.getNama_toko());
-                    bind.txtTitle1.setText(modelToko.getAlamat_toko() +"\n"+ modelToko.getNomer_toko());
+                    bind.txtTitle2.setText(modelToko.getAlamat_toko() +"\n"+ modelToko.getNomer_toko());
                     getData();
                 }
 
@@ -377,7 +390,7 @@ public class PrintStruk extends AppCompatActivity {
                 e.printStackTrace();
             }
             bind.txtPelanggan.setText("Pelanggan : "+struk.getNama_pelanggan());
-            if(resultPrint==null || modelToko==null) {
+            if(resultPrint==null && modelToko==null) {
 //            atur struk
                 resultPrint = new PrintTextBuilder();
                 // Alamat bisnis
@@ -410,7 +423,7 @@ public class PrintStruk extends AppCompatActivity {
                 resultPrint.addTextPair("Total", "Rp."+Modul.removeE(struk.getTotal()), AlignColumn.RIGHT);
                 resultPrint.addTextPair("Tunai", "Rp."+Modul.removeE(struk.getBayar()), AlignColumn.RIGHT);
                 resultPrint.addTextPair("Kembali", "Rp."+Modul.removeE(struk.getKembali()), AlignColumn.RIGHT);
-                resultPrint.addDivider();
+//                resultPrint.addDivider();
 //                resultPrint.addText("Halo", AlignColumn.CENTER);
 //                resultPrint.addText("Halo", AlignColumn.CENTER);
                 setPrinter();

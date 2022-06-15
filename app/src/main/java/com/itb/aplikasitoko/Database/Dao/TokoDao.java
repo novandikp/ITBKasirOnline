@@ -20,6 +20,6 @@ public interface TokoDao {
 
 //    get toko by id
     @Query("select * from tbltoko where idtoko=:idtoko")
-    ModelToko getToko(String idtoko);
+    LiveData<ModelToko> getToko(String idtoko);
 
 }

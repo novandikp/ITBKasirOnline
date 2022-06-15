@@ -12,6 +12,7 @@ import com.itb.aplikasitoko.Database.Dao.KategoriDao;
 import com.itb.aplikasitoko.Database.Dao.PegawaiDao;
 import com.itb.aplikasitoko.Database.Dao.PelangganDao;
 import com.itb.aplikasitoko.Database.Dao.SatuanDao;
+import com.itb.aplikasitoko.Database.Dao.TokoDao;
 import com.itb.aplikasitoko.Model.ModelBarang;
 import com.itb.aplikasitoko.Model.ModelDetailJual;
 import com.itb.aplikasitoko.Model.ModelJual;
@@ -44,6 +45,7 @@ public abstract class KasirDatabase extends RoomDatabase {
     public abstract PegawaiDao pegawaiDao();
     public abstract PelangganDao pelangganDao();
     public abstract SatuanDao satuanDao();
+    public abstract TokoDao tokoDao();
 
     public static volatile KasirDatabase INSTANCE= null ;
 //    SINGLETON
