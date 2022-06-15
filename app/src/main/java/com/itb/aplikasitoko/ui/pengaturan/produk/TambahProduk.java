@@ -60,6 +60,23 @@ public class TambahProduk extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(bind.getRoot());
 
+
+        bind.opsiSatuan.setClickable(true);
+        bind.opsiSatuan.setFocusable(false);
+        bind.opsiSatuan.setFocusableInTouchMode(false);
+        bind.opsiKategori.setClickable(true);
+        bind.opsiKategori.setFocusable(false);
+        bind.opsiKategori.setFocusableInTouchMode(false);
+        bind.opsiKategori.setOnTouchListener((view, motionEvent) -> {
+            bind.opsiKategori.showDropDown();
+            return true;
+        });
+        bind.opsiSatuan.setOnTouchListener((view, motionEvent) -> {
+            bind.opsiSatuan.showDropDown();
+            return true;
+        });
+
+
         //Spinner Kategori
         kategoriRepository = new KategoriRepository(getApplication());
         kategoriRepository.getAllKategori().observe(this, new Observer<List<ModelKategori>>() {
@@ -71,13 +88,16 @@ public class TambahProduk extends AppCompatActivity {
                     kategori.add(kategorimodel.getNama_kategori());
 
                 }
+                if(kategori.size()>0 ){
+                    bind.opsiKategori.setText(kategori.get(0));
+                }
                 adapterKategori = new ArrayAdapter(TambahProduk.this, android.R.layout.simple_spinner_dropdown_item, kategori);
                 bind.opsiKategori.setAdapter(adapterKategori);
                 //memaggil function kategori/satuan biar bisa berjalan saat online
-                refreshKategori();
+
             }
         });
-
+        refreshKategori();
         //Spinner satuan
         satuanRepository = new SatuanRepository(getApplication());
         satuanRepository.getAllSatuan().observe(this, new Observer<List<ModelSatuan>>() {
@@ -88,16 +108,19 @@ public class TambahProduk extends AppCompatActivity {
                 for (ModelSatuan satuanModel : modelSatuans){
                     satuan.add(satuanModel.getNama_satuan());
                 }
+                if(satuan.size()>0 ){
+                    bind.opsiSatuan.setText(satuan.get(0));
+                }
                 adapterSatuan = new ArrayAdapter(TambahProduk.this, android.R.layout.simple_spinner_dropdown_item, satuan);
                 bind.opsiSatuan.setAdapter(adapterSatuan);
 
                 //memaggil function kategori/satuan biar bisa berjalan saat online
-                refreshSatuan();
+
             }
         });
 
 
-
+        refreshSatuan();
         //post data
         barangRepository = new BarangRepository(getApplication());
 
@@ -121,16 +144,19 @@ public class TambahProduk extends AppCompatActivity {
                 String stok = inStok.getText().toString();
 
                 //ngambil value dr idkategori dan idsatuan
-                String idkategori = String.valueOf(kategoriSelected().getIdkategori());
-                String idsatuan = String.valueOf(satuanSelected().getIdsatuan());
 
-                if (nama.isEmpty() || kode.isEmpty() || harga.isEmpty() || hargaBeli.isEmpty() || stok.isEmpty()){
+                boolean isKategoriExist = bind.opsiKategori.getText().toString().equals("Pilih Kategori");
+                boolean isSatuanExist = bind.opsiKategori.getText().toString().equals("Pilih Satuan");
+
+                if (nama.isEmpty() || kode.isEmpty() || harga.isEmpty() || hargaBeli.isEmpty() || stok.isEmpty() || isKategoriExist || isSatuanExist){
                     inNama.setError("Harap isi dengan benar");
                     inKode.setError("Harap isi dengan benar");
                     inHarga.setError("Harap isi dengan benar");
                     inStok.setError("Harap isi dengan benar");
                 } else {
                     //diubah ke double lagi buat ke db
+                    String idkategori = String.valueOf(KategoriSelected().getIdkategori());
+                    String idsatuan = String.valueOf(SatuanSelected().getIdsatuan());
                     double Harga = Double.parseDouble(harga);
                     double HargaBeli = Double.parseDouble(hargaBeli);
                     double stokBarang = Double.parseDouble(stok);
@@ -156,9 +182,15 @@ public class TambahProduk extends AppCompatActivity {
             public void onResponse(Call<SatuanGetResp> call, Response<SatuanGetResp> response) {
                 if (dataSatuan.size() != response.body().getData().size() ) {
                     dataSatuan.clear();
+                    satuan.clear();
+                    satuanRepository.insertAll(response.body().getData(),true);
                     dataSatuan.addAll(response.body().getData());
+
                     for (ModelSatuan satuanModel : response.body().getData()){
                         satuan.add(satuanModel.getNama_satuan());
+                    }
+                    if(satuan.size()>0 ){
+                        bind.opsiSatuan.setText(satuan.get(0));
                     }
                     adapterSatuan = new ArrayAdapter(TambahProduk.this, android.R.layout.simple_spinner_dropdown_item, satuan);
                     bind.opsiSatuan.setAdapter(adapterSatuan);
@@ -180,10 +212,15 @@ public class TambahProduk extends AppCompatActivity {
             public void onResponse(Call<KategoriGetResp> call, Response<KategoriGetResp> response) {
                 if(dataKategori.size() != response.body().getData().size()){
                     dataKategori.clear();
+                    kategori.clear();
+                    kategoriRepository.insertAll(response.body().getData(),true);
                     dataKategori.addAll(response.body().getData());
                     for(ModelKategori kategorimodel : response.body().getData()){
                         kategori.add(kategorimodel.getNama_kategori());
 
+                    }
+                    if(kategori.size()>0 ){
+                        bind.opsiKategori.setText(kategori.get(0));
                     }
                     adapterKategori = new ArrayAdapter(TambahProduk.this, android.R.layout.simple_spinner_dropdown_item, kategori);
                     bind.opsiKategori.setAdapter(adapterKategori);
@@ -198,17 +235,13 @@ public class TambahProduk extends AppCompatActivity {
     }
 
 
-    //buat ngambil
-    public ModelKategori kategoriSelected(){
-//        return dataKategori.get(bind.opsiKategori.getSelectedItemPosition);
-        return null;
+    public ModelKategori KategoriSelected(){
+        return dataKategori.get(kategori.indexOf(bind.opsiKategori.getText().toString()));
     }
 
-    public ModelSatuan satuanSelected(){
-//        return dataSatuan.get(bind.opsiKategori.getSelectedItemPosition());
-        return null;
+    public ModelSatuan SatuanSelected(){
+        return dataSatuan.get(satuan.indexOf(bind.opsiSatuan.getText().toString()));
     }
-
     public void addBarang(ModelBarang modelBarang) {
 //        String idkategori = String.valueOf(kategoriSelected().getIdkategori());
 //        String idsatuan = String.valueOf(satuanSelected().getIdsatuan());

@@ -1,7 +1,9 @@
 package com.itb.aplikasitoko.ui.pengaturan.produk;
 
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
@@ -52,6 +54,9 @@ public class EditProduk extends AppCompatActivity {
     List<String> satuan = new ArrayList<>();
     SatuanRepository satuanRepository;
 
+    private ModelKategori modelKategoriSelected;
+    private ModelSatuan modelSatuanSelected;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         bind = EditProdukBinding.inflate(getLayoutInflater());
@@ -60,6 +65,23 @@ public class EditProduk extends AppCompatActivity {
 
         //panggil db/repository
         barangRepository = new BarangRepository(getApplication());
+
+        bind.opsiSatuan.setClickable(true);
+        bind.opsiSatuan.setFocusable(false);
+        bind.opsiSatuan.setFocusableInTouchMode(false);
+        bind.opsiKategori.setClickable(true);
+        bind.opsiKategori.setFocusable(false);
+        bind.opsiKategori.setFocusableInTouchMode(false);
+        bind.opsiKategori.setOnTouchListener((view, motionEvent) -> {
+            bind.opsiKategori.showDropDown();
+            return true;
+        });
+        bind.opsiSatuan.setOnTouchListener((view, motionEvent) -> {
+            bind.opsiSatuan.showDropDown();
+            return true;
+        });
+
+
 
         init();
 
@@ -72,15 +94,18 @@ public class EditProduk extends AppCompatActivity {
                 dataKategori.addAll(modelKategoris);
                 for (ModelKategori modelKategori : modelKategoris){
                     kategori.add(modelKategori.getNama_kategori());
+                    if(String.valueOf(modelKategori.getIdkategori()).equals(getIntent().getStringExtra("idkategori"))){
+                        bind.opsiKategori.setText(modelKategori.getNama_kategori());
+                    }
                 }
                 adapterKategori = new ArrayAdapter(EditProduk.this, android.R.layout.simple_spinner_dropdown_item, kategori);
                 bind.opsiKategori.setAdapter(adapterKategori);
 
                 //memaggil function kategori/satuan biar bisa berjalan saat online
-                refreshKategori();
+
             }
         });
-
+        refreshKategori();
         //Spinner satuan
         satuanRepository = new SatuanRepository(getApplication());
         satuanRepository.getAllSatuan().observe(this, new Observer<List<ModelSatuan>>() {
@@ -90,16 +115,18 @@ public class EditProduk extends AppCompatActivity {
                 dataSatuan.addAll(modelSatuans);
                 for (ModelSatuan modelSatuan: modelSatuans){
                     satuan.add(modelSatuan.getNama_satuan());
-
+                    if(String.valueOf(modelSatuan.getIdsatuan()).equals(getIntent().getStringExtra("idsatuan"))){
+                        bind.opsiSatuan.setText(modelSatuan.getNama_satuan());
+                    }
                 }
                 adapterSatuan = new ArrayAdapter(EditProduk.this, android.R.layout.simple_spinner_dropdown_item, satuan);
                 bind.opsiSatuan.setAdapter(adapterSatuan);
 
                 //memaggil function kategori/satuan biar bisa berjalan saat online
-                refreshSatuan();
+
             }
         });
-
+        refreshSatuan();
         //inisiasi variabel (update data)
         inNama = bind.namaProduk;
         inKode = bind.kodeProduk;
@@ -146,17 +173,13 @@ public class EditProduk extends AppCompatActivity {
         });
     }
 
-    //ngambil / selected item
     public ModelKategori KategoriSelected(){
-//        return dataKategori.get(bind.opsiKategori.getSelectedItemPosition());
-        return null;
+        return dataKategori.get(kategori.indexOf(bind.opsiKategori.getText().toString()));
     }
 
     public ModelSatuan SatuanSelected(){
-//        return dataSatuan.get(bind.opsiSatuan.getSelectedItemPosition());
-        return null;
+        return dataSatuan.get(satuan.indexOf(bind.opsiSatuan.getText().toString()));
     }
-
     public void init(){
         //deklarasi vaiabel
         inNama = bind.namaProduk;
@@ -170,7 +193,10 @@ public class EditProduk extends AppCompatActivity {
         //mengambil value dr intent
         inNama.setText(getIntent().getStringExtra("barang"));
         inKode.setText(getIntent().getStringExtra("idbarang"));
-//        inKategori.setSelected(getIntent().getStringArrayListExtra("kategori"));
+        String idkategori =getIntent().getStringExtra("idkategori");
+        String idsatuan =getIntent().getStringExtra("idsatuan");
+
+
 //        inSatuan;
         inHarga.setText(getIntent().getStringExtra("harga"));
         inhargaBeli.setText(getIntent().getStringExtra("hargaBeli"));
@@ -213,9 +239,14 @@ public class EditProduk extends AppCompatActivity {
             public void onResponse(Call<KategoriGetResp> call, Response<KategoriGetResp> response) {
                 if (dataKategori.size() != response.body().getData().size()){
                     dataKategori.clear();
+                    kategori.clear();
                     dataKategori.addAll(response.body().getData());
+                    kategoriRepository.insertAll(response.body().getData(),true);
                     for (ModelKategori modelKategori : response.body().getData()){
                         kategori.add(modelKategori.getNama_kategori());
+                        if(String.valueOf(modelKategori.getIdkategori()).equals(getIntent().getStringExtra("idkategori"))){
+                            bind.opsiKategori.setText(modelKategori.getNama_kategori());
+                        }
                     }
                     adapterKategori = new ArrayAdapter(EditProduk.this, android.R.layout.simple_spinner_dropdown_item, kategori);
                 }   bind.opsiKategori.setAdapter(adapterKategori);
@@ -235,9 +266,15 @@ public class EditProduk extends AppCompatActivity {
             public void onResponse(Call<SatuanGetResp> call, Response<SatuanGetResp> response) {
                 if (dataSatuan.size() != response.body().getData().size()){
                     dataSatuan.clear();
+                    satuan.clear();
                     dataSatuan.addAll(response.body().getData());
+                    satuanRepository.insertAll(response.body().getData(),true);
+                    String kategori = "";
                     for (ModelSatuan modelSatuan : response.body().getData()){
                         satuan.add(modelSatuan.getNama_satuan());
+                        if(String.valueOf(modelSatuan.getIdsatuan()).equals(getIntent().getStringExtra("idsatuan"))){
+                            bind.opsiSatuan.setText(modelSatuan.getNama_satuan());
+                        }
                     }
                     adapterSatuan = new ArrayAdapter(EditProduk.this, android.R.layout.simple_spinner_dropdown_item, satuan);
                     bind.opsiSatuan.setAdapter(adapterSatuan);

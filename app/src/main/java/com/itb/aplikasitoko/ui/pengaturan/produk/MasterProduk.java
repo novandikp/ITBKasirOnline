@@ -78,7 +78,6 @@ public class MasterProduk extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MasterProduk.this, TambahProduk.class));
-                finish();
             }
         });
 
@@ -99,6 +98,7 @@ public class MasterProduk extends AppCompatActivity {
             }
         });
     }
+
 
     public void refreshData(boolean fetch){
         //inisiasi search

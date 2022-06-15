@@ -61,29 +61,41 @@
                         android:textSize="15dp"
                         android:textStyle="normal" />
 
-                    <EditText
-                        android:id="@+id/email"
+                    <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="40dp"
-                        android:layout_marginTop="40dp"
-                        android:layout_marginRight="40dp"
-                        android:ems="10"
-                        android:hint="Email"
-                        android:inputType="textEmailAddress"
-                        android:textSize="15dp" />
+                        android:layout_height="wrap_content">
 
-                    <EditText
-                        android:id="@+id/password"
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="40dp"
+                            android:layout_marginTop="40dp"
+                            android:layout_marginRight="40dp"
+                            android:hint="Email"
+                            android:inputType="textEmailAddress"
+                            android:textSize="15dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="40dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginRight="40dp"
-                        android:ems="10"
-                        android:hint="Password"
-                        android:inputType="textPassword"
-                        android:textSize="15dp" />
+                        app:passwordToggleEnabled="true">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/password"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="40dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginRight="40dp"
+                            android:ems="10"
+                            android:hint="Password"
+                            android:inputType="textPassword"
+                            android:textSize="15dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
                 </LinearLayout>
 
                 <LinearLayout

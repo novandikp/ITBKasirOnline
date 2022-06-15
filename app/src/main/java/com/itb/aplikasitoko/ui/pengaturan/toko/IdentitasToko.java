@@ -39,6 +39,20 @@ public class IdentitasToko extends AppCompatActivity {
         AutoCompleteTextView JenisUsaha = bind.JenisUsaha;
         AutoCompleteTextView ukuranPrinter = bind.ukuranPrinter;
 
+        bind.JenisUsaha.setClickable(true);
+        bind.JenisUsaha.setFocusable(false);
+        bind.JenisUsaha.setFocusableInTouchMode(false);
+        bind.ukuranPrinter.setClickable(true);
+        bind.ukuranPrinter.setFocusable(false);
+        bind.ukuranPrinter.setFocusableInTouchMode(false);
+        bind.JenisUsaha.setOnTouchListener((view, motionEvent) -> {
+            bind.JenisUsaha.showDropDown();
+            return true;
+        });
+        bind.ukuranPrinter.setOnTouchListener((view, motionEvent) -> {
+            bind.ukuranPrinter.showDropDown();
+            return true;
+        });
         ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(IdentitasToko.this,
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.jenisUsaha));
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

@@ -2,6 +2,7 @@ package com.itb.aplikasitoko.ui.pengaturan.pegawai;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
@@ -53,6 +54,8 @@ public class LoginPegawai extends AppCompatActivity {
             public void onChanged(List<ModelPegawai> modelPegawais) {
                 dataPegawai.clear();
                 dataPegawai.addAll(modelPegawais);
+                pegawai.clear();
+                idpegawai.clear();
                 for(ModelPegawai modelPegawai : modelPegawais){
                     pegawai.add(modelPegawai.getNama_pegawai());
                     idpegawai.add(String.valueOf(modelPegawai.getIdpegawai()));
@@ -60,13 +63,14 @@ public class LoginPegawai extends AppCompatActivity {
                 adapterPegawai = new ArrayAdapter(LoginPegawai.this, android.R.layout.simple_spinner_dropdown_item, pegawai);
                 bind.namaPegawai.setAdapter(adapterPegawai);
 
-                refreshPegawai();
+
             }
         });
-
+        refreshPegawai();
         bind.btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Log.d("idpegawa",String.valueOf(idpegawai.size()));
                 String pegawai = idpegawai.get(bind.namaPegawai.getSelectedItemPosition());
                 String pin = bind.pin.getText().toString();
                 if (pin.isEmpty()) {
@@ -114,9 +118,13 @@ public class LoginPegawai extends AppCompatActivity {
             @Override
             public void onResponse(Call<PegawaiGetResp> call, Response<PegawaiGetResp> response) {
                 dataPegawai.clear();
+                pegawai.clear();
+                idpegawai.clear();
                 dataPegawai.addAll(response.body().getData());
+                pegawaiRepository.insertAll(response.body().getData(),true);
                 for(ModelPegawai modelPegawai : response.body().getData()){
                     pegawai.add(modelPegawai.getNama_pegawai());
+                    idpegawai.add(String.valueOf(modelPegawai.getIdpegawai()));
                 }
                 adapterPegawai = new ArrayAdapter(LoginPegawai.this, android.R.layout.simple_spinner_dropdown_item, pegawai);
                 bind.namaPegawai.setAdapter(adapterPegawai);

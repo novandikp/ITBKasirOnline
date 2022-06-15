@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Auth App</string>
+    <string name="app_name">Aplikasi Toko</string>
 
     <string-array name="jenisUsaha">
         <item>Toko</item>
