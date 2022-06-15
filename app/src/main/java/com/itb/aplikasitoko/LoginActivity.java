@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.itb.aplikasitoko.Component.ErrorDialog;
+import com.itb.aplikasitoko.Component.LoadingDialog;
 import com.itb.aplikasitoko.Component.SuccessDialog;
 import com.itb.aplikasitoko.Model.ModelLogin;
 import com.itb.aplikasitoko.Response.LoginResponse;
@@ -22,6 +23,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     ActivityMainBinding bind;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        LoadingDialog.close();
         super.onCreate(savedInstanceState);
         bind = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(bind.getRoot());

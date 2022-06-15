@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.itb.aplikasitoko.Component.LoadingDialog;
 import com.itb.aplikasitoko.R;
 import com.itb.aplikasitoko.ViewModel.ViewModelJual;
 import com.itb.aplikasitoko.ui.home.PrintStruk;
@@ -62,6 +63,7 @@ public class PrintPenjulanAdapter extends RecyclerView.Adapter<PrintPenjulanAdap
                 alert.setTitle("Konfirmasi").setMessage("Anda akan melakukan print struk ?").setPositiveButton("Iya", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
+                        LoadingDialog.load(context);
                         Intent intent = new Intent(context, PrintStruk.class);
                         intent.putExtra("idjual", viewModelJual.getFakturjual());
                         context.startActivity(intent);

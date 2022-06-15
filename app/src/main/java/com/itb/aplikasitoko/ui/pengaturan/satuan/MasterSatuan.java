@@ -268,11 +268,12 @@ public class MasterSatuan extends AppCompatActivity {
         satuanResponseCall.enqueue(new Callback<SatuanResponse>() {
             @Override
             public void onResponse(Call<SatuanResponse> call, Response<SatuanResponse> response) {
+                LoadingDialog.close();
                 if(response.isSuccessful()){
                     if (response.body().isStatus()){
                         satuanRepository.update(modelSatuan);
                         refreshData(true);
-                        LoadingDialog.close();
+
                         SuccessDialog.message(MasterSatuan.this,getString(R.string.updated_success) ,bind.getRoot());
                     }
                 } else {

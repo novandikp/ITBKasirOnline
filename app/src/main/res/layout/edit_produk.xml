@@ -66,6 +66,7 @@
                     android:layout_marginRight="40dp"
                     android:ems="10"
                     android:hint="Kode Produk"
+                    android:enabled="false"
                     android:inputType="text"
                     android:minHeight="48dp"
                     android:textSize="18sp" />
@@ -141,7 +142,7 @@
                     android:layout_marginRight="40dp"
                     android:ems="10"
                     android:hint="Harga Awal"
-                    android:inputType="text"
+                    android:inputType="number"
                     android:minHeight="48dp"
                     android:textSize="18sp" />
 
@@ -154,7 +155,7 @@
                     android:layout_marginRight="40dp"
                     android:ems="10"
                     android:hint="Harga Jual"
-                    android:inputType="text"
+                    android:inputType="number"
                     android:minHeight="48dp"
                     android:textSize="18sp" />
 
@@ -167,7 +168,8 @@
                     android:layout_marginRight="40dp"
                     android:ems="10"
                     android:hint="Stok Awal"
-                    android:inputType="text"
+                    android:text="0"
+                    android:inputType="number"
                     android:minHeight="48dp"
                     android:textSize="18sp" />
             </LinearLayout>

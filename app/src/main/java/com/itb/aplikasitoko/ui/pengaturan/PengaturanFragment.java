@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.itb.aplikasitoko.Component.LoadingDialog;
 import com.itb.aplikasitoko.databinding.FragmentPengaturanBinding;
 import com.itb.aplikasitoko.ui.pengaturan.kategori.MasterDaftarKategori;
 import com.itb.aplikasitoko.ui.pengaturan.pegawai.MasterPegawai;
@@ -36,7 +37,7 @@ public class PengaturanFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getContext(), MasterDaftarKategori.class)); // kalau mangil fragment, itu
-                                                                                     // pakenta getContext() ,bukan this
+                                                                                     // pakenya getContext() ,bukan this
             }
         });
 

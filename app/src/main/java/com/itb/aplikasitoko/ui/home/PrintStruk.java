@@ -90,6 +90,7 @@ public class PrintStruk extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        LoadingDialog.close();
         bind = ActivityPrintStrukBinding.inflate(getLayoutInflater());
         super.onCreate(savedInstanceState);
         setContentView(bind.getRoot());

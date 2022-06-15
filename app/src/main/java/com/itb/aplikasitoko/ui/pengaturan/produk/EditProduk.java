@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 
 import com.itb.aplikasitoko.Api;
+import com.itb.aplikasitoko.Component.ErrorDialog;
 import com.itb.aplikasitoko.Component.LoadingDialog;
 import com.itb.aplikasitoko.Component.SuccessDialog;
 import com.itb.aplikasitoko.Database.Repository.BarangRepository;
@@ -27,6 +28,7 @@ import com.itb.aplikasitoko.Response.BarangResponse;
 import com.itb.aplikasitoko.Response.KategoriGetResp;
 import com.itb.aplikasitoko.Response.SatuanGetResp;
 import com.itb.aplikasitoko.databinding.EditProdukBinding;
+import com.itb.aplikasitoko.util.Modul;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -159,15 +161,16 @@ public class EditProduk extends AppCompatActivity {
                     double Harga = Double.parseDouble(harga);
                     double HargaBeli = Double.parseDouble(hargaBeli);
                     double StokAwal = Double.parseDouble(stok);
+                    String id = getIntent().getStringExtra("idbarang");
                     ModelBarang modelBarang = new ModelBarang();
-                    modelBarang.setIdbarang(kode);
                     modelBarang.setBarang(nama);
                     modelBarang.setIdkategori(idkategori);
                     modelBarang.setIdsatuan(idsatuan);
                     modelBarang.setHarga(Harga);
                     modelBarang.setHargabeli(HargaBeli);
                     modelBarang.setStok(StokAwal);
-                    UpdateBarang(modelBarang.getIdbarang(), modelBarang);
+                    Toast.makeText(EditProduk.this, modelBarang.getIdbarang(), Toast.LENGTH_SHORT).show();
+                    UpdateBarang(id, modelBarang);
                 }
             }
         });
@@ -193,14 +196,18 @@ public class EditProduk extends AppCompatActivity {
         //mengambil value dr intent
         inNama.setText(getIntent().getStringExtra("barang"));
         inKode.setText(getIntent().getStringExtra("idbarang"));
-        String idkategori =getIntent().getStringExtra("idkategori");
-        String idsatuan =getIntent().getStringExtra("idsatuan");
+        String idkategori = getIntent().getStringExtra("idkategori");
+        String idsatuan = getIntent().getStringExtra("idsatuan");
+        inKategori.setText(idkategori);
+        inSatuan.setText(idsatuan);
 
 
 //        inSatuan;
         inHarga.setText(getIntent().getStringExtra("harga"));
         inhargaBeli.setText(getIntent().getStringExtra("hargaBeli"));
         inStok.setText(getIntent().getStringExtra("stok"));
+
+
     }
 
     public void UpdateBarang(String id, ModelBarang modelBarang){
@@ -216,10 +223,11 @@ public class EditProduk extends AppCompatActivity {
 
                         finish();
                         SuccessDialog.message(EditProduk.this, getString(R.string.updated_success), bind.getRoot());
+
                     }
                 } else {
-                    //ErrorDialog.message(EditProduk.this, getString(R.string.updated_error), bind.getRoot());
-                    Toast.makeText(EditProduk.this, response.toString(), Toast.LENGTH_SHORT).show();
+                    ErrorDialog.message(EditProduk.this, getString(R.string.updated_error), bind.getRoot());
+                    //Toast.makeText(EditProduk.this, response.toString(), Toast.LENGTH_SHORT).show();
                 }
 
             }

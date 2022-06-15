@@ -282,11 +282,12 @@ public class MasterDaftarKategori extends AppCompatActivity {
         kategoriResponseCall.enqueue(new Callback<KategoriResponse>() {
             @Override
             public void onResponse(Call<KategoriResponse> call, Response<KategoriResponse> response) {
+                LoadingDialog.close();
                 if(response.isSuccessful()){
                     if(response.body().isStatus()){
                         kategoriRepository.update(kategori);
                         refreshData(true);
-                        LoadingDialog.close();
+
                         SuccessDialog.message(
                                 MasterDaftarKategori.this,
                                 getString(R.string.updated_success),

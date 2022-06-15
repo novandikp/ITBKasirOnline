@@ -43,7 +43,7 @@
                         android:paddingLeft="1dp"
                         android:paddingTop="10dp"
                         android:paddingRight="1dp"
-                        android:paddingBottom="10dp"
+                        android:paddingBottom="20dp"
                         android:src="@drawable/ic_white_print"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -143,9 +143,17 @@
                             android:layout_marginLeft="10dp"
                             android:layout_marginTop="0dp"
                             android:layout_marginRight="10dp"
-                            android:layout_marginBottom="0dp"
+                            android:layout_marginBottom="10dp"
                             android:text="Rossa" />
                     </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -157,7 +165,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
-                            android:layout_marginTop="0dp"
+                            android:layout_marginTop="10dp"
                             android:layout_marginRight="10dp"
                             android:layout_marginBottom="0dp"
                             android:text="Pelanggan"
@@ -204,14 +212,7 @@
                             android:layout_marginBottom="10dp"
                             android:text="Rp. 150.000" />
                     </LinearLayout>
-
                 </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"></LinearLayout>
 
             </LinearLayout>
 

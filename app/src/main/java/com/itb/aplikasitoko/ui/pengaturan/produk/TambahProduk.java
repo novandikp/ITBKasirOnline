@@ -60,6 +60,16 @@ public class TambahProduk extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(bind.getRoot());
 
+//        bind.kodeProduk.setFocusable(false);
+//        bind.kodeProduk.setClickable(true);
+//        bind.namaProduk.setFocusable(false);
+//        bind.namaProduk.setClickable(true);
+//        bind.hargaAwal.setFocusable(false);
+//        bind.hargaAwal.setClickable(true);
+//        bind.hargaJual.setFocusable(false);
+//        bind.hargaJual.setClickable(true);
+//        bind.stokAwal.setFocusable(false);
+//        bind.stokAwal.setClickable(true);
 
         bind.opsiSatuan.setClickable(true);
         bind.opsiSatuan.setFocusable(false);

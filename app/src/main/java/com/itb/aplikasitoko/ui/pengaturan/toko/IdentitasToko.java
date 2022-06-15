@@ -125,9 +125,9 @@ public class IdentitasToko extends AppCompatActivity {
             @Override
             public void onResponse(Call<IdentitasResponse> call, Response<IdentitasResponse> response) {
                 if (response.isSuccessful()){
-                    SuccessDialog.message(IdentitasToko.this,getString(R.string.success_added),bind.getRoot());
+                    SuccessDialog.message(IdentitasToko.this,getString(R.string.updated_success),bind.getRoot());
                 } else {
-                    ErrorDialog.message(IdentitasToko.this,getString(R.string.add_kategori_error),bind.getRoot());
+                    ErrorDialog.message(IdentitasToko.this,getString(R.string.updated_error),bind.getRoot());
                 }
             }
 

@@ -331,9 +331,15 @@ public class HomeFragment extends Fragment {
 
     public void setTotal(){
         if(service.getBarang().size() == 0){
-            binding.viewTotal.setVisibility(View.GONE);
-        }else{
-            binding.viewTotal.setVisibility(View.VISIBLE);
+            binding.viewTotal.setBackgroundColor(getContext().getColor(R.color.darkgrey));
+            binding.tvJumlah.setTextColor(getContext().getColor(R.color.darkergrey));
+            binding.tvTotal.setTextColor(getContext().getColor(R.color.darkergrey));
+            binding.textviewtotal.setTextColor(getContext().getColor(R.color.darkergrey));
+        } else {
+            binding.viewTotal.setBackgroundColor(getContext().getColor(R.color.teal_700));
+            binding.tvJumlah.setTextColor(getContext().getColor(R.color.white));
+            binding.tvTotal.setTextColor(getContext().getColor(R.color.white));
+            binding.textviewtotal.setTextColor(getContext().getColor(R.color.white));
         }
         binding.tvJumlah.setText(String.valueOf(service.getJumlah()));
         binding.tvTotal.setText(Modul.removeE(service.getTotal()));

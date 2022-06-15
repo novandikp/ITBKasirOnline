@@ -112,7 +112,7 @@
                     android:layout_marginRight="40dp"
                     android:ems="10"
                     android:hint="Harga Awal"
-                    android:inputType="text"
+                    android:inputType="number"
                     android:minHeight="48dp"
                     android:textSize="18sp" />
 
@@ -125,7 +125,7 @@
                     android:layout_marginRight="40dp"
                     android:ems="10"
                     android:hint="Harga Jual"
-                    android:inputType="text"
+                    android:inputType="number"
                     android:minHeight="48dp"
                     android:textSize="18sp" />
 

@@ -59,7 +59,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="4dp"
-                android:layout_marginBottom="0dp">
+                android:layout_marginBottom="60dp">
 
             </androidx.recyclerview.widget.RecyclerView>
 
@@ -78,6 +78,29 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/bottomHorizontalDivider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="55dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="60dp"
+            app:layout_constraintBottom_toTopOf="@+id/bottomHorizontalDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topHorizontalDivider">
+
 
             <LinearLayout
                 android:id="@+id/viewTotal"
@@ -127,18 +150,8 @@
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-        <View
-            android:id="@+id/bottomHorizontalDivider"
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_marginBottom="55dp"
-            android:background="?android:attr/listDivider"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="0dp"
@@ -147,7 +160,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bottomHorizontalDivider">
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -174,7 +187,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="25dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/ic_master_category" />
+                            android:src="@drawable/ic_baseline_people_outline_24" />
 
                         <TextView
                             android:id="@+id/titlePelanggan"
@@ -210,7 +223,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="25dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/ic_master_satuan" />
+                            android:src="@drawable/ic_baseline_shopping_cart_24" />
 
                         <TextView
                             android:id="@+id/titleDaftar"
@@ -246,7 +259,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="25dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/ic_master_pegawai" />
+                            android:src="@drawable/ic_baseline_delete_24" />
 
                         <TextView
                             android:id="@+id/titleHapus"
