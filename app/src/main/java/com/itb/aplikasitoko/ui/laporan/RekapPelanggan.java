@@ -137,8 +137,8 @@ public class RekapPelanggan extends AppCompatActivity {
     public void refreshData(boolean fetch){
         LoadingDialog.load(RekapPelanggan.this);
         String cari = bind.searchView.getQuery().toString();
-        String mulai = bind.dateFrom.getText().toString(); 
-        String sampai = bind.dateTo.getText().toString();
+        String mulai = bind.dateFrom.getText().toString(); 
+        String sampai = bind.dateTo.getText().toString();
         if (true){
             Call<RekapPelangganResp> rekapPelangganRespCall = Api.RekapPelanggan(RekapPelanggan.this).getRekapPelanggan(cari, mulai, sampai);
             rekapPelangganRespCall.enqueue(new Callback<RekapPelangganResp>() {

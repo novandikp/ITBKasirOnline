@@ -153,8 +153,8 @@ public class RekapKategori extends AppCompatActivity {
     public void refreshData(boolean fetch){
         LoadingDialog.load(RekapKategori.this);
         String cari = bind.searchView.getQuery().toString();
-        String mulai = bind.dateFrom.getText().toString(); 
-        String sampai = bind.dateTo.getText().toString();
+        String mulai = bind.dateFrom.getText().toString(); 
+        String sampai = bind.dateTo.getText().toString();
 
 //        kategoriRepository.getRekapKategori(137).observe(this, new Observer<List<ViewModelRekapKategori>>() {
 //            @Override
