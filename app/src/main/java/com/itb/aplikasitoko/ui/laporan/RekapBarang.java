@@ -152,8 +152,10 @@ public class RekapBarang extends AppCompatActivity {
     public void refreshData(boolean fetch){
         LoadingDialog.load(RekapBarang.this);
         String cari = bind.searchView.getQuery().toString();
+        String mulai = bind.dateFrom.getText().toString(); 
+        String sampai = bind.dateTo.getText().toString();
         if (true){
-            Call<RekapBarangResp> rekapBarangRespCall = Api.RekapBarang(RekapBarang.this).getRekapBarang(cari);
+            Call<RekapBarangResp> rekapBarangRespCall = Api.RekapBarang(RekapBarang.this).getRekapBarang(cari, mulai, sampai);
             rekapBarangRespCall.enqueue(new Callback<RekapBarangResp>() {
                 @Override
                 public void onResponse(Call<RekapBarangResp> call, Response<RekapBarangResp> response) {
