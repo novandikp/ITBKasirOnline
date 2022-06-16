@@ -11,11 +11,13 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.itb.aplikasitoko.Adapter.LapPendapatanAdapter;
 import com.itb.aplikasitoko.Api;
 import com.itb.aplikasitoko.Component.LoadingDialog;
+import com.itb.aplikasitoko.Database.Repository.JualRepository;
 import com.itb.aplikasitoko.Response.PendapatanGetResp;
 import com.itb.aplikasitoko.ViewModel.ViewModelJual;
 import com.itb.aplikasitoko.databinding.ActivityLaporanPendapatanBinding;
@@ -50,12 +52,12 @@ public class LaporanPendapatan extends AppCompatActivity {
     private LapPendapatanAdapter adapter;
     private List<ViewModelJual> data = new ArrayList<>();
 
-
+    JualRepository jualRepository;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         bind = ActivityLaporanPendapatanBinding.inflate(getLayoutInflater());
         super.onCreate(savedInstanceState);
-
+        jualRepository = new JualRepository(getApplication());
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Laporan Pendapatan");
         actionBar.setDisplayShowHomeEnabled(true);
@@ -142,8 +144,21 @@ public class LaporanPendapatan extends AppCompatActivity {
         String cari = bind.searchView.getQuery().toString();
         String mulai = bind.dateFrom.getText().toString();
         String sampai = bind.dateTo.getText().toString();
+        jualRepository.getPendapatan(cari,mulai,sampai).observe(this, new Observer<List<ViewModelJual>>() {
+            @Override
+            public void onChanged(List<ViewModelJual> viewModelJuals) {
+                if(viewModelJuals.size()>0){
+                    LoadingDialog.close();
+                    data.clear();
+                    data.addAll(viewModelJuals);
+                    setTotal();
+                    adapter.notifyDataSetChanged();
+                }
+            }
+        });
 
         if (true){
+
             Call<PendapatanGetResp> pendapatanGetRespCall = Api.Pendapatan(LaporanPendapatan.this).getPendapatan(mulai, sampai, cari);
             pendapatanGetRespCall.enqueue(new Callback<PendapatanGetResp>() {
                 @Override
@@ -151,6 +166,7 @@ public class LaporanPendapatan extends AppCompatActivity {
                     LoadingDialog.close();
                     data.clear();
                     if (response.isSuccessful()){
+
                         data.addAll(response.body().getData());
                     }
                     setTotal();

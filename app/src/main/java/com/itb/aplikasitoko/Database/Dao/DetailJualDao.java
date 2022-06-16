@@ -10,6 +10,7 @@ import androidx.room.Update;
 
 import com.itb.aplikasitoko.Model.ModelDetailJual;
 import com.itb.aplikasitoko.ViewModel.ModelViewStruk;
+import com.itb.aplikasitoko.ViewModel.ViewModelJual;
 
 import java.util.List;
 
@@ -39,6 +40,9 @@ public interface DetailJualDao {
 
     @Query("select * from view_detailjual where idjual=:idjual")
     LiveData<List<ModelViewStruk>> getDetailStruk(int idjual);
+
+    @Query("select * from view_detailjual where (fakturjual like :cari or  nama_pelanggan like :cari) or tanggal_jual between :start and :end order by tanggal_jual desc")
+    LiveData<List<ModelViewStruk>> getPenjualan(String cari, String start, String end);
 
 
     //@Query("select sum(jumlahjual) total_jual,SUM(jumlahjual*hargajual)total_pendapatan, nama_kategori from view_detailjual group by idkategori, nama_kategori")

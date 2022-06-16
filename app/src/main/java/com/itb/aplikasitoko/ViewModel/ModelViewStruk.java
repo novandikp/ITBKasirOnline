@@ -7,6 +7,7 @@ import androidx.room.DatabaseView;
         "    tblbarang.idbarang,\n" +
         "    tbldetailjual.jumlahjual,\n" +
         "    tbldetailjual.hargajual,\n" +
+        "    tbldetailjual.hargajual - tblbarang.hargabeli as laba,\n" +
         "    tbljual.fakturjual,\n" +
         "    tbljual.bayar,\n" +
         "    tbljual.total,\n" +
@@ -26,12 +27,16 @@ import androidx.room.DatabaseView;
         "    COALESCE(tblpelanggan.no_telepon, '-') AS no_telepon,\n" +
         "    tbljual.tanggal_jual,\n" +
         "    tblsatuan.nama_satuan,\n" +
-        "    tblkategori.nama_kategori\n" +
+        "    tblkategori.nama_kategori,\n" +
+        "   tblpegawai.nama_pegawai," +
+        "   tblpegawai.alamat_pegawai," +
+        "   tblpegawai.no_pegawai" +
         "   FROM tbldetailjual inner join tbljual on tbljual.idjual = tbldetailjual.idjual\n" +
         "   left join tblpelanggan on tblpelanggan.idpelanggan = tbljual.idpelanggan\n" +
         "   inner join tblbarang on tblbarang.idbarang = tbldetailjual.idbarang\n" +
         "   inner join tblkategori on tblkategori.idkategori = tblbarang.idkategori\n" +
-        "   inner join tblsatuan on tblsatuan.idsatuan = tblbarang.idsatuan")
+        "   inner join tblsatuan on tblsatuan.idsatuan = tblbarang.idsatuan\n" +
+        "   inner join tblpegawai on tblpegawai.idpegawai = tbljual.idpegawai")
 public class ModelViewStruk {
     public void setIddetailjual(int iddetailjual) {
         this.iddetailjual = iddetailjual;
@@ -158,6 +163,42 @@ public class ModelViewStruk {
     private String tanggal_jual;
     private String nama_satuan;
     private String nama_kategori;
+    private double laba;
+    private String nama_pegawai;
+    private String alamat_pegawai;
+    private String no_pegawai;
+
+    public double getLaba() {
+        return laba;
+    }
+
+    public String getAlamat_pegawai() {
+        return alamat_pegawai;
+    }
+
+    public void setAlamat_pegawai(String alamat_pegawai) {
+        this.alamat_pegawai = alamat_pegawai;
+    }
+
+    public String getNo_pegawai() {
+        return no_pegawai;
+    }
+
+    public void setNo_pegawai(String no_pegawai) {
+        this.no_pegawai = no_pegawai;
+    }
+
+    public String getNama_pegawai() {
+        return nama_pegawai;
+    }
+
+    public void setNama_pegawai(String nama_pegawai) {
+        this.nama_pegawai = nama_pegawai;
+    }
+
+    public void setLaba(double laba) {
+        this.laba = laba;
+    }
 
     public int getIddetailjual() {
         return iddetailjual;

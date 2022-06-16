@@ -38,4 +38,7 @@ public interface JualDao {
 
     @Query("select * from viewJual")
     LiveData<List<ViewModelJual>> getPendapatan();
+
+    @Query("select * from viewJual where (fakturjual like :cari or  nama_pelanggan like :cari) or tanggal_jual between :start and :end order by tanggal_jual desc")
+    LiveData<List<ViewModelJual>> getPendapatan(String cari, String start, String end);
 }

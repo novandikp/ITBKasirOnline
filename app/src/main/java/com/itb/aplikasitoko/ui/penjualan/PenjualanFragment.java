@@ -11,11 +11,14 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.itb.aplikasitoko.Adapter.PrintPenjulanAdapter;
 import com.itb.aplikasitoko.Api;
+import com.itb.aplikasitoko.Component.LoadingDialog;
+import com.itb.aplikasitoko.Database.Repository.JualRepository;
 import com.itb.aplikasitoko.R;
 import com.itb.aplikasitoko.Response.PendapatanGetResp;
 import com.itb.aplikasitoko.ViewModel.ViewModelJual;
@@ -39,12 +42,12 @@ public class PenjualanFragment extends Fragment {
     private SimpleDateFormat dateFormatter;
     private PrintPenjulanAdapter adapter;
     private List<ViewModelJual> data = new ArrayList<>();
-
+    JualRepository jualRepository;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         PenjualanViewModel galleryViewModel =
                 new ViewModelProvider(this).get(PenjualanViewModel.class);
-
+        jualRepository = new JualRepository(getActivity().getApplication());
         bind = FragmentPenjualanBinding.inflate(inflater, container, false);
         View root = bind.getRoot();
 
@@ -120,26 +123,17 @@ public class PenjualanFragment extends Fragment {
         String mulai = bind.dateFrom.getText().toString();
         String sampai = bind.dateTo.getText().toString();
 
-//        Call<PendapatanGetResp> pendapatanGetRespCall = Api.Pendapatan(getContext()).getPendapatan("", "", "");
-//        pendapatanGetRespCall.enqueue(new Callback<PendapatanGetResp>() {
-//            @Override
-//            public void onResponse(Call<PendapatanGetResp> call, Response<PendapatanGetResp> response) {
-//                if (response.isSuccessful()){
-//
-//                    data.clear();
-//                    data.addAll(response.body().getData());
-//                    adapter.notifyDataSetChanged();
-//
-//                    //Toast.makeText(LaporanPendapatan.this, String.valueOf(response.body().getData().size()), Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<PendapatanGetResp> call, Throwable t) {
-//                Toast.makeText(getContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
-//            }
-//        });
-
+        jualRepository.getPendapatan(cari,mulai,sampai).observe(getActivity(), new Observer<List<ViewModelJual>>() {
+            @Override
+            public void onChanged(List<ViewModelJual> viewModelJuals) {
+                if(viewModelJuals.size()>0){
+                    LoadingDialog.close();
+                    data.clear();
+                    data.addAll(viewModelJuals);
+                    adapter.notifyDataSetChanged();
+                }
+            }
+        });
         if (true){
             Call<PendapatanGetResp> pendapatanGetRespCall = Api.Pendapatan(getContext()).getPendapatan(mulai, sampai, cari);
             pendapatanGetRespCall.enqueue(new Callback<PendapatanGetResp>() {

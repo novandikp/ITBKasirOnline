@@ -39,6 +39,11 @@ public class DetailJualRepository {
         return detailJualDao.getDetailStruk(idjual);
     }
 
+
+    public LiveData<List<ModelViewStruk>> getPenjualan(String cari, String start, String end){
+        return detailJualDao.getPenjualan(cari,start,end);
+    }
+
     public void insertAll(List<ModelDetailJual> data, boolean truncate){
         new InsertDetailJualAll(detailJualDao,truncate).execute(data);
     }

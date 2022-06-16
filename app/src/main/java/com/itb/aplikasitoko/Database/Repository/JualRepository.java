@@ -8,6 +8,7 @@ import androidx.lifecycle.LiveData;
 import com.itb.aplikasitoko.Database.Dao.JualDao;
 import com.itb.aplikasitoko.Database.KasirDatabase;
 import com.itb.aplikasitoko.Model.ModelJual;
+import com.itb.aplikasitoko.ViewModel.ViewModelJual;
 
 import java.util.List;
 
@@ -26,7 +27,11 @@ public class JualRepository {
         return jualDao.getOrder(idjual);
     }
 
-
+    public LiveData<List<ViewModelJual>> getPendapatan(String cari, String start, String end){
+        start = start + " 00:00:00";
+        end = end + " 23:59:59";
+        return jualDao.getPendapatan(cari, start, end);
+    }
 
     public LiveData<List<ModelJual>> getAllJual(String keyword){
         allJual = jualDao.getJual(keyword);

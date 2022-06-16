@@ -17,7 +17,7 @@ import com.itb.aplikasitoko.ui.pengaturan.pegawai.LoginPegawai;
 
 
 public class SplashActivity extends AppCompatActivity{
-    private static final int SPLASH_SCREEN_TIMEOUT = 1000;
+    private static final int SPLASH_SCREEN_TIMEOUT = 3000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -36,8 +36,12 @@ public class SplashActivity extends AppCompatActivity{
             public void run() {
                 switch (cek) {
                     case Config.PageSigned.DASHBOARD:
-                        startActivity(new Intent(SplashActivity.this, LoadActivity.class));
-//                        startActivity(new Intent(SplashActivity.this, LoadActivity.class));
+                        if(sp.getValue("isFirstLogin","").equals("")){
+                            sp.setValue("isFirstLogin","y");
+                            startActivity(new Intent(SplashActivity.this, LoadActivity.class));
+                        }else{
+                            startActivity(new Intent(SplashActivity.this, LoginPegawai.class));
+                        }
                         break;
                     case Config.PageSigned.OTP:
                         startActivity(new Intent(SplashActivity.this, TelpVerification.class));
@@ -54,13 +58,6 @@ public class SplashActivity extends AppCompatActivity{
         }, SPLASH_SCREEN_TIMEOUT);
 
 
-        Animation fadeOut=new AlphaAnimation(1,0);
-        fadeOut.setInterpolator(new AccelerateInterpolator());
-        fadeOut.setStartOffset(500);
-        fadeOut.setDuration(1800);
-        ImageView image=findViewById(R.id.imageView2);
-
-        image.setAnimation(fadeOut);
     }
 
 }

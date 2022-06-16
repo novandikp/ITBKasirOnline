@@ -19,6 +19,20 @@ public class ViewModelDetailJual {
     private int idtoko;
     private double laba;
 
+    public ViewModelDetailJual(String fakturjual, String nama_pegawai, String nama_pelanggan, String tanggal_jual, String barang, int jumlahjual, String nama_satuan, double hargajual, double hargabeli, int idtoko, double laba) {
+        this.fakturjual = fakturjual;
+        this.nama_pegawai = nama_pegawai;
+        this.nama_pelanggan = nama_pelanggan;
+        this.tanggal_jual = tanggal_jual;
+        this.barang = barang;
+        this.jumlahjual = jumlahjual;
+        this.nama_satuan = nama_satuan;
+        this.hargajual = hargajual;
+        this.hargabeli = hargabeli;
+        this.idtoko = idtoko;
+        this.laba = laba;
+    }
+
     public String getFakturjual() {
         return fakturjual;
     }

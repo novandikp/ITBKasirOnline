@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/drawable/gradient1.xml" value="0.1" />
+        <entry key="..\:/KasirOnlineAndroid/app/src/main/res/drawable/ic_icon_add.xml" value="0.3515" />
+        <entry key="..\:/KasirOnlineAndroid/app/src/main/res/drawable/ic_icon_add2.xml" value="0.3515" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/drawable/ic_icon_back.xml" value="0.1" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/drawable/ic_kasir_qrcode.xml" value="0.1" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/drawable/ic_master_pegawai.xml" value="0.1" />
@@ -13,8 +15,10 @@
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/activity_identitas.xml" value="0.33" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/activity_informasi_bisnis.xml" value="0.31567028985507245" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/activity_laporan_pendapatan.xml" value="0.31567028985507245" />
+        <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/activity_laporan_penjualan.xml" value="0.33" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/activity_load.xml" value="0.33" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/activity_master_pelanggan.xml" value="0.16750756811301715" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/activity_master_satuan.xml" value="0.16750756811301715" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/activity_otpverification.xml" value="0.31567028985507245" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/activity_pelanggan_order.xml" value="0.16750756811301715" />
@@ -40,7 +44,7 @@
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/fragment_logout_pegawai.xml" value="0.16750756811301715" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/fragment_master_list.xml" value="0.16750756811301715" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/fragment_pengaturan.xml" value="0.25" />
-        <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/fragment_penjualan.xml" value="0.16750756811301715" />
+        <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/fragment_penjualan.xml" value="0.25" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/fragment_print_penjualan.xml" value="0.25" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/insert_pegawai.xml" value="0.16750756811301715" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/insert_pelanggan.xml" value="0.5" />
@@ -62,6 +66,7 @@
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/item_satuan.xml" value="0.16750756811301715" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/item_struk.xml" value="0.16750756811301715" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/login_pegawai.xml" value="0.22" />
+        <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/splash_activity.xml" value="0.25" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/menu/activity_main_drawer.xml" value="0.3391215526046987" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/menu/home_page.xml" value="0.2824074074074074" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/menu/laporan_toolbar.xml" value="0.2824074074074074" />

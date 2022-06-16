@@ -12,12 +12,15 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.itb.aplikasitoko.Adapter.LapPenjualanAdapter;
 import com.itb.aplikasitoko.Api;
 import com.itb.aplikasitoko.Component.LoadingDialog;
+import com.itb.aplikasitoko.Database.Repository.DetailJualRepository;
 import com.itb.aplikasitoko.Response.PenjualanGetResp;
+import com.itb.aplikasitoko.ViewModel.ModelViewStruk;
 import com.itb.aplikasitoko.ViewModel.ViewModelDetailJual;
 import com.itb.aplikasitoko.databinding.ActivityLaporanPenjualanBinding;
 import com.itb.aplikasitoko.util.Modul;
@@ -48,12 +51,13 @@ public class LaporanPenjualan extends AppCompatActivity {
     private SimpleDateFormat dateFormatter;
     private List<ViewModelDetailJual> data = new ArrayList<>();
     private LapPenjualanAdapter adapter;
+    DetailJualRepository detailrepo;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         bind = ActivityLaporanPenjualanBinding.inflate(getLayoutInflater());
         super.onCreate(savedInstanceState);
-
+        detailrepo = new DetailJualRepository(getApplication());
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Laporan Penjualan");
         actionBar.setDisplayShowHomeEnabled(true);
@@ -145,6 +149,20 @@ public class LaporanPenjualan extends AppCompatActivity {
         String cari = bind.searchView.getQuery().toString();
         String mulai = bind.dateFrom.getText().toString();
         String sampai = bind.dateTo.getText().toString();
+
+        detailrepo.getPenjualan(cari,mulai,sampai).observe(this, new Observer<List<ModelViewStruk>>() {
+            @Override
+            public void onChanged(List<ModelViewStruk> modelViewStruks) {
+                LoadingDialog.close();
+                data.clear();
+                for(ModelViewStruk model : modelViewStruks){
+                    int jumlah = (int) model.getJumlahjual();
+                    data.add(new ViewModelDetailJual(model.getFakturjual(),model.getNama_pegawai(),model.getNama_pelanggan(),model.getTanggal_jual(),model.getBarang(),jumlah,model.getNama_satuan(),model.getHargajual(),model.getHargabeli(),0,model.getLaba()));
+                }
+                setTotal();
+                adapter.notifyDataSetChanged();
+            }
+        });
 
         if (true){
             Call<PenjualanGetResp> penjualanGetRespCall = Api.Penjualan(LaporanPenjualan.this).getPenjualan(mulai, sampai, cari);
