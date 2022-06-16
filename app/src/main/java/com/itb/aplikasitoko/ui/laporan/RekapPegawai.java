@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.itb.aplikasitoko.Adapter.RekapPegawaiAdapter;
 import com.itb.aplikasitoko.Api;
+import com.itb.aplikasitoko.Component.LoadingDialog;
 import com.itb.aplikasitoko.Response.RekapPegawaiResp;
 import com.itb.aplikasitoko.ViewModel.ViewModelRekapPegawai;
 import com.itb.aplikasitoko.databinding.ActivityRekapPegawaiBinding;
@@ -135,6 +136,7 @@ public class RekapPegawai extends AppCompatActivity {
     }
 
     public void refreshData(boolean fetch){
+        LoadingDialog.load(RekapPegawai.this);
         String cari = bind.searchView.getQuery().toString();
 
         if (fetch){
@@ -142,6 +144,7 @@ public class RekapPegawai extends AppCompatActivity {
             rekapPegawaiRespCall.enqueue(new Callback<RekapPegawaiResp>() {
                 @Override
                 public void onResponse(Call<RekapPegawaiResp> call, Response<RekapPegawaiResp> response) {
+                    LoadingDialog.close();
                     if (response.isSuccessful()){
                         data.clear();
                         data.addAll(response.body().getData());
@@ -153,7 +156,8 @@ public class RekapPegawai extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<RekapPegawaiResp> call, Throwable t) {
-
+                    LoadingDialog.close();
+                    Toast.makeText(RekapPegawai.this, t.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
         }

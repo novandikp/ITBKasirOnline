@@ -21,6 +21,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.itb.aplikasitoko.Adapter.ProdukAdapter;
 import com.itb.aplikasitoko.Api;
+import com.itb.aplikasitoko.Component.ErrorDialog;
 import com.itb.aplikasitoko.Component.LoadingDialog;
 import com.itb.aplikasitoko.Component.SuccessDialog;
 import com.itb.aplikasitoko.Database.Repository.BarangRepository;
@@ -109,6 +110,7 @@ public class MasterProduk extends AppCompatActivity {
 
 
     public void refreshData(boolean fetch){
+        LoadingDialog.load(MasterProduk.this);
         //inisiasi search
         String cari = bind.searchProduk.getQuery().toString();
 
@@ -117,6 +119,7 @@ public class MasterProduk extends AppCompatActivity {
         br.getAllBarang(cari).observe(this, new Observer<List<ModelBarang>>() {
             @Override
             public void onChanged(List<ModelBarang> modelBarangs) {
+                LoadingDialog.close();
                 data.clear();
                 data.addAll(modelBarangs);
                 pa.notifyDataSetChanged();
@@ -129,6 +132,7 @@ public class MasterProduk extends AppCompatActivity {
             barangGetRespCall.enqueue(new Callback<BarangGetResp>() {
                 @Override
                 public void onResponse(Call<BarangGetResp> call, Response<BarangGetResp> response) {
+                    LoadingDialog.close();
                     if (data.size() != response.body().getData().size() || !data.equals(response.body().getData())){
                         //memasukkan data ke / dr db
                         br.insertAll(response.body().getData(), true);
@@ -142,6 +146,7 @@ public class MasterProduk extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<BarangGetResp> call, Throwable t) {
+                    LoadingDialog.close();
                     Toast.makeText(MasterProduk.this, t.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
@@ -167,8 +172,8 @@ public class MasterProduk extends AppCompatActivity {
                                 SuccessDialog.message(MasterProduk.this, getString(R.string.deleted_success), bind.getRoot());
                             }
                         } else {
-                            //ErrorDialog.message(MasterProduk.this, getString(R.string.error_produk_message), bind.getRoot());
-                            Toast.makeText(MasterProduk.this, response.toString(), Toast.LENGTH_SHORT).show();
+                            ErrorDialog.message(MasterProduk.this, getString(R.string.error_produk_message), bind.getRoot());
+                            //Toast.makeText(MasterProduk.this, response.toString(), Toast.LENGTH_SHORT).show();
                         }
                         refreshData(true);
                     }

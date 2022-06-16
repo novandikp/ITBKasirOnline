@@ -12,6 +12,7 @@ import androidx.lifecycle.Observer;
 
 import com.itb.aplikasitoko.Api;
 import com.itb.aplikasitoko.Component.ErrorDialog;
+import com.itb.aplikasitoko.Component.LoadingDialog;
 import com.itb.aplikasitoko.Component.SuccessDialog;
 import com.itb.aplikasitoko.Database.Repository.TokoRepository;
 import com.itb.aplikasitoko.Model.ModelToko;
@@ -125,11 +126,12 @@ public class IdentitasToko extends AppCompatActivity {
 //    }
 
     public void refreshData(){
-
+        LoadingDialog.load(IdentitasToko.this);
         Call<IdentitasGetResp> identitasGetRespCall = Api.Identitas(IdentitasToko.this).getIdentitas();
         identitasGetRespCall.enqueue(new Callback<IdentitasGetResp>() {
             @Override
             public void onResponse(Call<IdentitasGetResp> call, Response<IdentitasGetResp> response) {
+                LoadingDialog.close();
                 if (response.isSuccessful()){
                     ModelToko modelToko = response.body().getData();
                     tokoRepository.insert(modelToko);
@@ -144,16 +146,19 @@ public class IdentitasToko extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<IdentitasGetResp> call, Throwable t) {
-
+                LoadingDialog.close();
+                Toast.makeText(IdentitasToko.this, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
 
     public void updateProfil(ModelToko modelToko){
+        LoadingDialog.load(IdentitasToko.this);
         Call<IdentitasResponse> identitasResponseCall = Api.Identitas(IdentitasToko.this).postIdentitas(modelToko);
         identitasResponseCall.enqueue(new Callback<IdentitasResponse>() {
             @Override
             public void onResponse(Call<IdentitasResponse> call, Response<IdentitasResponse> response) {
+                LoadingDialog.close();
                 tokoRepository.insert(modelToko);
                 if (response.isSuccessful()){
                     SuccessDialog.message(IdentitasToko.this,getString(R.string.updated_success),bind.getRoot());
@@ -164,6 +169,7 @@ public class IdentitasToko extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<IdentitasResponse> call, Throwable t) {
+                LoadingDialog.close();
                 Toast.makeText(IdentitasToko.this, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });

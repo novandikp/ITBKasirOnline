@@ -39,9 +39,8 @@ public class ProdukAdapter extends RecyclerView.Adapter<ProdukAdapter.ViewHolder
         //panggil model
         ModelBarang mb = data.get(position);
         holder.tBarang.setText(mb.getBarang());
-        holder.tKode.setText(mb.getIdbarang());
-        holder.tHj.setText(Modul.removeE(mb.getHarga()));
-        holder.tHb.setText(Modul.removeE(mb.getHargabeli()));
+        holder.tKode.setText("Kode : "+mb.getIdbarang());
+        holder.tHj.setText(Modul.removeE(mb.getHargabeli()) +" - "+Modul.removeE(mb.getHarga()));
         holder.tHapus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -77,7 +76,7 @@ public class ProdukAdapter extends RecyclerView.Adapter<ProdukAdapter.ViewHolder
             tBarang = (TextView) itemView.findViewById(R.id.txtProduk);
             tKode = (TextView) itemView.findViewById(R.id.txtKode);
             tHj = (TextView) itemView.findViewById(R.id.txtHargaJual);
-            tHb = (TextView) itemView.findViewById(R.id.txtHargaBeli);
+//            tHb = (TextView) itemView.findViewById(R.id.txtHargaBeli);
             tStok = (TextView) itemView.findViewById(R.id.stokAwal);
             tEdit = (TextView) itemView.findViewById(R.id.txtEdit);
             tHapus = (TextView) itemView.findViewById(R.id.txtHapus);

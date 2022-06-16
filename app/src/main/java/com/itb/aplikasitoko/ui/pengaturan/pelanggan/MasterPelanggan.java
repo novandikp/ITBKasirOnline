@@ -110,12 +110,14 @@ public class MasterPelanggan extends AppCompatActivity {
 
     //ini dkasi boolean biar gk merequest terusn klo request terus2 an bakal repot
     public void refreshData(boolean fetch){
+        LoadingDialog.load(MasterPelanggan.this);
         //inisiasi search dari layoutnya
         String cari = bind.searchPelanggan.getQuery().toString();
         //get sqlite
         pr.getAllPelanggan(cari).observe(this, new Observer<List<ModelPelanggan>>() {
             @Override
             public void onChanged(List<ModelPelanggan> modelPelanggans) {
+                LoadingDialog.close();
                 data.clear();
                 data.addAll(modelPelanggans);
                 adapter.notifyDataSetChanged();
@@ -129,6 +131,7 @@ public class MasterPelanggan extends AppCompatActivity {
             call.enqueue(new Callback<PelangganGetResp>() {
                 @Override
                 public void onResponse(Call<PelangganGetResp> call, Response<PelangganGetResp> response) {
+                    LoadingDialog.close();
                     //Toast.makeText(MasterPelanggan.this, String.valueOf(response.body().getData().size()), Toast.LENGTH_SHORT).show();
                     if (data.size() != response.body().getData().size() || !data.equals(response.body().getData())){
                         //memasukkan ke db kalau gada data yg sama
@@ -143,6 +146,7 @@ public class MasterPelanggan extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<PelangganGetResp> call, Throwable t) {
+                    LoadingDialog.close();
                     Toast.makeText(MasterPelanggan.this, t.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });

@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.itb.aplikasitoko.Adapter.RekapPelangganAdapter;
 import com.itb.aplikasitoko.Api;
+import com.itb.aplikasitoko.Component.LoadingDialog;
 import com.itb.aplikasitoko.Response.RekapPelangganResp;
 import com.itb.aplikasitoko.ViewModel.ViewModelRekapPelanggan;
 import com.itb.aplikasitoko.databinding.ActivityRekapPelangganBinding;
@@ -134,6 +135,7 @@ public class RekapPelanggan extends AppCompatActivity {
     }
 
     public void refreshData(boolean fetch){
+        LoadingDialog.load(RekapPelanggan.this);
         String cari = bind.searchView.getQuery().toString();
 
         if (true){
@@ -141,6 +143,7 @@ public class RekapPelanggan extends AppCompatActivity {
             rekapPelangganRespCall.enqueue(new Callback<RekapPelangganResp>() {
                 @Override
                 public void onResponse(Call<RekapPelangganResp> call, Response<RekapPelangganResp> response) {
+                    LoadingDialog.close();
                     if (response.isSuccessful()){
                         data.clear();
                         data.addAll(response.body().getData());
@@ -152,7 +155,8 @@ public class RekapPelanggan extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<RekapPelangganResp> call, Throwable t) {
-
+                    LoadingDialog.close();
+                    Toast.makeText(RekapPelanggan.this, t.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
         }
