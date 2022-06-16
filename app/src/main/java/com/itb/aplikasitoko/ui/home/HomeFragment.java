@@ -334,12 +334,12 @@ public class HomeFragment extends Fragment {
 
     public void setTotal(){
         if(service.getBarang().size() == 0){
-            binding.viewTotal.setBackgroundColor(getContext().getColor(R.color.darkgrey));
-            binding.tvJumlah.setTextColor(getContext().getColor(R.color.darkergrey));
-            binding.tvTotal.setTextColor(getContext().getColor(R.color.darkergrey));
-            binding.textviewtotal.setTextColor(getContext().getColor(R.color.darkergrey));
+            binding.viewTotal.setBackgroundColor(getContext().getColor(R.color.textdef));
+            binding.tvJumlah.setTextColor(getContext().getColor(R.color.white));
+            binding.tvTotal.setTextColor(getContext().getColor(R.color.white));
+            binding.textviewtotal.setTextColor(getContext().getColor(R.color.white));
         } else {
-            binding.viewTotal.setBackgroundColor(getContext().getColor(R.color.teal_700));
+            binding.viewTotal.setBackgroundColor(getContext().getColor(R.color.green));
             binding.tvJumlah.setTextColor(getContext().getColor(R.color.white));
             binding.tvTotal.setTextColor(getContext().getColor(R.color.white));
             binding.textviewtotal.setTextColor(getContext().getColor(R.color.white));

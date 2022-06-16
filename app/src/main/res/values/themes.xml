@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.AuthApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#795644</item>
-        <item name="colorPrimaryVariant">#795644</item>
+        <item name="colorPrimary">#045DE9</item>
+        <item name="colorPrimaryVariant">#3540A7</item>
         <item name="colorOnPrimary">#708090</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">#708090</item>

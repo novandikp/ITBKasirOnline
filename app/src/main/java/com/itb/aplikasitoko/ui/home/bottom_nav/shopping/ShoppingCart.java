@@ -65,6 +65,7 @@ public class ShoppingCart extends AppCompatActivity {
             bind.tvTotal.setText(Modul.removeE(orderService.getTotal()));//menampilkan total harga
             modelDetailJualList.clear();
             modelBarangList.clear();
+            bind.btnBayar.setBackgroundColor(getColor(R.color.default1));
             modelDetailJualList.addAll(orderService.getDetail());
             modelBarangList.addAll(orderService.getBarang());
             cartAdapter.notifyDataSetChanged();

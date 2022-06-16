@@ -78,6 +78,7 @@
                 android:background="@drawable/searchview_bg"
                 android:iconifiedByDefault="false"
                 android:queryHint="Cari Disini..."
+                android:theme="@style/FS_SearchView"
                 app:theme="@style/FS_SearchView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"

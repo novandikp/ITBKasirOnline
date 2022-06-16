@@ -52,6 +52,7 @@
                 android:background="@drawable/searchview_bg"
                 android:iconifiedByDefault="false"
                 android:queryHint="Cari Satuan..."
+                android:theme="@style/FS_SearchView"
                 app:theme="@style/FS_SearchView" />
 
         </LinearLayout>

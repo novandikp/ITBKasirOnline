@@ -54,9 +54,9 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
 
         if (detail == null){
             holder.tGambar.setText(modelBarang.getBarang().substring(0, 1).toUpperCase()); //klu jmlhnya nol mka akan tampil huruf
-            holder.linear.setBackgroundColor(context.getColor(R.color.default1));
-            holder.tGambar.setBackgroundColor(context.getColor(R.color.default1));
-            holder.tGambar.setTextColor(context.getColor(R.color.default2)); //ganti warna teks
+            holder.linear.setBackgroundColor(context.getColor(R.color.lightgrey));
+            holder.tGambar.setBackgroundColor(context.getColor(R.color.lightgrey));
+            holder.tGambar.setTextColor(context.getColor(R.color.white)); //ganti warna teks
             holder.tHarga.setText(Modul.removeE(modelBarang.getHarga()));
         } else {
             holder.tGambar.setText(String.valueOf(detail.getJumlahjual()));

@@ -28,6 +28,8 @@
 
             <androidx.appcompat.widget.SearchView
                 android:id="@+id/searchView"
+                android:theme="@style/FS_SearchView"
+                app:theme="@style/FS_SearchView" 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:iconifiedByDefault="false"
