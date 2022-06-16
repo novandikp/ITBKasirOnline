@@ -46,7 +46,7 @@
                         android:layout_marginBottom="10dp"
                         android:text="Wagyu A5"
                         android:textColor="@color/white"
-                        android:textSize="15dp"
+                        android:textSize="@dimen/FS_type1a"
                         android:textStyle="bold" />
 
                     <TextView
@@ -155,7 +155,7 @@
                             android:layout_marginBottom="0dp"
                             android:text="Total terjual"
                             android:textColor="@color/primary1"
-                            android:textSize="13dp"
+                            android:textSize="@dimen/FS_type3a"
                             android:textStyle="bold" />
 
                         <TextView
@@ -167,7 +167,7 @@
                             android:layout_marginRight="10dp"
                             android:layout_marginBottom="10dp"
                             android:text="0"
-                            android:textSize="13dp" />
+                            android:textSize="@dimen/FS_type3a" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -193,7 +193,7 @@
                             android:layout_marginBottom="0dp"
                             android:text="Total Pendapatan"
                             android:textColor="@color/primary1"
-                            android:textSize="13dp"
+                            android:textSize="@dimen/FS_type3a"
                             android:textStyle="bold" />
 
                         <TextView
@@ -203,9 +203,9 @@
                             android:layout_marginLeft="10dp"
                             android:layout_marginTop="0dp"
                             android:layout_marginRight="10dp"
-                            android:layout_marginBottom="0dp"
+                            android:layout_marginBottom="10dp"
                             android:text="Rp. 0"
-                            android:textSize="13dp" />
+                            android:textSize="@dimen/FS_type3a" />
                     </LinearLayout>
 
                     <LinearLayout

@@ -12,6 +12,14 @@
         android:layout_height="match_parent"
         android:layout_gravity="center">
 
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -51,80 +59,146 @@
                     android:textAlignment="textStart"
                     android:textSize="@dimen/FS_type2a"/>
 
+                <TextView
+                    android:id="@+id/bannerKodeProduk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    android:paddingLeft="3dp"
+                    android:text="Kode Produk"
+                    android:fontFamily="sans-serif-medium"
+                    android:textSize="13dp" />
+
                 <EditText
                     android:id="@+id/kodeProduk"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="40dp"
-                    android:layout_marginTop="25dp"
                     android:layout_marginRight="40dp"
                     android:ems="10"
-                    android:hint="Kode Produk"
+                    android:hint="Masukkan Kode Produk"
                     android:inputType="text"
                     android:minHeight="48dp"
                     android:textSize="@dimen/FS_type1a" />
+
+                <TextView
+                    android:id="@+id/bannerNamaProduk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    android:paddingLeft="3dp"
+                    android:text="Nama Produk"
+                    android:fontFamily="sans-serif-medium"
+                    android:textSize="13dp" />
 
                 <EditText
                     android:id="@+id/namaProduk"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="40dp"
-                    android:layout_marginTop="20dp"
                     android:layout_marginRight="40dp"
                     android:ems="10"
-                    android:hint="Nama Produk"
+                    android:hint="Masukkan Nama Produk"
                     android:inputType="text"
                     android:minHeight="48dp"
                     android:textSize="@dimen/FS_type1a" />
+
+                <TextView
+                    android:id="@+id/bannerKategori"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    android:paddingLeft="3dp"
+                    android:text="Kategori"
+                    android:fontFamily="sans-serif-medium"
+                    android:textSize="13dp" />
 
                 <EditText
                     android:id="@+id/kategori"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="40dp"
-                    android:layout_marginTop="20dp"
                     android:layout_marginRight="40dp"
                     android:ems="10"
-                    android:hint="Kategori"
+                    android:hint="Masukkan Kategori"
                     android:inputType="text"
                     android:minHeight="48dp"
                     android:textSize="@dimen/FS_type1a" />
+
+                <TextView
+                    android:id="@+id/bannerSatuan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    android:paddingLeft="3dp"
+                    android:text="Satuan"
+                    android:fontFamily="sans-serif-medium"
+                    android:textSize="13dp" />
 
                 <EditText
                     android:id="@+id/satuan"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="40dp"
-                    android:layout_marginTop="20dp"
                     android:layout_marginRight="40dp"
                     android:ems="10"
-                    android:hint="Satuan (pcs, kg, dll)"
+                    android:hint="Masukkan Satuan (pcs, kg, dll)"
                     android:inputType="text"
                     android:minHeight="48dp"
                     android:textSize="@dimen/FS_type1a" />
+
+                <TextView
+                    android:id="@+id/bannerHargaAwal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    android:paddingLeft="3dp"
+                    android:text="Harga Awal"
+                    android:fontFamily="sans-serif-medium"
+                    android:textSize="13dp" />
 
                 <EditText
                     android:id="@+id/harga"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="40dp"
-                    android:layout_marginTop="20dp"
                     android:layout_marginRight="40dp"
                     android:ems="10"
-                    android:hint="Harga Awal"
+                    android:hint="Masukkan Harga Awal"
                     android:inputType="number"
                     android:minHeight="48dp"
                     android:textSize="@dimen/FS_type1a" />
+
+                <TextView
+                    android:id="@+id/bannerHargaJual"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    android:paddingLeft="3dp"
+                    android:text="Harga Jual"
+                    android:fontFamily="sans-serif-medium"
+                    android:textSize="13dp" />
 
                 <EditText
                     android:id="@+id/hargaJual"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="40dp"
-                    android:layout_marginTop="20dp"
                     android:layout_marginRight="40dp"
                     android:ems="10"
-                    android:hint="Harga Jual"
+                    android:hint="Masukkan Harga Jual"
                     android:inputType="number"
                     android:minHeight="48dp"
                     android:textSize="@dimen/FS_type1a" />
@@ -150,9 +224,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="35dp"
-            android:layout_marginBottom="35dp"
-            android:paddingLeft="40dp"
-            android:paddingRight="40dp"
+                android:layout_marginBottom="35dp"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp"
                 android:gravity="center_horizontal"
                 android:orientation="vertical"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -162,7 +236,7 @@
                 <Button
                     android:id="@+id/nextToMainPage"
                     android:layout_width="match_parent"
-                    android:layout_height="55dp"
+                    android:layout_height="50dp"
                     android:backgroundTint="#2F4F4F"
                     android:text="Next"
                     android:textColor="#FFFFFF"/>
@@ -182,6 +256,6 @@
             <!--                    />-->
         </LinearLayout>
 
-
+        </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>

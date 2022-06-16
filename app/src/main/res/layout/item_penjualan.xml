@@ -40,7 +40,7 @@
                     android:layout_marginBottom="10dp"
                     android:text="18 May 2022"
                     android:textColor="@color/white"
-                    android:textSize="15dp"
+                    android:textSize="@dimen/FS_type1a"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -74,7 +74,7 @@
                             android:layout_marginBottom="0dp"
                             android:text="Faktur Jual"
                             android:textColor="@color/primary1"
-                            android:textSize="13dp"
+                            android:textSize="@dimen/FS_type3a"
                             android:textStyle="bold" />
 
                         <TextView
@@ -86,7 +86,7 @@
                             android:layout_marginRight="10dp"
                             android:layout_marginBottom="0dp"
                             android:text="000"
-                            android:textSize="13dp" />
+                            android:textSize="@dimen/FS_type3a" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -104,7 +104,7 @@
                             android:layout_marginBottom="0dp"
                             android:text="Pelanggan"
                             android:textColor="@color/primary1"
-                            android:textSize="13dp"
+                            android:textSize="@dimen/FS_type3a"
                             android:textStyle="bold" />
 
                         <TextView
@@ -116,7 +116,7 @@
                             android:layout_marginRight="10dp"
                             android:layout_marginBottom="0dp"
                             android:text="Ivanna"
-                            android:textSize="13dp" />
+                            android:textSize="@dimen/FS_type3a" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -134,7 +134,7 @@
                             android:layout_marginBottom="0dp"
                             android:text="Pegawai"
                             android:textColor="@color/primary1"
-                            android:textSize="13dp"
+                            android:textSize="@dimen/FS_type3a"
                             android:textStyle="bold" />
 
                         <TextView
@@ -146,7 +146,7 @@
                             android:layout_marginRight="10dp"
                             android:layout_marginBottom="10dp"
                             android:text="Rossa"
-                            android:textSize="13dp" />
+                            android:textSize="@dimen/FS_type3a" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -171,7 +171,7 @@
                             android:layout_marginBottom="0dp"
                             android:text="Nama Barang"
                             android:textColor="@color/primary1"
-                            android:textSize="13dp"
+                            android:textSize="@dimen/FS_type3a"
                             android:textStyle="bold" />
 
                         <TextView
@@ -183,7 +183,7 @@
                             android:layout_marginRight="10dp"
                             android:layout_marginBottom="0dp"
                             android:text="Kertas"
-                            android:textSize="13dp" />
+                            android:textSize="@dimen/FS_type3a" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -201,7 +201,7 @@
                             android:layout_marginBottom="0dp"
                             android:text="Keterangan"
                             android:textColor="@color/primary1"
-                            android:textSize="13dp"
+                            android:textSize="@dimen/FS_type3a"
                             android:textStyle="bold" />
 
                         <TextView
@@ -213,7 +213,7 @@
                             android:layout_marginRight="10dp"
                             android:layout_marginBottom="0dp"
                             android:text="1 pcs"
-                            android:textSize="13dp" />
+                            android:textSize="@dimen/FS_type3a" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -231,7 +231,7 @@
                             android:layout_marginBottom="0dp"
                             android:text="Keuntungan"
                             android:textColor="@color/primary1"
-                            android:textSize="13dp"
+                            android:textSize="@dimen/FS_type3a"
                             android:textStyle="bold" />
 
                         <TextView
@@ -243,7 +243,7 @@
                             android:layout_marginRight="10dp"
                             android:layout_marginBottom="10dp"
                             android:text="Rp. 150.000"
-                            android:textSize="13dp" />
+                            android:textSize="@dimen/FS_type3a" />
                     </LinearLayout>
                 </LinearLayout>
 

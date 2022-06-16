@@ -68,7 +68,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Dari"
-                    android:textSize="14sp" />
+                    android:textSize="@dimen/FS_type1a" />
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
 
@@ -89,7 +89,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Sampai"
-                    android:textSize="14sp" />
+                    android:textSize="@dimen/FS_type1a" />
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
 

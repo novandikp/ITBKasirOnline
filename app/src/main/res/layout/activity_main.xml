@@ -12,6 +12,14 @@
             android:layout_height="match_parent"
             android:layout_gravity="center">
 
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -76,7 +84,6 @@
                             android:inputType="textEmailAddress"
                             android:textSize="@dimen/FS_type1a" />
                     </com.google.android.material.textfield.TextInputLayout>
-
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
@@ -143,7 +150,7 @@
                     <Button
                         android:id="@+id/signIn"
                         android:layout_width="match_parent"
-                        android:layout_height="55dp"
+                        android:layout_height="50dp"
                         android:backgroundTint="#2F4F4F"
                         android:text="Login"
                         android:textColor="#FFFFFF"/>
@@ -159,7 +166,7 @@
                             android:id="@+id/txtRegister"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginRight="10dp"
+                            android:layout_marginRight="5dp"
                             android:onClick="register"
                             android:text="Belum punya akun?"
                             android:textSize="@dimen/FS_type1a" />
@@ -212,6 +219,6 @@
 <!--                    />-->
             </LinearLayout>
 
-
+            </ScrollView>
         </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>

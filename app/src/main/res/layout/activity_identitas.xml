@@ -25,7 +25,7 @@
                 android:layout_marginBottom="8dp"
                 android:orientation="vertical"
                 android:paddingTop="5dp"
-                android:paddingBottom="5dp"
+                android:paddingBottom="45dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -44,40 +44,52 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
-                        android:id="@+id/banner"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:id="@+id/bannerNamaPemilik"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="40dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginRight="40dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="20dp"
+                        android:paddingLeft="3dp"
                         android:fontFamily="sans-serif-medium"
-                        android:text="Identitas Toko"
+                        android:text="Nama Pemilik"
                         android:textAlignment="textStart"
-                        android:textSize="15dp" />
+                        android:textSize="@dimen/FS_type1a" />
 
                     <EditText
                         android:id="@+id/namaPemilik"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="40dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginRight="40dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
                         android:ems="10"
-                        android:hint="Nama Pemilik"
+                        android:hint="Masukkan Nama Pemilik"
                         android:inputType="text"
                         android:minHeight="48dp"
                         android:textSize="@dimen/FS_type1a" />
 
+                    <TextView
+                        android:id="@+id/bannerNamaUsaha"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="20dp"
+                        android:paddingLeft="3dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Nama Usaha"
+                        android:textAlignment="textStart"
+                        android:textSize="@dimen/FS_type1a" />
                     <EditText
                         android:id="@+id/namaUsaha"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="40dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginRight="40dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
                         android:ems="10"
-                        android:hint="Nama Usaha"
+                        android:hint="Masukkan Nama Usaha"
                         android:inputType="text"
                         android:minHeight="48dp"
                         android:textSize="@dimen/FS_type1a" />
@@ -95,16 +107,28 @@
                     <!--                        android:layout_margin-="2dp"-->
                     <!--                        android:minHeight="48dp"/>-->
 
+                    <TextView
+                        android:id="@+id/bannerLokasiUsaha"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="20dp"
+                        android:paddingLeft="3dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Lokasi Usaha"
+                        android:textAlignment="textStart"
+                        android:textSize="@dimen/FS_type1a" />
+
                     <EditText
                         android:id="@+id/lokasiUsaha"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="40dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginRight="40dp"
-                        android:layout_marginBottom="8dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
                         android:ems="10"
-                        android:hint="Lokasi Usaha"
+                        android:hint="Msasukkan Lokasi Usaha"
                         android:inputType="text"
                         android:minHeight="48dp"
                         android:textSize="@dimen/FS_type1a" />
@@ -117,10 +141,9 @@
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginStart="40dp"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginEnd="40dp"
-                            android:layout_marginBottom="8dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -147,8 +170,7 @@
                     android:id="@+id/linearLayout3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="1dp"
-                    android:layout_marginBottom="1dp"
+                    android:layout_marginTop="20dp"
                     android:gravity="center_horizontal"
                     android:orientation="vertical"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -156,17 +178,18 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
-                        android:id="@+id/banner3"
+                        android:id="@+id/bannerInfoPrinter"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="40dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginRight="40dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:paddingLeft="3dp"
                         android:fontFamily="sans-serif-medium"
                         android:text="Informasi Printer"
                         android:textAlignment="textStart"
-                        android:textSize="15dp" />
+                        android:textSize="@dimen/FS_type1a" />
 
 
                     <!--                    <Spinner-->
@@ -189,10 +212,9 @@
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginStart="40dp"
-                            android:layout_marginTop="20dp"
-                            android:layout_marginEnd="40dp"
-                            android:layout_marginBottom="20dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -245,8 +267,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginTop="25dp"
-                        android:paddingLeft="60dp"
-                        android:paddingRight="60dp">
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp">
 
                         <Button
                             android:id="@+id/btnSubmit"

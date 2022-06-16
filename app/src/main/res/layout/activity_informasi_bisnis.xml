@@ -7,167 +7,209 @@
     android:orientation="vertical"
     tools:context=".InformasiBisnis">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center">
-
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="2dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="2dp"
-            android:layout_marginBottom="8dp"
-            android:orientation="vertical"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="match_parent"
+            android:layout_gravity="center">
 
-            <LinearLayout
-                android:id="@+id/linearLayout1"
+            <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:gravity="center_horizontal"
-                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <TextView
-                    android:id="@+id/banner"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginRight="40dp"
-                    android:fontFamily="sans-serif-medium"
-                    android:text="Informasi Bisnis"
-                    android:textColor="@color/black"
-                    android:textAlignment="textStart"
-                    android:textSize="@dimen/FS_type2a"/>
+                    android:layout_marginStart="2dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="2dp"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="vertical"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-                <EditText
-                    android:id="@+id/namaPemilik"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginTop="25dp"
-                    android:layout_marginRight="40dp"
-                    android:ems="10"
-                    android:hint="Nama Pemilik"
-                    android:inputType="text"
-                    android:minHeight="48dp"
-                    android:textSize="@dimen/FS_type1a" />
-
-                <EditText
-                    android:id="@+id/namaUsaha"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="40dp"
-                    android:ems="10"
-                    android:hint="Nama Usaha"
-                    android:inputType="text"
-                    android:minHeight="48dp"
-                    android:textSize="@dimen/FS_type1a" />
-
-                <EditText
-                    android:id="@+id/lokasiUsaha"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="40dp"
-                    android:ems="10"
-                    android:hint="Lokasi Usaha"
-                    android:inputType="text"
-                    android:minHeight="48dp"
-                    android:textSize="@dimen/FS_type1a" />
-
-<!--                    <Spinner-->
-<!--                        android:id="@+id/jenisUsaha"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:ems="10"-->
-<!--                        android:layout_marginRight="1dp"-->
-<!--                        android:layout_marginLeft="1dp"-->
-<!--                        android:paddingLeft="8dp"-->
-<!--                        android:paddingRight="8dp"-->
-<!--                        android:layout_margin-="2dp"-->
-<!--                        android:minHeight="48dp"/>-->
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    <LinearLayout
+                        android:id="@+id/linearLayout1"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginStart="40dp"
-                        android:layout_marginEnd="40dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent">
 
-                        <AutoCompleteTextView
-                            android:id="@+id/JenisUsaha"
+                        <TextView
+                            android:id="@+id/banner"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="Restoran"
-                            android:hint="Jenis Usaha"
-                            android:textSize="@dimen/FS_type1a"
-                            android:inputType="none"/>
-                    </com.google.android.material.textfield.TextInputLayout>
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </LinearLayout>
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="40dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="40dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="Informasi Bisnis"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/FS_type2a" />
 
-            <LinearLayout
-                android:id="@+id/linearLayout2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="35dp"
-                android:layout_marginBottom="35dp"
-                android:paddingLeft="40dp"
-                android:paddingRight="40dp"
-                android:gravity="center_horizontal"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout1">
+                        <TextView
+                            android:id="@+id/bannerNamaPemilik"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="40dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginRight="40dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:paddingLeft="3dp"
+                            android:text="Nama Pemilik"
+                            android:textSize="13dp" />
 
-                <Button
-                    android:id="@+id/nextToTambahProduk"
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:backgroundTint="#2F4F4F"
-                    android:text="Next"
-                    android:textColor="#FFFFFF"/>
-            </LinearLayout>
+                        <EditText
+                            android:id="@+id/namaPemilik"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="40dp"
+                            android:layout_marginRight="40dp"
+                            android:ems="10"
+                            android:hint="Masukkan Nama Pemilik"
+                            android:inputType="text"
+                            android:minHeight="48dp"
+                            android:textSize="@dimen/FS_type1a" />
 
-            <!--                <ProgressBar-->
-            <!--                    android:id="@+id/progressBar"-->
-            <!--                    style="?android:attr/progressBarStyleLarge"-->
-            <!--                    android:layout_width="wrap_content"-->
-            <!--                    android:layout_height="wrap_content"-->
-            <!--                    android:layout_centerInParent="true"-->
-            <!--                    android:visibility="gone"-->
-            <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
-            <!--                    app:layout_constraintTop_toTopOf="parent"-->
-            <!--                    app:layout_constraintLeft_toLeftOf="parent"-->
-            <!--                    app:layout_constraintRight_toRightOf="parent"-->
-            <!--                    />-->
-        </LinearLayout>
+                        <TextView
+                            android:id="@+id/bannerNamaUsaha"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="40dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginRight="40dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:paddingLeft="3dp"
+                            android:text="Nasa Usaha"
+                            android:textSize="13dp" />
 
+                        <EditText
+                            android:id="@+id/namaUsaha"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="40dp"
+                            android:layout_marginRight="40dp"
+                            android:ems="10"
+                            android:hint="Masukkan Nama Usaha"
+                            android:inputType="text"
+                            android:minHeight="48dp"
+                            android:textSize="@dimen/FS_type1a" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                        <TextView
+                            android:id="@+id/bannerLokasiUsaha"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="40dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginRight="40dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:paddingLeft="3dp"
+                            android:text="Lokasi Usaha"
+                            android:textSize="13dp" />
+
+                        <EditText
+                            android:id="@+id/lokasiUsaha"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="40dp"
+                            android:layout_marginRight="40dp"
+                            android:ems="10"
+                            android:hint="Masukkan Lokasi Usaha"
+                            android:inputType="text"
+                            android:minHeight="48dp"
+                            android:textSize="@dimen/FS_type1a" />
+
+                        <!--                    <Spinner-->
+                        <!--                        android:id="@+id/jenisUsaha"-->
+                        <!--                        android:layout_width="match_parent"-->
+                        <!--                        android:layout_height="wrap_content"-->
+                        <!--                        android:ems="10"-->
+                        <!--                        android:layout_marginRight="1dp"-->
+                        <!--                        android:layout_marginLeft="1dp"-->
+                        <!--                        android:paddingLeft="8dp"-->
+                        <!--                        android:paddingRight="8dp"-->
+                        <!--                        android:layout_margin-="2dp"-->
+                        <!--                        android:minHeight="48dp"/>-->
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="40dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginEnd="40dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <AutoCompleteTextView
+                                    android:id="@+id/JenisUsaha"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:hint="Jenis Usaha"
+                                    android:inputType="none"
+                                    android:text="Restoran"
+                                    android:textSize="@dimen/FS_type1a" />
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="35dp"
+                        android:layout_marginBottom="35dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:paddingLeft="40dp"
+                        android:paddingRight="40dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayout1">
+
+                        <Button
+                            android:id="@+id/nextToTambahProduk"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:backgroundTint="#2F4F4F"
+                            android:text="Next"
+                            android:textColor="#FFFFFF" />
+                    </LinearLayout>
+
+                    <!--                <ProgressBar-->
+                    <!--                    android:id="@+id/progressBar"-->
+                    <!--                    style="?android:attr/progressBarStyleLarge"-->
+                    <!--                    android:layout_width="wrap_content"-->
+                    <!--                    android:layout_height="wrap_content"-->
+                    <!--                    android:layout_centerInParent="true"-->
+                    <!--                    android:visibility="gone"-->
+                    <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+                    <!--                    app:layout_constraintTop_toTopOf="parent"-->
+                    <!--                    app:layout_constraintLeft_toLeftOf="parent"-->
+                    <!--                    app:layout_constraintRight_toRightOf="parent"-->
+                    <!--                    />-->
+                </LinearLayout>
+
+            </ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.appcompat.widget.LinearLayoutCompat>

@@ -69,7 +69,7 @@
                     android:layout_height="wrap_content"
                     android:hint="Dari"
                     android:text="DD/MM/YY"
-                    android:textSize="14sp" />
+                    android:textSize="@dimen/FS_type1a" />
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
 
@@ -91,7 +91,7 @@
                     android:layout_height="wrap_content"
                     android:hint="Sampai"
                     android:text="DD/MM/YY"
-                    android:textSize="14sp" />
+                    android:textSize="@dimen/FS_type1a" />
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
 

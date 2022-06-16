@@ -49,8 +49,9 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="18dp"
-            android:layout_marginRight="2dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="0dp"
+            android:layout_marginRight="1dp"
             android:layout_weight="1"
             android:fontFamily="sans-serif-black"
             android:text="Rp."
@@ -60,14 +61,16 @@
 
         <TextView
             android:id="@+id/tvTotal"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="12dp"
             android:layout_marginRight="10dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginBottom="0dp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:fontFamily="sans-serif-black"
             android:text="0"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textColor="@color/teal_700" />
 
 

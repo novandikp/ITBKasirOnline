@@ -37,7 +37,7 @@
                 android:paddingLeft="7dp"
                 android:text="Nama Pegawai"
                 android:textColor="@color/black"
-                android:textSize="15dp" />
+                android:textSize="@dimen/FS_type1a" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -58,7 +58,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif"
                         android:text="Nomor Telepon"
-                        android:textSize="12dp" />
+                        android:textSize="@dimen/FS_type3a" />
 
                     <TextView
                         android:id="@+id/txtAlamat"
@@ -66,7 +66,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif"
                         android:text="Alamat"
-                        android:textSize="12dp" />
+                        android:textSize="@dimen/FS_type3a" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -88,7 +88,7 @@
                         android:text="Edit"
                         android:textAlignment="textEnd"
                         android:textColor="@color/success"
-                        android:textSize="@dimen/FS_type1a"
+                        android:textSize="@dimen/FS_type3a"
                         android:textStyle="bold" />
 
                     <TextView
@@ -99,7 +99,7 @@
                         android:text="Hapus"
                         android:textAlignment="center"
                         android:textColor="@color/error"
-                        android:textSize="@dimen/FS_type1a"
+                        android:textSize="@dimen/FS_type3a"
                         android:textStyle="bold" />
                 </LinearLayout>
 

@@ -40,7 +40,7 @@
                     android:layout_marginTop="16dp"
                     android:text="TextView"
                     android:textColor="@color/black"
-                    android:textSize="15dp"
+                    android:textSize="@dimen/FS_type1a"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -51,7 +51,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     android:text="TextView"
-                    android:textSize="13dp"
+                    android:textSize="@dimen/FS_type3a"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/txtProduk"
                     app:layout_constraintTop_toBottomOf="@+id/txtProduk" />

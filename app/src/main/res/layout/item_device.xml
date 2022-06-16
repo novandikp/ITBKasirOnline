@@ -38,7 +38,7 @@
                 android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:text="TextView"
-                android:textSize="13dp"
+                android:textSize="@dimen/FS_type3a"
                 android:textStyle="bold" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>

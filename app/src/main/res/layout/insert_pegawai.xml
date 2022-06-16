@@ -41,6 +41,19 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
+                    android:id="@+id/bannerNamaPegawai"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:paddingLeft="3dp"
+                    android:text="Nama Pegawai"
+                    android:fontFamily="sans-serif-medium"
+                    android:textAlignment="textStart"
+                    android:textSize="@dimen/FS_type1a" />
+
+                <TextView
                     android:id="@+id/banner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -57,50 +70,85 @@
                     android:id="@+id/addNamaPagawai"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginTop="25dp"
-                    android:layout_marginRight="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
                     android:ems="10"
-                    android:hint="Nama Pegawai"
+                    android:hint="Masukkan Nama Pegawai"
                     android:inputType="text"
                     android:minHeight="48dp"
+                    android:textSize="@dimen/FS_type1a" />
+
+                <TextView
+                    android:id="@+id/bannerAlamat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:paddingLeft="3dp"
+                    android:text="Alamat"
+                    android:fontFamily="sans-serif-medium"
+                    android:textAlignment="textStart"
                     android:textSize="@dimen/FS_type1a" />
 
                 <EditText
                     android:id="@+id/addAlamatPagawai"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
                     android:ems="10"
-                    android:hint="Alamat"
+                    android:hint="Masukkan Alamat"
                     android:inputType="text"
                     android:minHeight="48dp"
+                    android:textSize="@dimen/FS_type1a" />
+
+                <TextView
+                    android:id="@+id/bannerNoTelp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:paddingLeft="3dp"
+                    android:text="Nomor Telepon"
+                    android:fontFamily="sans-serif-medium"
+                    android:textAlignment="textStart"
                     android:textSize="@dimen/FS_type1a" />
 
                 <EditText
                     android:id="@+id/addNomorPagawai"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
                     android:ems="10"
-                    android:hint="Nomor Telepon"
+                    android:hint="Masukkan Nomor Telepon"
                     android:inputType="number"
                     android:minHeight="48dp"
+                    android:textSize="@dimen/FS_type1a" />
+
+                <TextView
+                    android:id="@+id/bannerNoPIN"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:paddingLeft="3dp"
+                    android:text="PIN"
+                    android:fontFamily="sans-serif-medium"
+                    android:textAlignment="textStart"
                     android:textSize="@dimen/FS_type1a" />
 
                 <EditText
                     android:id="@+id/addPinPegawai"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
                     android:ems="10"
-                    android:hint="PIN"
+                    android:hint="Masukkan PIN"
                     android:inputType="number"
                     android:minHeight="48dp"
                     android:textSize="@dimen/FS_type1a" />
@@ -112,8 +160,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="35dp"
                 android:layout_marginBottom="35dp"
-                android:paddingLeft="40dp"
-                android:paddingRight="40dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
                 android:gravity="center_horizontal"
                 android:orientation="vertical"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -123,7 +171,7 @@
                 <Button
                     android:id="@+id/btnAddPegawai"
                     android:layout_width="match_parent"
-                    android:layout_height="55dp"
+                    android:layout_height="50dp"
                     android:backgroundTint="#2F4F4F"
                     android:text="Add"
                     android:textColor="#FFFFFF"/>

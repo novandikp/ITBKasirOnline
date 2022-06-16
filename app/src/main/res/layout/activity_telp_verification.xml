@@ -12,6 +12,14 @@
         android:layout_height="match_parent"
         android:layout_gravity="center">
 
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -68,7 +76,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="40dp"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginRight="40dp"
                     android:ems="10"
                     android:hint="Nomor Telepon"
@@ -96,7 +104,7 @@
                     android:layout_height="55dp"
                     android:backgroundTint="#2F4F4F"
                     android:text="Send OTP Code"
-                    android:textColor="#FFFFFF"/>
+                    android:textColor="#FFFFFF" />
             </LinearLayout>
 
             <!--                <ProgressBar-->
@@ -113,6 +121,6 @@
             <!--                    />-->
         </LinearLayout>
 
-
+        </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>

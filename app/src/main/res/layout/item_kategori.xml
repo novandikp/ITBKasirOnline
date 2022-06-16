@@ -54,7 +54,7 @@
                             android:fontFamily="sans-serif-medium"
                             android:text="Kategori"
                             android:textColor="@color/black"
-                            android:textSize="14dp" />
+                            android:textSize="@dimen/FS_type1a" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -77,7 +77,7 @@
                         android:text="Edit"
                         android:textAlignment="textEnd"
                         android:textColor="@color/success"
-                        android:textSize="@dimen/FS_type1a"
+                        android:textSize="@dimen/FS_type3a"
                         android:textStyle="bold" />
                     <TextView
                         android:id="@+id/txtHapus"
@@ -86,7 +86,7 @@
                         android:layout_height="wrap_content"
                         android:text="Hapus"
                         android:textStyle="bold"
-                        android:textSize="@dimen/FS_type1a"
+                        android:textSize="@dimen/FS_type3a"
                         android:textColor="@color/error"
                         android:textAlignment="center"/>
                 </LinearLayout>

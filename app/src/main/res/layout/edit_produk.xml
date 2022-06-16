@@ -57,29 +57,53 @@
                     android:textAlignment="textStart"
                     android:textSize="30sp"/>
 
+                <TextView
+                    android:id="@+id/bannerKodeProduk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:paddingLeft="3dp"
+                    android:text="Nama Pegawai"
+                    android:fontFamily="sans-serif-medium"
+                    android:textAlignment="textStart"
+                    android:textSize="@dimen/FS_type1a" />
+
                 <EditText
                     android:id="@+id/kodeProduk"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginTop="25dp"
-                    android:layout_marginRight="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
                     android:ems="10"
-                    android:hint="Kode Produk"
+                    android:hint="Masukkan Kode Produk"
                     android:enabled="false"
                     android:inputType="text"
                     android:minHeight="48dp"
+                    android:textSize="@dimen/FS_type1a" />
+
+                <TextView
+                    android:id="@+id/bannerNamaProduk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:paddingLeft="3dp"
+                    android:text="Nama Produk"
+                    android:fontFamily="sans-serif-medium"
+                    android:textAlignment="textStart"
                     android:textSize="@dimen/FS_type1a" />
 
                 <EditText
                     android:id="@+id/namaProduk"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
                     android:ems="10"
-                    android:hint="Nama Produk"
+                    android:hint="Masukkan Nama Produk"
                     android:inputType="text"
                     android:minHeight="48dp"
                     android:textSize="@dimen/FS_type1a" />
@@ -90,8 +114,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="20dp"
-                    android:layout_marginStart="40dp"
-                    android:layout_marginEnd="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -117,8 +141,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="20dp"
-                    android:layout_marginStart="40dp"
-                    android:layout_marginEnd="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -135,39 +159,75 @@
                         android:inputType="none"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <TextView
+                    android:id="@+id/bannerHargaAwal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:paddingLeft="3dp"
+                    android:text="Harga Awal"
+                    android:fontFamily="sans-serif-medium"
+                    android:textAlignment="textStart"
+                    android:textSize="@dimen/FS_type1a" />
+
                 <EditText
                     android:id="@+id/hargaAwal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
                     android:ems="10"
-                    android:hint="Harga Awal"
+                    android:hint="Masukkan Harga Awal"
                     android:inputType="number"
                     android:minHeight="48dp"
+                    android:textSize="@dimen/FS_type1a" />
+
+                <TextView
+                    android:id="@+id/bannerHargaJual"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:paddingLeft="3dp"
+                    android:text="Harga Jual"
+                    android:fontFamily="sans-serif-medium"
+                    android:textAlignment="textStart"
                     android:textSize="@dimen/FS_type1a" />
 
                 <EditText
                     android:id="@+id/hargaJual"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
                     android:ems="10"
-                    android:hint="Harga Jual"
+                    android:hint="Masukkan Harga Jual"
                     android:inputType="number"
                     android:minHeight="48dp"
+                    android:textSize="@dimen/FS_type1a" />
+
+                <TextView
+                    android:id="@+id/bannerInfoStok"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:paddingLeft="3dp"
+                    android:text="Stok Awal"
+                    android:fontFamily="sans-serif-medium"
+                    android:textAlignment="textStart"
                     android:textSize="@dimen/FS_type1a" />
 
                 <EditText
                     android:id="@+id/stokAwal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
                     android:ems="10"
                     android:hint="Stok Awal"
                     android:text="0"
@@ -182,8 +242,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="35dp"
                 android:layout_marginBottom="35dp"
-                android:paddingLeft="40dp"
-                android:paddingRight="40dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
                 android:gravity="center_horizontal"
                 android:orientation="vertical"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -193,7 +253,7 @@
                 <Button
                     android:id="@+id/btnUpdateProduk"
                     android:layout_width="match_parent"
-                    android:layout_height="55dp"
+                    android:layout_height="50dp"
                     android:backgroundTint="#2F4F4F"
                     android:text="Save"
                     android:textColor="#FFFFFF"/>
