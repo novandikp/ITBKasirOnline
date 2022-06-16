@@ -64,6 +64,9 @@ public class UserRegister extends AppCompatActivity {
                 if(response.isSuccessful()) {
 
                     //sp.setEmail(response.body());
+                    SpHelper spHelper = new SpHelper(UserRegister.this);
+                    spHelper.setToken(response.body().getToken());
+                    sp.setEmail(response.body().getData().getEmail_toko());
 
                     String message = "Registrasi berhasil";
                     //sp.setToken(response.body().getToken());
@@ -74,6 +77,7 @@ public class UserRegister extends AppCompatActivity {
                     finish();
 
                 } else {
+
                     String message = "Terjadi error, mohon coba lagi";
                     Toast.makeText(com.itb.aplikasitoko.UserRegister.this, message, Toast.LENGTH_LONG).show();
 
@@ -98,8 +102,14 @@ public class UserRegister extends AppCompatActivity {
 
             editTextConfirm.requestFocus();
             editTextConfirm.setError("Harap diisi");
-             return true;
+            return true;
+        }else if(editTextPassword.getText().length() <8){
+            editTextPassword.requestFocus();
+            editTextPassword.setError("Password minimal 8 karakter");
 
+            editTextConfirm.requestFocus();
+            editTextConfirm.setError("Password minimal 8 karakter");
+            return  true;
         } else if (!editTextPassword.getText().toString().matches(editTextConfirm.getText().toString())){
             editTextPassword.requestFocus();
             editTextPassword.setError("Password tidak sama");

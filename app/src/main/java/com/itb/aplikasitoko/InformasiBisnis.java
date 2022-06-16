@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.itb.aplikasitoko.Model.ModelToko;
 import com.itb.aplikasitoko.Response.InfoBisnisResponse;
+import com.itb.aplikasitoko.SharedPref.SpHelper;
 import com.itb.aplikasitoko.databinding.ActivityInformasiBisnisBinding;
 
 import retrofit2.Call;
@@ -25,7 +26,7 @@ public class InformasiBisnis extends AppCompatActivity {
     private EditText NamaPemilik, NamaUsaha, Lokasi;
     private ProgressBar progressBar;
     ActivityInformasiBisnisBinding bind;
-
+    SpHelper spHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +44,7 @@ public class InformasiBisnis extends AppCompatActivity {
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //mySpinner.setAdapter(myAdapter);
         JenisUsaha.setAdapter(myAdapter);
+         spHelper = new SpHelper(this);
 
         bind.nextToTambahProduk.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,6 +67,7 @@ public class InformasiBisnis extends AppCompatActivity {
             @Override
             public void onResponse(Call<InfoBisnisResponse> call, Response<InfoBisnisResponse> response) {
                 if (response.isSuccessful()){
+                    spHelper.setUsername(modelToko.getNama_pemilik());
                     String message = "Data berhasil ditambahkan";
                     Toast.makeText(InformasiBisnis.this, message, Toast.LENGTH_SHORT).show();
 

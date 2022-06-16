@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.itb.aplikasitoko.Component.LoadingDialog;
 import com.itb.aplikasitoko.Model.ModelToko;
 import com.itb.aplikasitoko.Response.OtpResponse;
 import com.itb.aplikasitoko.SharedPref.SpHelper;
@@ -101,23 +102,26 @@ public class OTPVerification extends AppCompatActivity {
 
 
     public void MintaOtp(ModelToko modelToko) {
+        LoadingDialog.load(this);
         setResendTimer();
         Call<OtpResponse> OtpResponseCall = Api.getService(OTPVerification.this).mintaOtp(modelToko);
         OtpResponseCall.enqueue(new Callback<OtpResponse>() {
             @Override
             public void onResponse(Call<OtpResponse> call, Response<OtpResponse> response) {
+                LoadingDialog.close();
                 if(response.isSuccessful()){
                     String message = "Kode OTP terkirim";
                     Toast.makeText(OTPVerification.this, message , Toast.LENGTH_LONG).show();
 
                 } else {
-                    String message = "Nomor telepon tidak valid";
+                    String message = "Nomer telepon tidak valid";
                     Toast.makeText(OTPVerification.this, message, Toast.LENGTH_LONG).show();
                 }
             }
 
             @Override
             public void onFailure(Call<OtpResponse> call, Throwable t) {
+                LoadingDialog.close();
                 String message = t.getLocalizedMessage();
                 Toast.makeText(OTPVerification.this, message, Toast.LENGTH_LONG).show();
             }
@@ -125,10 +129,12 @@ public class OTPVerification extends AppCompatActivity {
     }
 
     public boolean VerifOtp(String otp) {
+        LoadingDialog.load(this);
         Call<OtpResponse> OtpResponseCall = Api.getService(OTPVerification.this).verifOtp(otp);
         OtpResponseCall.enqueue(new Callback<OtpResponse>() {
             @Override
             public void onResponse(Call<OtpResponse> call, Response<OtpResponse> response) {
+                LoadingDialog.close();
                 if (response.isSuccessful()){
                     startActivity(new Intent(OTPVerification.this, InformasiBisnis.class));
                     finish();
@@ -139,7 +145,8 @@ public class OTPVerification extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<OtpResponse> call, Throwable t) {
-                Toast.makeText(OTPVerification.this, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                LoadingDialog.close();
+                Toast.makeText(OTPVerification.this, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
         return true;

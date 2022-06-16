@@ -58,6 +58,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     sp.setEmail(response.body().getData().getEmail());
                     sp.setUsername(response.body().getData().getUsername());
 
+
                     sp.setValue(Config.lastPageSign, response.body().getPage()); //ini buat mencari pae
                     SuccessDialog.message(LoginActivity.this, message, bind.getRoot());
                     if (response.body().getPage().equals(Config.PageSigned.DASHBOARD)) {

@@ -11,6 +11,10 @@ import android.widget.Toast;
 import com.itb.aplikasitoko.ViewModel.ViewModelBarang;
 import com.itb.aplikasitoko.Response.RegisBarangResponse;
 import com.itb.aplikasitoko.databinding.ActivityTambahkanProdukBinding;
+import com.itb.aplikasitoko.util.Modul;
+import com.itb.aplikasitoko.util.NumberTextWatcher;
+
+import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -25,6 +29,8 @@ public class TambahkanProduk extends AppCompatActivity {
         bind = ActivityTambahkanProdukBinding.inflate(getLayoutInflater());
         setContentView(bind.getRoot());
 
+        bind.harga.addTextChangedListener(new NumberTextWatcher(bind.harga, new Locale("id","ID"),0));
+        bind.hargaJual.addTextChangedListener(new NumberTextWatcher(bind.hargaJual, new Locale("id","ID"),0));
         EditText idBarang = bind.kodeProduk;
         EditText NamaBarang = bind.namaProduk;
         EditText Kategori = bind.kategori;
@@ -42,8 +48,8 @@ public class TambahkanProduk extends AppCompatActivity {
                 modelVB.setBarang(NamaBarang.getText().toString());
                 modelVB.setNama_kategori(Kategori.getText().toString());
                 modelVB.setNama_satuan(Satuan.getText().toString());
-                modelVB.setHarga(Harga.getText().toString());
-                modelVB.setHargabeli(HargaJual.getText().toString());
+                modelVB.setHarga(Modul.unnumberFormat(HargaJual.getText().toString()));
+                modelVB.setHargabeli(Modul.unnumberFormat(Harga.getText().toString()));
                 modelVB.setStok(Stok.getText().toString());
                 RegisBarang(modelVB);
             }

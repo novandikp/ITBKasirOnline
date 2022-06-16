@@ -55,7 +55,7 @@ public class TelpVerification extends AppCompatActivity {
                     finish();
                 } else {
                     String message = "Nomor telepon tidak valid";
-                    Toast.makeText(TelpVerification.this, message, Toast.LENGTH_LONG).show();
+                    Toast.makeText(TelpVerification.this, String.valueOf(response.code()), Toast.LENGTH_LONG).show();
                 }
             }
 
