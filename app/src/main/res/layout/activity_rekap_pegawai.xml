@@ -47,9 +47,9 @@
                 android:padding="5.2dp"
                 android:text="Rp. 0"
                 android:textAlignment="center"
-                android:textColor="#3F4F4F"
+                android:textColor="@color/black"
                 android:textSize="@dimen/FS_type1a"
-                android:textStyle="italic"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
