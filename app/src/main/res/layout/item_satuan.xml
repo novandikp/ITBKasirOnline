@@ -51,10 +51,10 @@
                             android:id="@+id/txtSatuan"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-medium"
                             android:text="Satuan"
                             android:textColor="@color/black"
-                            android:fontFamily="sans-serif-medium"
-                            android:textSize="@dimen/FS_type1a"/>
+                            android:textSize="14dp" />
                     </LinearLayout>
                 </LinearLayout>
 

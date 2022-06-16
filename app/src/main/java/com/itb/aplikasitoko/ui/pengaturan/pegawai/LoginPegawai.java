@@ -43,6 +43,7 @@ public class LoginPegawai extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        LoadingDialog.close();
         bind = LoginPegawaiBinding.inflate(getLayoutInflater());
         super.onCreate(savedInstanceState);
         setContentView(bind.getRoot());

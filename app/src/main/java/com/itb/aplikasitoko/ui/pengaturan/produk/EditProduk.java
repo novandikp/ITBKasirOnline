@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 
 import com.itb.aplikasitoko.Api;
+import com.itb.aplikasitoko.Component.ErrorDialog;
 import com.itb.aplikasitoko.Component.LoadingDialog;
 import com.itb.aplikasitoko.Component.SuccessDialog;
 import com.itb.aplikasitoko.Database.Repository.BarangRepository;
@@ -28,9 +29,12 @@ import com.itb.aplikasitoko.Response.BarangResponse;
 import com.itb.aplikasitoko.Response.KategoriGetResp;
 import com.itb.aplikasitoko.Response.SatuanGetResp;
 import com.itb.aplikasitoko.databinding.EditProdukBinding;
+import com.itb.aplikasitoko.util.Modul;
+import com.itb.aplikasitoko.util.NumberTextWatcher;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -62,7 +66,8 @@ public class EditProduk extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         bind = EditProdukBinding.inflate(getLayoutInflater());
         super.onCreate(savedInstanceState);
-
+        bind.hargaAwal.addTextChangedListener(new NumberTextWatcher(bind.hargaAwal, new Locale("id","ID"),0));
+        bind.hargaJual.addTextChangedListener(new NumberTextWatcher(bind.hargaJual, new Locale("id","ID"),0));
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Edit Detail Produk");
         actionBar.setDisplayShowHomeEnabled(true);
@@ -148,8 +153,8 @@ public class EditProduk extends AppCompatActivity {
             public void onClick(View view) {
                 String nama = inNama.getText().toString();
                 String kode = inKode.getText().toString();
-                String harga = inHarga.getText().toString();
-                String hargaBeli = inhargaBeli.getText().toString();
+                String harga = Modul.unnumberFormat(inHarga.getText().toString());
+                String hargaBeli = Modul.unnumberFormat(inhargaBeli.getText().toString());
                 String stok = inStok.getText().toString();
 
                 String idkategori = String.valueOf(KategoriSelected().getIdkategori());
@@ -166,15 +171,16 @@ public class EditProduk extends AppCompatActivity {
                     double Harga = Double.parseDouble(harga);
                     double HargaBeli = Double.parseDouble(hargaBeli);
                     double StokAwal = Double.parseDouble(stok);
+                    String id = getIntent().getStringExtra("idbarang");
                     ModelBarang modelBarang = new ModelBarang();
-                    modelBarang.setIdbarang(kode);
+                    modelBarang.setIdbarang(id);
                     modelBarang.setBarang(nama);
                     modelBarang.setIdkategori(idkategori);
                     modelBarang.setIdsatuan(idsatuan);
                     modelBarang.setHarga(Harga);
                     modelBarang.setHargabeli(HargaBeli);
                     modelBarang.setStok(StokAwal);
-                    UpdateBarang(modelBarang.getIdbarang(), modelBarang);
+                    UpdateBarang(id, modelBarang);
                 }
             }
         });
@@ -200,14 +206,18 @@ public class EditProduk extends AppCompatActivity {
         //mengambil value dr intent
         inNama.setText(getIntent().getStringExtra("barang"));
         inKode.setText(getIntent().getStringExtra("idbarang"));
-        String idkategori =getIntent().getStringExtra("idkategori");
-        String idsatuan =getIntent().getStringExtra("idsatuan");
+        String idkategori = getIntent().getStringExtra("idkategori");
+        String idsatuan = getIntent().getStringExtra("idsatuan");
+        inKategori.setText(idkategori);
+        inSatuan.setText(idsatuan);
 
 
 //        inSatuan;
         inHarga.setText(getIntent().getStringExtra("harga"));
         inhargaBeli.setText(getIntent().getStringExtra("hargaBeli"));
         inStok.setText(getIntent().getStringExtra("stok"));
+
+
     }
 
     public void UpdateBarang(String id, ModelBarang modelBarang){
@@ -223,10 +233,11 @@ public class EditProduk extends AppCompatActivity {
 
                         finish();
                         SuccessDialog.message(EditProduk.this, getString(R.string.updated_success), bind.getRoot());
+
                     }
                 } else {
-                    //ErrorDialog.message(EditProduk.this, getString(R.string.updated_error), bind.getRoot());
-                    Toast.makeText(EditProduk.this, response.toString(), Toast.LENGTH_SHORT).show();
+                    ErrorDialog.message(EditProduk.this, getString(R.string.updated_error), bind.getRoot());
+                    //Toast.makeText(EditProduk.this, response.toString(), Toast.LENGTH_SHORT).show();
                 }
 
             }

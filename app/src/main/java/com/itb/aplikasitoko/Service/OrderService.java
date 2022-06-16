@@ -58,11 +58,13 @@ public class OrderService {
         jual.setIdpegawai(Modul.strToInt(sp.getIdPegawai()));
         ModelOrder modelOrder = new ModelOrder(jual,detail);
 
+        LoadingDialog.load(application);
         Call<OrderResponse> orderResponseCall = Api.Order(application.getApplicationContext()).postOrder(modelOrder);
         orderResponseCall.enqueue(new Callback<OrderResponse>() {
             @Override
             public void onResponse(Call<OrderResponse> call, Response<OrderResponse> response) {
                 if (response.isSuccessful()){
+                    LoadingDialog.close();
                     jualRepository.insert(response.body().getData().getJual(), new JualRepository.onInsertJual() {
                         @Override
                         public void onComplete(Long modelJual) {

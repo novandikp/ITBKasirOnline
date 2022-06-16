@@ -3,6 +3,7 @@ package com.itb.aplikasitoko.util;
 import android.text.TextUtils;
 
 import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -64,6 +65,21 @@ public class Modul {
         String rounded = String.format("%.0f", doubleValue);
         return rounded;
     }
+
+    public static String unnumberFormat(String df){
+        Locale locale=new Locale("in","ID");
+        DecimalFormat format=(DecimalFormat) DecimalFormat.getInstance(locale);
+        DecimalFormatSymbols symbols=format.getDecimalFormatSymbols();
+        char separator=symbols.getDecimalSeparator();
+        char grouping=symbols.getGroupingSeparator();
+
+        String a=df.replace(String.valueOf(grouping),"");
+        String b=a.replace(separator,'.');
+
+        return b;
+    }
+
+
 
     //buat membuat huruf pertama jd kapital
     public static String upperCaseFirst(String value) {

@@ -43,7 +43,7 @@
                         android:paddingLeft="1dp"
                         android:paddingTop="10dp"
                         android:paddingRight="1dp"
-                        android:paddingBottom="10dp"
+                        android:paddingBottom="20dp"
                         android:src="@drawable/ic_white_print"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -68,7 +68,7 @@
                         android:layout_marginBottom="10dp"
                         android:text="18 May 2022"
                         android:textColor="@color/white"
-                        android:textSize="17sp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
 
@@ -104,7 +104,7 @@
                             android:layout_marginBottom="0dp"
                             android:text="Faktur Jual"
                             android:textColor="@color/primary1"
-                            android:textSize="12sp"
+                            android:textSize="13dp"
                             android:textStyle="bold" />
 
                         <TextView
@@ -115,7 +115,8 @@
                             android:layout_marginTop="0dp"
                             android:layout_marginRight="10dp"
                             android:layout_marginBottom="0dp"
-                            android:text="000" />
+                            android:text="000"
+                            android:textSize="13dp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -133,7 +134,7 @@
                             android:layout_marginBottom="0dp"
                             android:text="Pegawai"
                             android:textColor="@color/primary1"
-                            android:textSize="12sp"
+                            android:textSize="13dp"
                             android:textStyle="bold" />
 
                         <TextView
@@ -143,9 +144,18 @@
                             android:layout_marginLeft="10dp"
                             android:layout_marginTop="0dp"
                             android:layout_marginRight="10dp"
-                            android:layout_marginBottom="0dp"
-                            android:text="Rossa" />
+                            android:layout_marginBottom="10dp"
+                            android:text="Rossa"
+                            android:textSize="13dp" />
                     </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -157,12 +167,12 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
-                            android:layout_marginTop="0dp"
+                            android:layout_marginTop="10dp"
                             android:layout_marginRight="10dp"
                             android:layout_marginBottom="0dp"
                             android:text="Pelanggan"
                             android:textColor="@color/primary1"
-                            android:textSize="12sp"
+                            android:textSize="13dp"
                             android:textStyle="bold" />
 
                         <TextView
@@ -173,7 +183,8 @@
                             android:layout_marginTop="0dp"
                             android:layout_marginRight="10dp"
                             android:layout_marginBottom="0dp"
-                            android:text="Rossa" />
+                            android:text="Rossa"
+                            android:textSize="13dp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -191,7 +202,7 @@
                             android:layout_marginBottom="0dp"
                             android:text="Pendapatan"
                             android:textColor="@color/primary1"
-                            android:textSize="12sp"
+                            android:textSize="13dp"
                             android:textStyle="bold" />
 
                         <TextView
@@ -202,16 +213,10 @@
                             android:layout_marginTop="0dp"
                             android:layout_marginRight="10dp"
                             android:layout_marginBottom="10dp"
-                            android:text="Rp. 150.000" />
+                            android:text="Rp. 150.000"
+                            android:textSize="13dp" />
                     </LinearLayout>
-
                 </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"></LinearLayout>
 
             </LinearLayout>
 

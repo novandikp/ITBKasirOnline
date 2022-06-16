@@ -1,5 +1,6 @@
 package com.itb.aplikasitoko.ui.pengaturan.produk;
 
+import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -31,6 +32,7 @@ import com.itb.aplikasitoko.Response.BarangResponse;
 import com.itb.aplikasitoko.databinding.ActivityMasterProdukBinding;
 import com.itb.aplikasitoko.ui.pengaturan.PengaturanFragment;
 import com.itb.aplikasitoko.ui.pengaturan.kategori.MasterDaftarKategori;
+import com.itb.aplikasitoko.ui.pengaturan.pegawai.MasterPegawai;
 import com.itb.aplikasitoko.util.Modul;
 import com.itb.aplikasitoko.util.ModulExcel;
 
@@ -237,12 +239,14 @@ public class MasterProduk extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         if (item.getItemId() == android.R.id.home) {
-            Intent intent = new Intent(this, HomePage.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
-            finish();
+           onBackPressed();
         } else if (id == R.id.export) {
-                Toast.makeText(getApplicationContext(), "Exported", Toast.LENGTH_SHORT).show();
+            try {
+                ModulExcel.askForPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE,0, MasterProduk.this,MasterProduk.this);
+                ExportExcel();
+            }catch (Exception e){
+                Toast.makeText(MasterProduk.this, "Terjadi kesalahan harap coba lagi", Toast.LENGTH_SHORT).show();
+            }
         } return true;
     }
 

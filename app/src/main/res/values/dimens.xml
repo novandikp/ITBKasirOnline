@@ -8,6 +8,7 @@
 
     <!--  Font Size [cara penggunaan -> android:textSize="@dimen/FS_15sp"] -->
     <dimen name="FS_type1a" parent="@style/Text">15sp</dimen>
+
     <dimen name="FS_type1b" parent="@style/Text">15dp</dimen>
     <dimen name="FS_type2a" parent="@style/Text">25sp</dimen>
     <dimen name="FS_type2b" parent="@style/Text">25dp</dimen>

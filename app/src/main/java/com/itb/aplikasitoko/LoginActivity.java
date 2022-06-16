@@ -9,11 +9,14 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.itb.aplikasitoko.Component.ErrorDialog;
+import com.itb.aplikasitoko.Component.LoadingDialog;
 import com.itb.aplikasitoko.Component.SuccessDialog;
 import com.itb.aplikasitoko.Model.ModelLogin;
 import com.itb.aplikasitoko.Response.LoginResponse;
 import com.itb.aplikasitoko.SharedPref.SpHelper;
 import com.itb.aplikasitoko.databinding.ActivityMainBinding;
+import com.itb.aplikasitoko.ui.load.LoadActivity;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -22,6 +25,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     ActivityMainBinding bind;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        LoadingDialog.close();
         super.onCreate(savedInstanceState);
         bind = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(bind.getRoot());
@@ -57,7 +61,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     sp.setValue(Config.lastPageSign, response.body().getPage()); //ini buat mencari pae
                     SuccessDialog.message(LoginActivity.this, message, bind.getRoot());
                     if (response.body().getPage().equals(Config.PageSigned.DASHBOARD)) {
-                        startActivity(new Intent(LoginActivity.this, HomePage.class));
+                        startActivity(new Intent(LoginActivity.this, LoadActivity.class));
                     } else if (response.body().getPage().equals(Config.PageSigned.OTP)) {
                         startActivity(new Intent(LoginActivity.this, TelpVerification.class));
                     } else {

@@ -1,13 +1,19 @@
 package com.itb.aplikasitoko;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
 import android.widget.TextView;
 
+import com.itb.aplikasitoko.Component.LoadingDialog;
 import com.itb.aplikasitoko.SharedPref.SpHelper;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -16,6 +22,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.itb.aplikasitoko.databinding.ActivityHomePageBinding;
+import com.itb.aplikasitoko.ui.pengaturan.pegawai.LoginPegawai;
 
 public class HomePage extends AppCompatActivity {
 
@@ -48,9 +55,64 @@ public class HomePage extends AppCompatActivity {
                 R.id.nav_home, R.id.nav_penjualan, R.id.nav_laporan, R.id.nav_pengaturan, R.id.nav_logout_toko, R.id.nav_logout_pegawai)
                 .setOpenableLayout(drawer)
                 .build();
+
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_home_page);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id = item.getItemId();
+                if(id == R.id.nav_logout_toko) {
+                    AlertDialog.Builder alert = new AlertDialog.Builder(HomePage.this);
+                    alert.setTitle("Konfirmasi");
+                    alert.setMessage("Apakah anda ingin keluar dan menghapus data toko ini ?");
+                    alert.setPositiveButton("Iya", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            LoadingDialog.load(HomePage.this);
+                            SpHelper sp = new SpHelper(HomePage.this);
+                            sp.clearAll();
+
+                            startActivity(new Intent(HomePage.this, LoginActivity.class));
+                        }
+                    }).setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    }).show();
+
+                    return true;
+                }else  if(id == R.id.nav_logout_pegawai) {
+                    AlertDialog.Builder alert = new AlertDialog.Builder(HomePage.this);
+                    alert.setTitle("Konfirmasi");
+                    alert.setMessage("Apakah anda yakin ingin keluar ?");
+                    alert.setPositiveButton("Iya", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            LoadingDialog.load(HomePage.this);
+                            SpHelper sp = new SpHelper(HomePage.this);
+                            sp.clearPegawai();
+
+                            startActivity(new Intent(HomePage.this, LoginPegawai.class));
+                        }
+                    }).setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    }).show();
+
+                    return true;
+                } else {
+                    boolean handled = NavigationUI.onNavDestinationSelected(item, navController);
+                    if (handled)
+                        drawer.closeDrawer(navigationView);
+                    return handled;
+                }
+            }
+        });
     }
 
     @Override

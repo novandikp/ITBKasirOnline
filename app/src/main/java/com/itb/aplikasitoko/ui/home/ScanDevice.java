@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -20,6 +21,7 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.itb.aplikasitoko.HomePage;
 import com.itb.aplikasitoko.R;
 import com.novandikp.simplethermalprinter.Bluetooth.DeviceBT;
 import com.novandikp.simplethermalprinter.Bluetooth.PrinterBTContext;
@@ -43,6 +45,18 @@ public class ScanDevice extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scan_devicebt);
         initView();
+        setTitle("Cari Printer");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        if (item.getItemId() == android.R.id.home) {
+          onBackPressed();
+        }
+        return true;
     }
 
 
@@ -81,6 +95,7 @@ public class ScanDevice extends AppCompatActivity {
         } else {
             if (!printerBTContext.isEnabled()) {
                 startActivityForResult(new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE), PERMISSION_BLUETOOTH_ENABLED);
+                refreshData();
             }else{
                 refreshData();
                 ProgressDialog dialog= new ProgressDialog(this);

@@ -32,12 +32,10 @@
     <fragment
         android:id="@+id/nav_logout_toko"
         android:name="com.itb.aplikasitoko.ui.logout.LogoutToko"
-        android:label="@string/menu_logout_toko"
-        tools:layout="@layout/fragment_logout_toko" />
+        android:label="@string/menu_logout_toko" />
 
     <fragment
         android:id="@+id/nav_logout_pegawai"
         android:name="com.itb.aplikasitoko.ui.logout.LogoutPegawai"
-        android:label="@string/menu_logout_toko"
-        tools:layout="@layout/fragment_logout_pegawai" />
+        android:label="@string/menu_logout_pegawai" />
 </navigation>

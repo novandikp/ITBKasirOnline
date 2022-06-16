@@ -34,38 +34,40 @@
                     android:id="@+id/txtpegawai"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="0dp"
                     android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
                     android:text="Rossa"
                     android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:textSize="20sp" />
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/txtnomor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="0dp"
                     android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginRight="10dp"
+                    android:layout_marginBottom="0dp"
                     android:text="09766877777"
-                    android:textSize="@dimen/FS_type1a"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/white"
+                    android:textSize="14dp"
+                    android:visibility="gone" />
 
                 <TextView
                     android:id="@+id/txtalamat"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="0dp"
-                    android:layout_marginBottom="10dp"
                     android:layout_marginLeft="10dp"
+                    android:layout_marginTop="0dp"
                     android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
                     android:text="Sidoarjo"
-                    android:textSize="@dimen/FS_type1a"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/white"
+                    android:textSize="14dp"
+                    android:visibility="gone" />
 
             </LinearLayout>
 
@@ -89,28 +91,28 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/txtTanggal"
+                            android:id="@+id/txtPendapatan"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="0dp"
                             android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
                             android:layout_marginRight="10dp"
-                            android:text="Tanggal Jual"
+                            android:layout_marginBottom="0dp"
+                            android:text="Total Pendapatan"
                             android:textColor="@color/primary1"
-                            android:textStyle="bold"
-                            android:textSize="@dimen/FS_type1a" />
+                            android:textSize="13dp"
+                            android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/isitanggal"
+                            android:id="@+id/isipendapatan"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="0dp"
-                            android:layout_marginBottom="0dp"
                             android:layout_marginLeft="10dp"
+                            android:layout_marginTop="0dp"
                             android:layout_marginRight="10dp"
-                            android:text="18 Mei 2022"
-                            android:textSize="@dimen/FS_type1a" />
+                            android:layout_marginBottom="0dp"
+                            android:text="Rp. 0"
+                            android:textSize="13dp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -122,25 +124,25 @@
                             android:id="@+id/txtTotalJual"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="0dp"
-                            android:layout_marginBottom="0dp"
                             android:layout_marginLeft="10dp"
+                            android:layout_marginTop="0dp"
                             android:layout_marginRight="10dp"
+                            android:layout_marginBottom="0dp"
                             android:text="Total terjual"
                             android:textColor="@color/primary1"
-                            android:textStyle="bold"
-                            android:textSize="@dimen/FS_type1a" />
+                            android:textSize="13dp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/isitotaljual"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="0dp"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginLeft="10dp"
+                            android:layout_marginTop="0dp"
                             android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
                             android:text="Ivanna"
-                            android:textSize="@dimen/FS_type1a" />
+                            android:textSize="13dp" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -148,8 +150,9 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:orientation="vertical"
-                    android:layout_weight="1">
+                    android:visibility="gone">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -157,27 +160,27 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/txtPendapatan"
+                            android:id="@+id/txtTanggal"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="0dp"
                             android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
                             android:layout_marginRight="10dp"
-                            android:text="Total Pendapatan"
+                            android:layout_marginBottom="0dp"
+                            android:text="Tanggal Jual"
                             android:textColor="@color/primary1"
-                            android:textStyle="bold"
-                            android:textSize="@dimen/FS_type1a" />
+                            android:textSize="@dimen/FS_type1a"
+                            android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/isipendapatan"
+                            android:id="@+id/isitanggal"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="0dp"
-                            android:layout_marginBottom="0dp"
                             android:layout_marginLeft="10dp"
+                            android:layout_marginTop="0dp"
                             android:layout_marginRight="10dp"
-                            android:text="Rp. 0"
+                            android:layout_marginBottom="0dp"
+                            android:text="18 Mei 2022"
                             android:textSize="@dimen/FS_type1a" />
                     </LinearLayout>
 
@@ -190,23 +193,23 @@
                             android:id="@+id/txtKeuntungan"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="0dp"
-                            android:layout_marginBottom="0dp"
                             android:layout_marginLeft="10dp"
+                            android:layout_marginTop="0dp"
                             android:layout_marginRight="10dp"
+                            android:layout_marginBottom="0dp"
                             android:text="Total Keuntungan"
                             android:textColor="@color/primary1"
-                            android:textStyle="bold"
-                            android:textSize="@dimen/FS_type1a" />
+                            android:textSize="@dimen/FS_type1a"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/isiKeuntungan"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="0dp"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginLeft="10dp"
+                            android:layout_marginTop="0dp"
                             android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
                             android:text="1 pcs"
                             android:textSize="@dimen/FS_type1a" />
                     </LinearLayout>

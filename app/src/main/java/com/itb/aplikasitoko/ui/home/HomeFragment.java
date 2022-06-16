@@ -37,9 +37,11 @@ import com.itb.aplikasitoko.ui.home.bottom_nav.PelangganOrder;
 import com.itb.aplikasitoko.ui.home.bottom_nav.shopping.Payment;
 import com.itb.aplikasitoko.ui.home.bottom_nav.shopping.ShoppingCart;
 import com.itb.aplikasitoko.util.Modul;
+import com.itb.aplikasitoko.util.NumberTextWatcher;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -278,7 +280,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 int jumlah = Integer.parseInt(binder.tvJumlah.getText().toString());
-                double hargaBaru = Modul.strToDouble(binder.eHarga.getText().toString());
+                double hargaBaru = Modul.strToDouble(Modul.unnumberFormat(binder.eHarga.getText().toString()));
 
                 service.setJumlahBeli(modelBarang,  modelDetailJual.getJumlahjual(),jumlah,hargaBaru);
                 //Toast.makeText(getContext(), String.valueOf(modelDetailJual.getJumlahjual()), Toast.LENGTH_SHORT).show();
@@ -292,6 +294,7 @@ public class HomeFragment extends Fragment {
             }
         });
         binder.eHarga.setText(Modul.toString(modelDetailJual.getHargajual()));
+        binder.eHarga.addTextChangedListener(new NumberTextWatcher(binder.eHarga, new Locale("id","ID"),0));
         binder.cbHarga.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
@@ -331,9 +334,15 @@ public class HomeFragment extends Fragment {
 
     public void setTotal(){
         if(service.getBarang().size() == 0){
-            binding.viewTotal.setVisibility(View.GONE);
-        }else{
-            binding.viewTotal.setVisibility(View.VISIBLE);
+            binding.viewTotal.setBackgroundColor(getContext().getColor(R.color.darkgrey));
+            binding.tvJumlah.setTextColor(getContext().getColor(R.color.darkergrey));
+            binding.tvTotal.setTextColor(getContext().getColor(R.color.darkergrey));
+            binding.textviewtotal.setTextColor(getContext().getColor(R.color.darkergrey));
+        } else {
+            binding.viewTotal.setBackgroundColor(getContext().getColor(R.color.teal_700));
+            binding.tvJumlah.setTextColor(getContext().getColor(R.color.white));
+            binding.tvTotal.setTextColor(getContext().getColor(R.color.white));
+            binding.textviewtotal.setTextColor(getContext().getColor(R.color.white));
         }
         binding.tvJumlah.setText(String.valueOf(service.getJumlah()));
         binding.tvTotal.setText(Modul.removeE(service.getTotal()));

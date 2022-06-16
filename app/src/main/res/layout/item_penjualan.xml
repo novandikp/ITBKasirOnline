@@ -34,14 +34,14 @@
                     android:id="@+id/txtDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
                     android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
                     android:text="18 May 2022"
                     android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:textSize="20sp" />
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -74,19 +74,19 @@
                             android:layout_marginBottom="0dp"
                             android:text="Faktur Jual"
                             android:textColor="@color/primary1"
-                            android:textSize="@dimen/FS_type1a"
+                            android:textSize="13dp"
                             android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/isiFakturJual"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="0dp"
-                            android:layout_marginBottom="0dp"
                             android:layout_marginLeft="10dp"
+                            android:layout_marginTop="0dp"
                             android:layout_marginRight="10dp"
+                            android:layout_marginBottom="0dp"
                             android:text="000"
-                            android:textSize="@dimen/FS_type1a" />
+                            android:textSize="13dp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -98,25 +98,25 @@
                             android:id="@+id/txtPelanggan"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="0dp"
-                            android:layout_marginBottom="0dp"
                             android:layout_marginLeft="10dp"
+                            android:layout_marginTop="0dp"
                             android:layout_marginRight="10dp"
+                            android:layout_marginBottom="0dp"
                             android:text="Pelanggan"
                             android:textColor="@color/primary1"
-                            android:textStyle="bold"
-                            android:textSize="@dimen/FS_type1a" />
+                            android:textSize="13dp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/isipelanggan"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="0dp"
-                            android:layout_marginBottom="0dp"
                             android:layout_marginLeft="10dp"
+                            android:layout_marginTop="0dp"
                             android:layout_marginRight="10dp"
+                            android:layout_marginBottom="0dp"
                             android:text="Ivanna"
-                            android:textSize="@dimen/FS_type1a" />
+                            android:textSize="13dp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -128,25 +128,25 @@
                             android:id="@+id/txtPegawai"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="0dp"
-                            android:layout_marginBottom="0dp"
                             android:layout_marginLeft="10dp"
+                            android:layout_marginTop="0dp"
                             android:layout_marginRight="10dp"
+                            android:layout_marginBottom="0dp"
                             android:text="Pegawai"
                             android:textColor="@color/primary1"
-                            android:textStyle="bold"
-                            android:textSize="@dimen/FS_type1a" />
+                            android:textSize="13dp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/isiPegawai"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="0dp"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginLeft="10dp"
+                            android:layout_marginTop="0dp"
                             android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
                             android:text="Rossa"
-                            android:textSize="@dimen/FS_type1a" />
+                            android:textSize="13dp" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -165,25 +165,25 @@
                             android:id="@+id/txtBarang"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="0dp"
                             android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
                             android:layout_marginRight="10dp"
+                            android:layout_marginBottom="0dp"
                             android:text="Nama Barang"
                             android:textColor="@color/primary1"
-                            android:textStyle="bold"
-                            android:textSize="@dimen/FS_type1a" />
+                            android:textSize="13dp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/isiBarang"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="0dp"
-                            android:layout_marginBottom="0dp"
                             android:layout_marginLeft="10dp"
+                            android:layout_marginTop="0dp"
                             android:layout_marginRight="10dp"
+                            android:layout_marginBottom="0dp"
                             android:text="Kertas"
-                            android:textSize="@dimen/FS_type1a" />
+                            android:textSize="13dp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -195,25 +195,25 @@
                             android:id="@+id/txtKeterangan"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="0dp"
-                            android:layout_marginBottom="0dp"
                             android:layout_marginLeft="10dp"
+                            android:layout_marginTop="0dp"
                             android:layout_marginRight="10dp"
+                            android:layout_marginBottom="0dp"
                             android:text="Keterangan"
                             android:textColor="@color/primary1"
-                            android:textStyle="bold"
-                            android:textSize="@dimen/FS_type1a" />
+                            android:textSize="13dp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/isiKeterangan"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="0dp"
-                            android:layout_marginBottom="0dp"
                             android:layout_marginLeft="10dp"
+                            android:layout_marginTop="0dp"
                             android:layout_marginRight="10dp"
+                            android:layout_marginBottom="0dp"
                             android:text="1 pcs"
-                            android:textSize="@dimen/FS_type1a" />
+                            android:textSize="13dp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -225,25 +225,25 @@
                             android:id="@+id/txtKeuntungan"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="0dp"
-                            android:layout_marginBottom="0dp"
                             android:layout_marginLeft="10dp"
+                            android:layout_marginTop="0dp"
                             android:layout_marginRight="10dp"
+                            android:layout_marginBottom="0dp"
                             android:text="Keuntungan"
                             android:textColor="@color/primary1"
-                            android:textStyle="bold"
-                            android:textSize="@dimen/FS_type1a" />
+                            android:textSize="13dp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/isiKeuntungan"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="0dp"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginLeft="10dp"
+                            android:layout_marginTop="0dp"
                             android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
                             android:text="Rp. 150.000"
-                            android:textSize="@dimen/FS_type1a" />
+                            android:textSize="13dp" />
                     </LinearLayout>
                 </LinearLayout>
 
