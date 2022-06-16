@@ -47,9 +47,9 @@
                 android:padding="5.2dp"
                 android:text="Rp. 0"
                 android:textAlignment="center"
-                android:textColor="#3F4F4F"
+                android:textColor="@color/black"
                 android:textSize="@dimen/FS_type1a"
-                android:textStyle="italic"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -161,10 +161,9 @@
         <LinearLayout
             android:id="@+id/linearLayout4"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="190dp"
+            android:layout_height="0dp"
             android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/topHorizontalDivider">
@@ -173,26 +172,30 @@
                 android:id="@+id/itemPenjualan"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginBottom="60dp" />
+                android:layout_marginTop="0dp" />
         </LinearLayout>
 
-        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-            android:id="@+id/btnExcel"
-            android:layout_width="0dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="16dp"
-            android:text="Export Excel"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            app:iconTint="#FFFFFF"
-            android:backgroundTint="#2F4F4F"
+        <LinearLayout
+            android:id="@+id/linearLayout5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/btnExcel"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/success"
+                android:text="Export Excel"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                app:iconTint="#FFFFFF" />
+        </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>
