@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.itb.aplikasitoko.Adapter.RekapKategoriAdapter;
 import com.itb.aplikasitoko.Api;
+import com.itb.aplikasitoko.Component.LoadingDialog;
 import com.itb.aplikasitoko.Database.Repository.KategoriRepository;
 import com.itb.aplikasitoko.Response.RekapKategoriResp;
 import com.itb.aplikasitoko.ViewModel.ViewModelRekapKategori;
@@ -150,6 +151,7 @@ public class RekapKategori extends AppCompatActivity {
     }
 
     public void refreshData(boolean fetch){
+        LoadingDialog.load(RekapKategori.this);
         String cari = bind.searchView.getQuery().toString();
 
 //        kategoriRepository.getRekapKategori(137).observe(this, new Observer<List<ViewModelRekapKategori>>() {
@@ -166,6 +168,7 @@ public class RekapKategori extends AppCompatActivity {
             rekapKategoriRespCall.enqueue(new Callback<RekapKategoriResp>() {
                 @Override
                 public void onResponse(Call<RekapKategoriResp> call, Response<RekapKategoriResp> response) {
+                    LoadingDialog.close();
                     if (response.isSuccessful()){
                         data.clear();
                         data.addAll(response.body().getData());
@@ -177,7 +180,8 @@ public class RekapKategori extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<RekapKategoriResp> call, Throwable t) {
-
+                    LoadingDialog.close();
+                    Toast.makeText(RekapKategori.this, t.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
         }

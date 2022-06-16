@@ -157,12 +157,14 @@ public class MasterSatuan extends AppCompatActivity {
     }
 
     public void refreshData(boolean fetch){
+        LoadingDialog.load(MasterSatuan.this);
         String cari = bind.searchSatuan.getQuery().toString();
 
         //get sqlite
         satuanRepository.getAllSatuan(cari).observe(this, new Observer<List<ModelSatuan>>() {
             @Override
             public void onChanged(List<ModelSatuan> modelSatuans) {
+                LoadingDialog.close();
                 data.clear();
                 data.addAll(modelSatuans);
                 adapter.notifyDataSetChanged();
@@ -176,6 +178,7 @@ public class MasterSatuan extends AppCompatActivity {
             call.enqueue(new Callback<SatuanGetResp>() {
                 @Override
                 public void onResponse(Call<SatuanGetResp> call, Response<SatuanGetResp> response) {
+                    LoadingDialog.close();
                     if (data.size() != response.body().getData().size() || !data.equals(response.body().getData())) {
                         // memasukkan inputan ke sqlite jika tak ada yg sama
                         satuanRepository.insertAll(response.body().getData(), true);
@@ -188,6 +191,7 @@ public class MasterSatuan extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<SatuanGetResp> call, Throwable t) {
+                    LoadingDialog.close();
                     Toast.makeText(MasterSatuan.this, t.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });

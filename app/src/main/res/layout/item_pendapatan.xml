@@ -40,7 +40,7 @@
                     android:layout_marginBottom="10dp"
                     android:text="18 May 2022"
                     android:textColor="@color/white"
-                    android:textSize="13dp"
+                    android:textSize="@dimen/FS_type1a"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -56,10 +56,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:paddingLeft="5dp">
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="82dp"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="4dp"
                         android:orientation="vertical">
@@ -77,7 +78,7 @@
                             android:id="@+id/txtPelanggan"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-
+                            android:layout_marginTop="4dp"
                             android:text="Pelanggan"
                             android:textColor="@color/primary1"
                             android:textSize="13dp"
@@ -85,8 +86,9 @@
 
                         <TextView
                             android:id="@+id/txtPegawai"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
                             android:text="Pegawai"
                             android:textColor="@color/primary1"
                             android:textSize="13dp"
@@ -96,6 +98,8 @@
                             android:id="@+id/txtPendapatan"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="4dp"
                             android:text="Pendapatan"
                             android:textColor="@color/primary1"
                             android:textSize="13dp"
@@ -104,7 +108,7 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:orientation="vertical">
@@ -122,21 +126,25 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Ivanna"
-                            android:textSize="13dp" />
+                            android:textSize="13dp"
+                            android:layout_marginTop="4dp"/>
+
+                        <TextView
+                            android:id="@+id/isiPegawai"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rose"
+                            android:textSize="13dp"
+                            android:layout_marginTop="4dp"/>
 
                         <TextView
                             android:id="@+id/isiPendapatan"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Rp. 150.000"
-                            android:textSize="13dp" />
-
-                        <TextView
-                            android:id="@+id/isiPegawai"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Rossa"
-                            android:textSize="13dp" />
+                            android:textSize="13dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="4dp"/>
                     </LinearLayout>
                 </LinearLayout>
 

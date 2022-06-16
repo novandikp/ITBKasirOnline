@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.itb.aplikasitoko.Adapter.LapPenjualanAdapter;
 import com.itb.aplikasitoko.Api;
+import com.itb.aplikasitoko.Component.LoadingDialog;
 import com.itb.aplikasitoko.Response.PenjualanGetResp;
 import com.itb.aplikasitoko.ViewModel.ViewModelDetailJual;
 import com.itb.aplikasitoko.databinding.ActivityLaporanPenjualanBinding;
@@ -24,6 +25,7 @@ import com.itb.aplikasitoko.util.ModulExcel;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -139,6 +141,7 @@ public class LaporanPenjualan extends AppCompatActivity {
     }
 
     public void refreshData(boolean fetch){
+        LoadingDialog.load(LaporanPenjualan.this);
         String cari = bind.searchView.getQuery().toString();
         String mulai = bind.dateFrom.getText().toString();
         String sampai = bind.dateTo.getText().toString();
@@ -148,6 +151,7 @@ public class LaporanPenjualan extends AppCompatActivity {
             penjualanGetRespCall.enqueue(new Callback<PenjualanGetResp>() {
                 @Override
                 public void onResponse(Call<PenjualanGetResp> call, Response<PenjualanGetResp> response) {
+                    LoadingDialog.close();
                     if (response.isSuccessful()){
                         data.clear();
                         if (response.isSuccessful()){
@@ -160,6 +164,7 @@ public class LaporanPenjualan extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<PenjualanGetResp> call, Throwable t) {
+                    LoadingDialog.close();
                     Toast.makeText(LaporanPenjualan.this, t.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
@@ -231,7 +236,11 @@ public class LaporanPenjualan extends AppCompatActivity {
         for (ViewModelDetailJual detailJual : data){
             int col = 0;
             ModulExcel.addLabel(sheet, col++, row, Modul.intToStr(no));
-            ModulExcel.addLabel(sheet, col++, row, detailJual.getTanggal_jual());
+            try {
+                ModulExcel.addLabel(sheet, col++, row, Modul.tanggalku(detailJual.getTanggal_jual()));
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
             ModulExcel.addLabel(sheet, col++, row, detailJual.getFakturjual());
             ModulExcel.addLabel(sheet, col++, row, detailJual.getNama_pelanggan());
             ModulExcel.addLabel(sheet, col++, row, detailJual.getBarang());

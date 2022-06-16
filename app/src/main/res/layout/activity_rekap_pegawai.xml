@@ -177,7 +177,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="0dp"
                 android:layout_marginRight="8dp"
-                android:layout_marginBottom="0dp" />
+                android:layout_marginBottom="60dp" />
         </LinearLayout>
 
         <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton

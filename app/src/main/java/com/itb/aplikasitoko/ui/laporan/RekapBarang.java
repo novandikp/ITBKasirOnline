@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.itb.aplikasitoko.Adapter.RekapBarangAdapter;
 import com.itb.aplikasitoko.Api;
+import com.itb.aplikasitoko.Component.LoadingDialog;
 import com.itb.aplikasitoko.Response.RekapBarangResp;
 import com.itb.aplikasitoko.ViewModel.ViewModelRekapBarang;
 import com.itb.aplikasitoko.databinding.ActivityRekapBarangBinding;
@@ -137,6 +138,7 @@ public class RekapBarang extends AppCompatActivity {
                 return false;
             }
         });
+
     }
 
     public void setTotal(){
@@ -148,12 +150,14 @@ public class RekapBarang extends AppCompatActivity {
     }
 
     public void refreshData(boolean fetch){
+        LoadingDialog.load(RekapBarang.this);
         String cari = bind.searchView.getQuery().toString();
         if (true){
             Call<RekapBarangResp> rekapBarangRespCall = Api.RekapBarang(RekapBarang.this).getRekapBarang(cari);
             rekapBarangRespCall.enqueue(new Callback<RekapBarangResp>() {
                 @Override
                 public void onResponse(Call<RekapBarangResp> call, Response<RekapBarangResp> response) {
+                    LoadingDialog.close();
                     if (response.isSuccessful()){
                         data.clear();
                         data.addAll(response.body().getData());
@@ -165,6 +169,8 @@ public class RekapBarang extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<RekapBarangResp> call, Throwable t) {
+                    LoadingDialog.close();
+                    Toast.makeText(RekapBarang.this, t.getMessage(), Toast.LENGTH_SHORT).show();
 
                 }
             });

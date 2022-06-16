@@ -111,12 +111,14 @@ public class MasterPegawai extends AppCompatActivity {
 
 
     public void refreshData(boolean fetch){
+        LoadingDialog.load(MasterPegawai.this);
         //inisiasi cari dr file layout
         String cari = bind.searchPegawai.getQuery().toString();
         //get SQLite
         pr.getAllPegawai(cari).observe(this, new Observer<List<ModelPegawai>>() {
             @Override
             public void onChanged(List<ModelPegawai> modelPegawais) {
+                LoadingDialog.close();
                 data.clear();
                 data.addAll(modelPegawais);
                 pa.notifyDataSetChanged();
@@ -129,6 +131,7 @@ public class MasterPegawai extends AppCompatActivity {
             pegawaiGetRespCall.enqueue(new Callback<PegawaiGetResp>() {
                 @Override
                 public void onResponse(Call<PegawaiGetResp> call, Response<PegawaiGetResp> response) {
+                    LoadingDialog.close();
                     if (data.size() != response.body().getData().size() || !data.equals(response.body().getData())) {
                         //Memasukkan ke db kalau gada yg sm
                         pr.insertAll(response.body().getData(), true);
@@ -142,6 +145,7 @@ public class MasterPegawai extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<PegawaiGetResp> call, Throwable t) {
+                    LoadingDialog.close();
                     Toast.makeText(MasterPegawai.this, t.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });

@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.SearchView;
+import android.widget.Toast;
 
 import com.itb.aplikasitoko.Adapter.KategoriAdapter;
 import com.itb.aplikasitoko.Api;
@@ -110,12 +111,14 @@ public class MasterDaftarKategori extends AppCompatActivity {
     }
 
     public void refreshData(boolean fetch) {
+        LoadingDialog.load(MasterDaftarKategori.this);
         String cari = bind.searchKategori.getQuery().toString();
 
         // Get sqlite
         kategoriRepository.getAllKategori(cari).observe(this, new Observer<List<ModelKategori>>() {
             @Override
             public void onChanged(List<ModelKategori> kategoris) {
+                LoadingDialog.close();
                 data.clear();
                 data.addAll(kategoris);
                 adapter.notifyDataSetChanged();
@@ -128,6 +131,7 @@ public class MasterDaftarKategori extends AppCompatActivity {
             call.enqueue(new Callback<KategoriGetResp>() {
                 @Override
                 public void onResponse(Call<KategoriGetResp> call, Response<KategoriGetResp> response) {
+                    LoadingDialog.close();
                     if(response.body().getStatus()) {
                         if (data.size() != response.body().getData().size() || !data.equals(response.body().getData())) {
                             //  Masukan data pada sqlite jika data tidak ada
@@ -142,6 +146,8 @@ public class MasterDaftarKategori extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<KategoriGetResp> call, Throwable t) {
+                    LoadingDialog.close();
+                    Toast.makeText(MasterDaftarKategori.this, t.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
         }
