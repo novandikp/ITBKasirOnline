@@ -23,17 +23,17 @@ public interface LaporanService {
 
     //REKAP KATEGORI
     @GET("report/kategori")
-    Call<RekapKategoriResp> getRekapKategori(@Query("cari") String cari);
+    Call<RekapKategoriResp> getRekapKategori(@Query("cari") String cari, @Query("mulai") String mulai, @Query("sampai") String sampai);
 
     //REKAP BARANG
     @GET("report/barang")
-    Call<RekapBarangResp> getRekapBarang(@Query("cari") String cari);
+    Call<RekapBarangResp> getRekapBarang(@Query("cari") String cari, @Query("mulai") String mulai, @Query("sampai") String sampai);
 
     //REKAP PELANGAGN
     @GET("report/pelanggan")
-    Call<RekapPelangganResp> getRekapPelanggan(@Query("cari") String cari);
+    Call<RekapPelangganResp> getRekapPelanggan(@Query("cari") String cari, @Query("mulai") String mulai, @Query("sampai") String sampai);
 
     //REKAP PEGAWAU
     @GET("report/pegawai")
-    Call<RekapPegawaiResp> getRekapPegawai(@Query("cari") String cari);
+    Call<RekapPegawaiResp> getRekapPegawai(@Query("cari") String cari, @Query("mulai") String mulai, @Query("sampai") String sampai);
 }
