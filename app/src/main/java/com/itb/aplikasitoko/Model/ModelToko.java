@@ -89,6 +89,12 @@ public class ModelToko {
         return jenis_toko;
     }
 
+
+
+    public boolean isValidIdentitas(){
+        return !(nama_pemilik.isEmpty() ||  alamat_toko.isEmpty() || nama_toko.isEmpty());
+    }
+
     public void setJenis_toko(String jenis_toko) {
         this.jenis_toko = jenis_toko;
     }

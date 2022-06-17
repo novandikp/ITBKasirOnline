@@ -62,7 +62,8 @@ public class EditPegawai extends AppCompatActivity {
                     inPin.setError("Harap isi dengan benar");
 
                 } else {
-                    ModelPegawai mp = new ModelPegawai(nama, alamat, Modul.phoneFormat(telp), pin);
+                    telp = Modul.PhoneFormat(telp);
+                    ModelPegawai mp = new ModelPegawai(nama, alamat, telp, pin);
                     mp.setIdpegawai(id);
                     UpdatePeg(mp.getIdpegawai(), mp);
                 }

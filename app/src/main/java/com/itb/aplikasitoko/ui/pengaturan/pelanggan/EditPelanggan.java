@@ -57,7 +57,8 @@ public class EditPelanggan extends AppCompatActivity {
                     inTelp.setError("Harap isi dengan benar");
                 } else {
                     //setiap update butuh id, tapi gk bisa lgsg dimasukkan ke parameter, jd hrs dipisah saat di inisiasi
-                    ModelPelanggan mp = new ModelPelanggan(nama, alamat, Modul.phoneFormat(telp));
+                    telp = Modul.PhoneFormat(telp);
+                    ModelPelanggan mp = new ModelPelanggan(nama, alamat, telp);
                     mp.setIdpelanggan(id);
                     UpdatePel(mp.getIdpelanggan(), mp);
                 }

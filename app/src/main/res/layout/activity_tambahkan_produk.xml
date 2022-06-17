@@ -237,7 +237,7 @@
                     android:id="@+id/nextToMainPage"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:backgroundTint="#2F4F4F"
+                    android:backgroundTint="@color/default1"
                     android:text="Next"
                     android:textColor="#FFFFFF"/>
             </LinearLayout>

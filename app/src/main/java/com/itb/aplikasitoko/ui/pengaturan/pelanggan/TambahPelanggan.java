@@ -63,7 +63,8 @@ public class TambahPelanggan extends AppCompatActivity {
                     inAlamat.setError("Harap isi dengan benar");
                     inTelp.setError("Harap isi dengan benar");
                 } else {
-                    ModelPelanggan mp = new ModelPelanggan(nama, alamat, Modul.phoneFormat(telp));
+                    telp = Modul.PhoneFormat(telp);
+                    ModelPelanggan mp = new ModelPelanggan(nama, alamat, telp);
                     PostPel(mp);
                 }
             }

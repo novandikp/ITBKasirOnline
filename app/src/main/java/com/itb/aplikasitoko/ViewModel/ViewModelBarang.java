@@ -75,4 +75,6 @@ public class ViewModelBarang {
     public void setIdtoko(String idtoko) {
         this.idtoko = idtoko;
     }
+
+
 }

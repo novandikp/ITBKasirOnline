@@ -151,7 +151,7 @@
                         android:id="@+id/signIn"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
-                        android:backgroundTint="#2F4F4F"
+                        android:backgroundTint="@color/default1"
                         android:text="Login"
                         android:textColor="#FFFFFF"/>
 
@@ -177,7 +177,7 @@
                             android:layout_height="match_parent"
                             android:onClick="register"
                             android:text="Register"
-                            android:textColor="@color/teal_800"
+                            android:textColor="@color/default1"
                             android:textSize="@dimen/FS_type1a" />
                     </LinearLayout>
 

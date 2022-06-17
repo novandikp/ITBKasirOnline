@@ -74,7 +74,7 @@ public class HomePage extends AppCompatActivity {
                             LoadingDialog.load(HomePage.this);
                             SpHelper sp = new SpHelper(HomePage.this);
                             sp.clearAll();
-
+                            finish();
                             startActivity(new Intent(HomePage.this, LoginActivity.class));
                         }
                     }).setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
@@ -95,7 +95,7 @@ public class HomePage extends AppCompatActivity {
                             LoadingDialog.load(HomePage.this);
                             SpHelper sp = new SpHelper(HomePage.this);
                             sp.clearPegawai();
-
+                            finish();
                             startActivity(new Intent(HomePage.this, LoginPegawai.class));
                         }
                     }).setNegativeButton("Tidak", new DialogInterface.OnClickListener() {

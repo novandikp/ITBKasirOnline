@@ -34,12 +34,13 @@
                         android:id="@+id/iconLaporanPendapatan"
                         android:layout_width="35dp"
                         android:layout_height="match_parent"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginLeft="7dp"
+                        android:layout_marginRight="3dp"
                         android:paddingLeft="7dp"
                         android:paddingTop="7dp"
                         android:paddingRight="7dp"
                         android:paddingBottom="7dp"
-                        android:src="@drawable/ic_master_category" />
+                        android:src="@drawable/laporan_pendapatan" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -52,6 +53,7 @@
                             android:id="@+id/textLaporanPendapatan"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="0dp"
                             android:paddingLeft="7dp"
                             android:paddingTop="6dp"
                             android:paddingRight="5dp"
@@ -88,7 +90,7 @@
                         android:paddingTop="7dp"
                         android:paddingRight="7dp"
                         android:paddingBottom="7dp"
-                        android:src="@drawable/ic_master_product" />
+                        android:src="@drawable/laporan_penjualan" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -137,7 +139,7 @@
                         android:paddingTop="7dp"
                         android:paddingRight="7dp"
                         android:paddingBottom="7dp"
-                        android:src="@drawable/ic_master_satuan" />
+                        android:src="@drawable/laporan_barang2" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -185,7 +187,7 @@
                         android:paddingTop="7dp"
                         android:paddingRight="7dp"
                         android:paddingBottom="7dp"
-                        android:src="@drawable/ic_master_pelanggan" />
+                        android:src="@drawable/laporan_kategori" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -229,11 +231,11 @@
                         android:layout_width="35dp"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="10dp"
-                        android:paddingLeft="7dp"
+                        android:paddingLeft="6dp"
                         android:paddingTop="7dp"
-                        android:paddingRight="7dp"
+                        android:paddingRight="6dp"
                         android:paddingBottom="7dp"
-                        android:src="@drawable/ic_master_pegawai" />
+                        android:src="@drawable/laporan_pelanggan" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -277,11 +279,11 @@
                         android:layout_width="35dp"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="10dp"
-                        android:paddingLeft="7dp"
-                        android:paddingTop="7dp"
-                        android:paddingRight="7dp"
-                        android:paddingBottom="7dp"
-                        android:src="@drawable/ic_master_category" />
+                        android:paddingLeft="6dp"
+                        android:paddingTop="6dp"
+                        android:paddingRight="6dp"
+                        android:paddingBottom="6dp"
+                        android:src="@drawable/laporan_pegawai" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
