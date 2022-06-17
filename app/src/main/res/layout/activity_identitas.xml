@@ -227,7 +227,7 @@
                                 android:layout_weight="1"
                                 android:hint="Ukuran Printer"
                                 android:inputType="none"
-                                android:text="56mm"
+                                android:text="58mm"
                                 android:textSize="@dimen/FS_type1a" />
                         </com.google.android.material.textfield.TextInputLayout>
 
