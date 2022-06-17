@@ -30,8 +30,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AuthApp"
         android:usesCleartextTraffic="true"
-        android:largeHeap="true"
-        android:hardwareAccelerated="false"
         >
         <activity
             android:name=".ui.load.LoadActivity"
