@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -72,10 +73,10 @@ import java.util.Locale;
     public void Del(View view){
         String recentValue = bind.inBayar.getText().toString().replace(".","").replace("Rp", "");
         if (recentValue.length() >= 1 ){
+            recentValue = recentValue.replace(",00","").replace(",0","");
             Bayar = recentValue.substring(0, recentValue.length() - 1);
             setBayar("");
         } else {
-
             Bayar = "0";
             setBayar("");
         }
