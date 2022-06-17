@@ -33,7 +33,7 @@ import com.itb.aplikasitoko.ViewModel.ViewModelJual;
         ModelJual.class,
         ModelDetailJual.class,
         ModelToko.class
-}, views = {ModelViewStruk.class, ViewModelJual.class},version = 11)
+}, views = {ModelViewStruk.class, ViewModelJual.class},version = 14)
 public abstract class KasirDatabase extends RoomDatabase {
     private static final String name_database = "KasirDB";
 

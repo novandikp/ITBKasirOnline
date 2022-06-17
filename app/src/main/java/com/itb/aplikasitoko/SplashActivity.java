@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import com.itb.aplikasitoko.SharedPref.SpHelper;
 import com.itb.aplikasitoko.ui.load.LoadActivity;
 import com.itb.aplikasitoko.ui.pengaturan.pegawai.LoginPegawai;
+import com.itb.aplikasitoko.util.Modul;
 
 
 public class SplashActivity extends AppCompatActivity{
@@ -36,8 +37,9 @@ public class SplashActivity extends AppCompatActivity{
             public void run() {
                 switch (cek) {
                     case Config.PageSigned.DASHBOARD:
-                        if(sp.getValue("isFirstLogin","").equals("")){
-                            sp.setValue("isFirstLogin","y");
+
+                        if(!sp.getValue("isFirstLogin","").equals(Modul.getDate("yyyy-MM-dd"))){
+                            sp.setValue("isFirstLogin",Modul.getDate("yyyy-MM-dd"));
                             startActivity(new Intent(SplashActivity.this, LoadActivity.class));
                         }else{
                             startActivity(new Intent(SplashActivity.this, LoginPegawai.class));

@@ -45,6 +45,8 @@ public class InformasiBisnis extends AppCompatActivity {
         //mySpinner.setAdapter(myAdapter);
         JenisUsaha.setAdapter(myAdapter);
          spHelper = new SpHelper(this);
+        spHelper.setValue(Config.lastPageSign,Config.PageSigned.PROFIL);
+
 
         bind.nextToTambahProduk.setOnClickListener(new View.OnClickListener() {
             @Override

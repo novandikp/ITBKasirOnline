@@ -15,15 +15,17 @@ import java.util.TimeZone;
                 "    tbljual.total,\n" +
                 "    tbljual.kembali,\n" +
                 "    tbljual.potongan,\n" +
-                "    tblpelanggan.idpelanggan,\n" +
+                "    tbljual.idpelanggan,\n" +
                 "    tbljual.tanggal_jual,\n" +
-                "    tblpelanggan.nama_pelanggan,\n" +
-                "    tblpelanggan.alamat_pelanggan,\n" +
-                "    tblpelanggan.no_telepon\n" +
+                "    coalesce(tblpelanggan.nama_pelanggan,'Umum') as nama_pelanggan,\n" +
+               "    tblpegawai.nama_pegawai,\n" +
+                "   coalesce( tblpelanggan.alamat_pelanggan,'-') as alamat_pelanggan ,\n" +
+                "   coalesce( tblpelanggan.no_telepon,'-') as no_telepon\n" +
                 "    \n" +
-                "   FROM (tbljual\n" +
-                "     JOIN tblpelanggan ON (tbljual.idpelanggan = tblpelanggan.idpelanggan)\n" +
-                "     );\n" +
+                "   FROM tbljual\n" +
+               "    JOIN tblpegawai on tbljual.idpegawai = tblpegawai.idpegawai"+
+                "    LEFT JOIN tblpelanggan ON tbljual.idpelanggan = tblpelanggan.idpelanggan\n" +
+                "     ;\n" +
                 "     ",viewName = "viewJual"
 )
 public class ViewModelJual {
