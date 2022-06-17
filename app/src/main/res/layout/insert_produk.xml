@@ -214,6 +214,7 @@
                         android:paddingLeft="3dp"
                         android:fontFamily="sans-serif-medium"
                         android:text="Stok Awal"
+                        android:visibility="gone"
                         android:textAlignment="textStart"
                         android:textSize="@dimen/FS_type1a" />
 
@@ -225,6 +226,7 @@
                         android:layout_marginRight="20dp"
                         android:ems="10"
                         android:hint="Masukkan Stok Awal"
+                        android:visibility="gone"
                         android:inputType="number"
                         android:minHeight="48dp"
                         android:text="0"

@@ -366,7 +366,7 @@
         android:layout_marginBottom="8dp"
         android:text="Cetak"
         android:textColor="@color/white"
-        android:backgroundTint="#2F4F4F"/>
+        android:backgroundTint="@color/default1"/>
 
 
     <!--    <androidx.appcompat.widget.Toolbar-->
