@@ -279,8 +279,12 @@ public class HomeFragment extends Fragment {
         alertBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                int jumlah = Integer.parseInt(binder.tvJumlah.getText().toString());
+                int jumlah =Modul.strToInt(binder.tvJumlah.getText().toString());
                 double hargaBaru = Modul.strToDouble(Modul.unnumberFormat(binder.eHarga.getText().toString()));
+                if(binder.tvJumlah.getText().toString().isEmpty()){
+                    binder.tvJumlah.setError("Harap isi dengan benar");
+                    return;
+                }
 
                 service.setJumlahBeli(modelBarang,  modelDetailJual.getJumlahjual(),jumlah,hargaBaru);
                 setTotal();
