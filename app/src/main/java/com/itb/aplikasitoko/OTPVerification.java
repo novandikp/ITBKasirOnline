@@ -38,6 +38,8 @@ public class OTPVerification extends AppCompatActivity {
         NoHp = sp.getValue(Config.phoneOTP);
         EditText kode = bind.kodeOTP;
 
+        setResendTimer();
+
         bind.submitKodeOTP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

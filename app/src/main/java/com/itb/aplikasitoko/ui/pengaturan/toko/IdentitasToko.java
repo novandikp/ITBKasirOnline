@@ -106,16 +106,6 @@ public class IdentitasToko extends AppCompatActivity {
             }
         });
 
-        if (bind.lokasiUsaha.getText().toString().isEmpty() || bind.namaUsaha.getText().toString().isEmpty() ||
-                bind.namaPemilik.getText().toString().isEmpty() || bind.JenisUsaha.getText().toString().isEmpty() || bind.ukuranPrinter.getText().toString().isEmpty()) {
-
-            bind.namaPemilik.setError("Tidak boleh kosong");
-            bind.namaUsaha.setError("Tidak boleh kosong");
-            bind.JenisUsaha.setError("Tidak boleh kosong");
-            bind.lokasiUsaha.setError("Tidak boleh kosong");
-            bind.ukuranPrinter.setError("Tidak boleh kosong");
-        }
-
 
     }
 
@@ -166,6 +156,16 @@ public class IdentitasToko extends AppCompatActivity {
     }
 
     public void updateProfil(ModelToko modelToko){
+        if (bind.lokasiUsaha.getText().toString().isEmpty() || bind.namaUsaha.getText().toString().isEmpty() ||
+                bind.namaPemilik.getText().toString().isEmpty() || bind.JenisUsaha.getText().toString().isEmpty() || bind.ukuranPrinter.getText().toString().isEmpty()) {
+
+            bind.namaPemilik.setError("Tidak boleh kosong");
+            bind.namaUsaha.setError("Tidak boleh kosong");
+            bind.JenisUsaha.setError("Tidak boleh kosong");
+            bind.lokasiUsaha.setError("Tidak boleh kosong");
+            bind.ukuranPrinter.setError("Tidak boleh kosong");
+            return;
+        }
         LoadingDialog.load(IdentitasToko.this);
         Call<IdentitasResponse> identitasResponseCall = Api.Identitas(IdentitasToko.this).postIdentitas(modelToko);
         identitasResponseCall.enqueue(new Callback<IdentitasResponse>() {
@@ -173,11 +173,13 @@ public class IdentitasToko extends AppCompatActivity {
             public void onResponse(Call<IdentitasResponse> call, Response<IdentitasResponse> response) {
                 LoadingDialog.close();
                 tokoRepository.insert(modelToko);
+
                 if (response.isSuccessful()){
                     SuccessDialog.message(IdentitasToko.this,getString(R.string.updated_success),bind.getRoot());
                 } else {
                     ErrorDialog.message(IdentitasToko.this,getString(R.string.updated_error),bind.getRoot());
                 }
+
             }
 
             @Override

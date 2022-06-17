@@ -99,6 +99,7 @@
                 android:ems="10"
                 android:hint="PIN Pegawai"
                 android:inputType="number"
+                android:maxLength="4"
                 android:textSize="@dimen/FS_type1a"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"

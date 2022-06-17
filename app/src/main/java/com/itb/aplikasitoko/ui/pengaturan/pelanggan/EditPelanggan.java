@@ -17,6 +17,7 @@ import com.itb.aplikasitoko.Model.ModelPelanggan;
 import com.itb.aplikasitoko.R;
 import com.itb.aplikasitoko.Response.PelangganResponse;
 import com.itb.aplikasitoko.databinding.EditPelangganBinding;
+import com.itb.aplikasitoko.util.Modul;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -49,7 +50,7 @@ public class EditPelanggan extends AppCompatActivity {
                 int id = getIntent().getIntExtra("idpelanggan", 0);
                 String nama = inNama.getText().toString();
                 String alamat = inAlamat.getText().toString();
-                String telp = inTelp.getText().toString();
+                String telp = Modul.PhoneFormat(inTelp.getText().toString());
                 if (nama.isEmpty() || alamat.isEmpty() || telp.isEmpty()){
                     inNama.setError("Harap isi dengan benar");
                     inAlamat.setError("Harap isi dengan benar");

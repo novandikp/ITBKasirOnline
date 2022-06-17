@@ -23,20 +23,24 @@
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/activity_master_pegawai.xml" value="0.165625" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/activity_master_produk.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/activity_master_satuan.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/activity_otpverification.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/activity_rekap_barang.xml" value="0.22" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/activity_rekap_kategori.xml" value="0.18854166666666666" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/activity_rekap_pegawai.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/activity_rekap_pelanggan.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/activity_tambahkan_produk.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/activity_telp_verification.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/edit_pegawai.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/edit_produk.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/fragment_home.xml" value="0.67" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/fragment_print_penjualan.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/insert_pegawai.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/insert_produk.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/item_home.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/item_pendapatan.xml" value="0.33" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/item_print_penjualan.xml" value="0.5" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/item_produk.xml" value="0.47784200385356457" />
+        <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/login_pegawai.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/splash_activity.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/LEGION/AndroidStudioProjects/ITBKasirOnline/app/src/main/res/drawable-v24/ic_notifications_black_24dp.xml" value="0.1" />
         <entry key="..\:/Users/LEGION/AndroidStudioProjects/ITBKasirOnline/app/src/main/res/layout/activity_bayar.xml" value="0.25416666666666665" />

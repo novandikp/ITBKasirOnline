@@ -137,4 +137,9 @@ public class Modul {
         SimpleDateFormat formatBaru = new SimpleDateFormat("yyyy-MM-dd", new Locale("id", "ID"));
         return formatBaru.format(tanggal1);
     }
+
+    public static String PhoneFormat(String telp) {
+        String telpon = telp.substring(0,1).replace("0", "62")+telp.substring(1);
+        return telpon;
+    }
 }

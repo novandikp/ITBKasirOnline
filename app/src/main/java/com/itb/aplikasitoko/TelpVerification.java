@@ -15,6 +15,7 @@ import com.itb.aplikasitoko.Model.ModelToko;
 import com.itb.aplikasitoko.Response.OtpResponse;
 import com.itb.aplikasitoko.SharedPref.SpHelper;
 import com.itb.aplikasitoko.databinding.ActivityTelpVerificationBinding;
+import com.itb.aplikasitoko.util.Modul;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -32,14 +33,13 @@ public class TelpVerification extends AppCompatActivity {
         setContentView(bind.getRoot());
         SpHelper sp = new SpHelper(this); //disimpan di minta otp
 
-        NoTelp = bind.noTelp;
+        String NoTelp = bind.noTelp.getText().toString();
         bind.sendKodeOTP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ModelToko modelToko = new ModelToko();
-                String telpon = NoTelp.getText().toString();
-                modelToko.setNomer_toko(telpon.substring(0,1).replace("0", "62")+telpon.substring(1));
-                sp.setValue(Config.phoneOTP, NoTelp.getText().toString()); //ini menyimpan notelpon ke dlm shared pref
+                modelToko.setNomer_toko(Modul.getDate(NoTelp));
+                sp.setValue(Config.phoneOTP, NoTelp); //ini menyimpan notelpon ke dlm shared pref
                 MintaOtp(modelToko);
             }
         });
