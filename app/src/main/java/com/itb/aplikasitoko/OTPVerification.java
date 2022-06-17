@@ -49,7 +49,6 @@ public class OTPVerification extends AppCompatActivity {
                     kode.requestFocus();
                     kode.setError("Harap diisi");
                 } else {
-                    //Toast.makeText(OTPVerification.this, "...", Toast.LENGTH_SHORT).show();
                     VerifOtp(kode.getText().toString());
 
                 }
@@ -114,7 +113,7 @@ public class OTPVerification extends AppCompatActivity {
                     Toast.makeText(OTPVerification.this, message , Toast.LENGTH_LONG).show();
 
                 } else {
-                    String message = "Nomer telepon tidak valid";
+                    String message = Api.getError(response).message;
                     Toast.makeText(OTPVerification.this, message, Toast.LENGTH_LONG).show();
                 }
             }

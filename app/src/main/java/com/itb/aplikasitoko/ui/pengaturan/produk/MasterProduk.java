@@ -173,7 +173,6 @@ public class MasterProduk extends AppCompatActivity {
                             }
                         } else {
                             ErrorDialog.message(MasterProduk.this, getString(R.string.error_produk_message), bind.getRoot());
-                            //Toast.makeText(MasterProduk.this, response.toString(), Toast.LENGTH_SHORT).show();
                         }
                         refreshData(true);
                     }

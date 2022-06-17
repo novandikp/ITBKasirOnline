@@ -71,7 +71,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     finish();
 
                 } else {
-                    String message = "Akun tidak ditemukan";
+                    String message = Api.getError(response).message;
                     ErrorDialog.message(LoginActivity.this, message, bind.getRoot());
                 }
             }

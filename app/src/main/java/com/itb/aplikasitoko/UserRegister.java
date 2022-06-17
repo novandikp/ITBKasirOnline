@@ -63,22 +63,22 @@ public class UserRegister extends AppCompatActivity {
             public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
                 if(response.isSuccessful()) {
 
-                    //sp.setEmail(response.body());
+                    
                     SpHelper spHelper = new SpHelper(UserRegister.this);
                     spHelper.setToken(response.body().getToken());
                     sp.setEmail(response.body().getData().getEmail_toko());
 
                     String message = "Registrasi berhasil";
-                    //sp.setToken(response.body().getToken());
+                    
                     Toast.makeText(com.itb.aplikasitoko.UserRegister.this, message, Toast.LENGTH_LONG).show();
 
-                    //startActivity(new Intent(UserRegister.this, InformasiBisnis.class));
+                    
                     startActivity(new Intent(UserRegister.this, TelpVerification.class));
                     finish();
 
                 } else {
 
-                    String message = "Terjadi error, mohon coba lagi";
+                    String message = Api.getError(response).message;
                     Toast.makeText(com.itb.aplikasitoko.UserRegister.this, message, Toast.LENGTH_LONG).show();
 
                 }

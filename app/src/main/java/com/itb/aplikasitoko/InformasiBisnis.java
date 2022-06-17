@@ -56,7 +56,7 @@ public class InformasiBisnis extends AppCompatActivity {
                 //modelToko.setJenis_toko(mySpinner.getSelectedItem().toString());
                 modelToko.setJenis_toko(JenisUsaha.toString());
                 MasukProfil(modelToko);
-                //Toast.makeText(InformasiBisnis.this, Lokasi.getText().toString(), Toast.LENGTH_SHORT).show();
+               
             }
         });
     }
@@ -74,7 +74,7 @@ public class InformasiBisnis extends AppCompatActivity {
                     startActivity(new Intent(InformasiBisnis.this, TambahkanProduk.class));
                     finish();
                 } else {
-                    String message = "Data gagal ditambahkan";
+                    String message = Api.getError(response).message;
                     Toast.makeText(InformasiBisnis.this, message, Toast.LENGTH_SHORT).show();
                 }
             }

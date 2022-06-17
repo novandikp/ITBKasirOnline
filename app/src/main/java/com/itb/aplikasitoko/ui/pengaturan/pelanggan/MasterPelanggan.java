@@ -132,7 +132,7 @@ public class MasterPelanggan extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<PelangganGetResp> call, Response<PelangganGetResp> response) {
                     LoadingDialog.close();
-                    //Toast.makeText(MasterPelanggan.this, String.valueOf(response.body().getData().size()), Toast.LENGTH_SHORT).show();
+                    
                     if (data.size() != response.body().getData().size() || !data.equals(response.body().getData())){
                         //memasukkan ke db kalau gada data yg sama
                         pr.insertAll(response.body().getData(), true);

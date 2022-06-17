@@ -74,7 +74,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
 
                 service.add(finalModelBarang);
                 notifyItemChanged(position); //mereload posisi item
-                //Toast.makeText(context, String.valueOf(service.getTotal()), Toast.LENGTH_SHORT).show();
+               
 
                 fragment.setTotal();
             }
@@ -89,10 +89,6 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
                     return false; //mengembalikan ke onclick
                 }
                 fragment.DialogTotal(finalDetail,finalModelBarang);
-
-//                Toast.makeText(context, "long", Toast.LENGTH_SHORT).show();
-
-
                 return true;
             }
         });

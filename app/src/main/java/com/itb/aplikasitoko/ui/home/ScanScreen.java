@@ -56,13 +56,8 @@ public class ScanScreen extends ScanBarcode implements ZXingScannerView.ResultHa
     @Override
     public void handleResult(Result rawResult) {
         Intent i = new Intent();
-//        Toast.makeText(this, rawResult.getText(), Toast.LENGTH_SHORT).show();
         i.putExtra("idproduk", rawResult.getText());
         setResult(Activity.RESULT_OK, i);
-        // Note:
-        // * Wait 2 seconds to resume the preview.
-        // * On older devices continuously stopping and resuming camera preview can result in freezing the app.
-        // * I don't know why this is the case but I don't have the time to figure out.
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override

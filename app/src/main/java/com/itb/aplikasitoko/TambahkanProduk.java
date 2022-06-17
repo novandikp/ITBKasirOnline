@@ -68,7 +68,7 @@ public class TambahkanProduk extends AppCompatActivity {
                     startActivity(new Intent(TambahkanProduk.this, HomePage.class));
                     finish();
                 } else {
-                    String message = "Data gagal ditambahkan";
+                    String message = Api.getError(response).message;
                     Toast.makeText(TambahkanProduk.this, message , Toast.LENGTH_LONG).show();
                 }
             }

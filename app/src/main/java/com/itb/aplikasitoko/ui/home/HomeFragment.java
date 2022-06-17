@@ -283,7 +283,6 @@ public class HomeFragment extends Fragment {
                 double hargaBaru = Modul.strToDouble(Modul.unnumberFormat(binder.eHarga.getText().toString()));
 
                 service.setJumlahBeli(modelBarang,  modelDetailJual.getJumlahjual(),jumlah,hargaBaru);
-                //Toast.makeText(getContext(), String.valueOf(modelDetailJual.getJumlahjual()), Toast.LENGTH_SHORT).show();
                 setTotal();
                 produkAdapter.notifyDataSetChanged();
             }
