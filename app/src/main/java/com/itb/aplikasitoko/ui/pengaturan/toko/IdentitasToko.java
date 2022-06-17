@@ -109,24 +109,6 @@ public class IdentitasToko extends AppCompatActivity {
 
     }
 
-//    public void MasukProfil(ModelToko modelToko){
-//        Call<InfoBisnisResponse> infoBisnisResponseCall = Api.getService(this).masukProfil(modelToko);
-//        infoBisnisResponseCall.enqueue(new Callback<InfoBisnisResponse>() {
-//            @Override
-//            public void onResponse(Call<InfoBisnisResponse> call, Response<InfoBisnisResponse> response) {
-//                if (response.isSuccessful()){
-//                    SuccessDialog.message(IdentitasToko.this,getString(R.string.success_added),bind.getRoot());
-//                } else {
-//                    ErrorDialog.message(IdentitasToko.this,getString(R.string.add_kategori_error),bind.getRoot());
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<InfoBisnisResponse> call, Throwable t) {
-//                Toast.makeText(IdentitasToko.this, t.getMessage(), Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//    }
 
     public void refreshData(){
         LoadingDialog.load(IdentitasToko.this);

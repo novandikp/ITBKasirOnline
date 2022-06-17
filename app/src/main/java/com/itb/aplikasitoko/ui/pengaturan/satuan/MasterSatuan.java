@@ -206,7 +206,7 @@ public class MasterSatuan extends AppCompatActivity {
             @Override
             public void onResponse(Call<SatuanResponse> call, Response<SatuanResponse> response) {
                 LoadingDialog.close();
-                if (response.isSuccessful() && response.body().isStatus()) {
+                if (response.isSuccessful()) {
                     SuccessDialog.message(MasterSatuan.this, getString(R.string.success_added), bind.getRoot());
 
                     satuanRepository.insert(modelSatuan);
