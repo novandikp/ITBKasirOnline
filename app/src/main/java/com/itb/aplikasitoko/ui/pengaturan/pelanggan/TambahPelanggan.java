@@ -81,7 +81,7 @@ public class TambahPelanggan extends AppCompatActivity {
             @Override
             public void onResponse(Call<PelangganResponse> call, Response<PelangganResponse> response) {
                 LoadingDialog.close();
-                if (response.isSuccessful() && response.body().isStatus()){
+                if (response.isSuccessful()){
                     SuccessDialog.message(TambahPelanggan.this, getString(R.string.success_added), bind.getRoot());
                     bind.inNama.getText().clear();
                     bind.inAlamat.getText().clear();
