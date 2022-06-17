@@ -136,7 +136,7 @@ public class OTPVerification extends AppCompatActivity {
                 LoadingDialog.close();
                 if (response.isSuccessful()){
                     startActivity(new Intent(OTPVerification.this, InformasiBisnis.class));
-                    finish();
+
                 } else {
                     Toast.makeText(OTPVerification.this, "Masukkan kode OTP dengan benar", Toast.LENGTH_SHORT).show();
                 }

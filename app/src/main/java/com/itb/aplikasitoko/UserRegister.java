@@ -74,7 +74,6 @@ public class UserRegister extends AppCompatActivity {
 
                     
                     startActivity(new Intent(UserRegister.this, TelpVerification.class));
-                    finish();
 
                 } else {
 

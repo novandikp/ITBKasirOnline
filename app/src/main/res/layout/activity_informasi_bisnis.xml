@@ -92,7 +92,7 @@
                             android:layout_marginRight="40dp"
                             android:fontFamily="sans-serif-medium"
                             android:paddingLeft="3dp"
-                            android:text="Nasa Usaha"
+                            android:text="Nama Usaha"
                             android:textSize="13dp" />
 
                         <EditText

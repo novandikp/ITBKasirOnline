@@ -66,7 +66,6 @@ public class TambahkanProduk extends AppCompatActivity {
                     Toast.makeText(TambahkanProduk.this, message , Toast.LENGTH_LONG).show();
 
                     startActivity(new Intent(TambahkanProduk.this, HomePage.class));
-                    finish();
                 } else {
                     String message = Api.getError(response).message;
                     Toast.makeText(TambahkanProduk.this, message , Toast.LENGTH_LONG).show();

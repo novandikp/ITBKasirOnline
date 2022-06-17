@@ -72,7 +72,7 @@ public class InformasiBisnis extends AppCompatActivity {
                     Toast.makeText(InformasiBisnis.this, message, Toast.LENGTH_SHORT).show();
 
                     startActivity(new Intent(InformasiBisnis.this, TambahkanProduk.class));
-                    finish();
+
                 } else {
                     String message = Api.getError(response).message;
                     Toast.makeText(InformasiBisnis.this, message, Toast.LENGTH_SHORT).show();

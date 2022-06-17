@@ -14,6 +14,7 @@ import com.itb.aplikasitoko.Component.LoadingDialog;
 import com.itb.aplikasitoko.Model.ModelToko;
 import com.itb.aplikasitoko.Response.OtpResponse;
 import com.itb.aplikasitoko.SharedPref.SpHelper;
+import com.itb.aplikasitoko.databinding.ActivityTelpVerificationBinding;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -22,23 +23,34 @@ import retrofit2.Response;
 public class TelpVerification extends AppCompatActivity {
     private EditText NoTelp;
     private TextView btnOtp;
+    ActivityTelpVerificationBinding bind;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        bind = ActivityTelpVerificationBinding.inflate(getLayoutInflater());
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_telp_verification);
+        setContentView(bind.getRoot());
         SpHelper sp = new SpHelper(this); //disimpan di minta otp
 
-        NoTelp = (EditText) findViewById(R.id.noTelp);
-        btnOtp = (Button) findViewById(R.id.sendKodeOTP);
-        btnOtp.setOnClickListener(new View.OnClickListener() {
+        NoTelp = bind.noTelp;
+        bind.sendKodeOTP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ModelToko modelToko = new ModelToko();
-                //ini perubahannya
-                modelToko.setNomer_toko(NoTelp.getText().toString().substring(0, 1).replace("08", "62")+NoTelp.getText().toString().substring(1));
+                String telpon = NoTelp.getText().toString();
+                modelToko.setNomer_toko(telpon.substring(0,1).replace("0", "62")+telpon.substring(1));
                 sp.setValue(Config.phoneOTP, NoTelp.getText().toString()); //ini menyimpan notelpon ke dlm shared pref
                 MintaOtp(modelToko);
+            }
+        });
+
+        bind.backToAdvance.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sp.clearAll();
+
+                startActivity(new Intent(TelpVerification.this, UserRegister.class));
+                finish();
             }
         });
     }
