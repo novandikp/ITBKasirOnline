@@ -92,7 +92,7 @@
                             android:layout_marginRight="40dp"
                             android:fontFamily="sans-serif-medium"
                             android:paddingLeft="3dp"
-                            android:text="Nasa Usaha"
+                            android:text="Nama Usaha"
                             android:textSize="13dp" />
 
                         <EditText
@@ -190,7 +190,7 @@
                             android:id="@+id/nextToTambahProduk"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
-                            android:backgroundTint="#2F4F4F"
+                            android:backgroundTint="@color/default1"
                             android:text="Next"
                             android:textColor="#FFFFFF" />
                     </LinearLayout>

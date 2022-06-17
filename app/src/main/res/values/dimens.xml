@@ -2,6 +2,7 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin2">40dp</dimen>
     <dimen name="nav_header_vertical_spacing">8dp</dimen>
     <dimen name="nav_header_height">176dp</dimen>
     <dimen name="fab_margin">0dp</dimen>
@@ -15,11 +16,11 @@
 
     <!--  Font Size [cara penggunaan -> android:textSize="@dimen/FS_15sp"] -->
     <dimen name="FS_type1a" parent="@style/Text">15dp</dimen> // untuk tulisan biasa, textinput layout, dan judul pada item
-    <dimen name="FS_type1b" parent="@style/Text">15dp</dimen> // untuk tulisan biasa, textinput layout, dan judul pada item
+    <dimen name="FS_type1b" parent="@style/Text">15sp</dimen> // untuk tulisan biasa, textinput layout, dan judul pada item
     <dimen name="FS_type2a" parent="@style/Text">25dp</dimen> // untuk judul dengan bold dan text color black
-    <dimen name="FS_type2b" parent="@style/Text">25dp</dimen> // untuk judul dengan bold dan text color black
+    <dimen name="FS_type2b" parent="@style/Text">25sp</dimen> // untuk judul dengan bold dan text color black
     <dimen name="FS_type3a" parent="@style/Text">13dp</dimen> // untuk item pada recyclerview
-    <dimen name="FS_type3b" parent="@style/Text">13dp</dimen> // untuk item pada recyclerview
+    <dimen name="FS_type3b" parent="@style/Text">13sp</dimen> // untuk item pada recyclerview
 
     <!--  Font Size  (bisa ditaruh di res/strings juga) [cara penggunaan -> app:theme="@style/FS_SearchView"]  -->
     <style name="FS_SearchView" parent="Widget.AppCompat.SearchView" >

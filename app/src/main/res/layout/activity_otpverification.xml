@@ -65,7 +65,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="40dp"
                     android:layout_marginRight="40dp"
-                    android:text="Kode OTP dikirim ke Whatsapp anda"
+                    android:text="Kode OTP dikirimkan ke Whatsapp anda"
                     android:textFontWeight="450"
                     android:textAlignment="textStart"
                     android:textSize="@dimen/FS_type1a"
@@ -102,7 +102,7 @@
                     android:layout_height="50dp"
                     android:layout_marginLeft="40dp"
                     android:layout_marginRight="40dp"
-                    android:backgroundTint="#2F4F4F"
+                    android:backgroundTint="@color/default1"
                     android:text="Submit"
                     android:textColor="#FFFFFF"/>
 

@@ -115,7 +115,7 @@
                         android:layout_marginTop="20dp"
                         android:layout_marginRight="40dp"
                         android:ems="10"
-                        android:hint="Password"
+                        android:hint="Confirm Password"
                         android:inputType="textPassword"
                         android:textSize="@dimen/FS_type1a" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -139,7 +139,7 @@
                     android:id="@+id/register"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:backgroundTint="#2F4F4F"
+                    android:backgroundTint="@color/default1"
                     android:text="Register"
                     android:textColor="#FFFFFF"/>
             </LinearLayout>

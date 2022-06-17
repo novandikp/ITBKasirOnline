@@ -249,7 +249,7 @@
                         android:id="@+id/btnAddProduk"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
-                        android:backgroundTint="#2F4F4F"
+                        android:backgroundTint="@color/default1"
                         android:text="Add"
                         android:textColor="#FFFFFF" />
                 </LinearLayout>
