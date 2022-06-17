@@ -46,6 +46,30 @@ public class TambahkanProduk extends AppCompatActivity {
         bind.nextToMainPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+//                cek alll input is exist
+                if (idBarang.getText().toString().isEmpty() || NamaBarang.getText().toString().isEmpty() || Kategori.getText().toString().isEmpty() || Satuan.getText().toString().isEmpty() || Harga.getText().toString().isEmpty() || HargaJual.getText().toString().isEmpty()) {
+//                    set error input
+                    if(idBarang.getText().toString().isEmpty()){
+                        idBarang.setError("Kode Barang tidak boleh kosong");
+                    }
+                    if(NamaBarang.getText().toString().isEmpty()){
+                        NamaBarang.setError("Nama Barang tidak boleh kosong");
+                    }
+                    if(Kategori.getText().toString().isEmpty()) {
+                        Kategori.setError("Kategori tidak boleh kosong");
+                    }
+                    if(Satuan.getText().toString().isEmpty()) {
+                        Satuan.setError("Satuan tidak boleh kosong");
+                    }
+                    if(Harga.getText().toString().isEmpty()) {
+                        Harga.setError("Harga tidak boleh kosong");
+                    }
+                    if(HargaJual.getText().toString().isEmpty()) {
+                        HargaJual.setError("Harga Jual tidak boleh kosong");
+                    }
+                    return;
+                }
                 ViewModelBarang modelVB = new ViewModelBarang();
                 modelVB.setIdbarang(idBarang.getText().toString());
                 modelVB.setBarang(NamaBarang.getText().toString());
