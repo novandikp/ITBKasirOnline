@@ -56,7 +56,7 @@ public class InformasiBisnis extends AppCompatActivity {
                 modelToko.setNama_toko(NamaUsaha.getText().toString());
                 modelToko.setAlamat_toko(Lokasi.getText().toString());
                 //modelToko.setJenis_toko(mySpinner.getSelectedItem().toString());
-                modelToko.setJenis_toko(JenisUsaha.toString());
+                modelToko.setJenis_toko(JenisUsaha.getText().toString());
                 MasukProfil(modelToko);
                
             }
