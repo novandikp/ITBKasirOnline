@@ -236,8 +236,8 @@ public class EditProduk extends AppCompatActivity {
 
                     }
                 } else {
-                    ErrorDialog.message(EditProduk.this, getString(R.string.updated_error), bind.getRoot());
-                    //Toast.makeText(EditProduk.this, response.toString(), Toast.LENGTH_SHORT).show();
+                    String message = Api.getError(response).message;
+                    ErrorDialog.message(EditProduk.this, message, bind.getRoot());
                 }
 
             }

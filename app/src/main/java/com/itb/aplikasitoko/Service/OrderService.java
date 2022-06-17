@@ -76,7 +76,6 @@ public class OrderService {
                             intent.putExtra("total", Modul.doubleToStr(jual.getTotal()));
                             intent.putExtra("idjual", Modul.intToStr(modelJual.intValue()));
                             application.startActivity(intent);
-                            //Toast.makeText(application, "menyimpan", Toast.LENGTH_SHORT).show();
                         }
                     });
 

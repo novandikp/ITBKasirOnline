@@ -72,17 +72,6 @@ public class TambahProduk extends AppCompatActivity {
         bind.hargaJual.addTextChangedListener(new NumberTextWatcher(bind.hargaJual, new Locale("id","ID"),0));
         setContentView(bind.getRoot());
 
-//        bind.kodeProduk.setFocusable(false);
-//        bind.kodeProduk.setClickable(true);
-//        bind.namaProduk.setFocusable(false);
-//        bind.namaProduk.setClickable(true);
-//        bind.hargaAwal.setFocusable(false);
-//        bind.hargaAwal.setClickable(true);
-//        bind.hargaJual.setFocusable(false);
-//        bind.hargaJual.setClickable(true);
-//        bind.stokAwal.setFocusable(false);
-//        bind.stokAwal.setClickable(true);
-
         bind.opsiSatuan.setClickable(true);
         bind.opsiSatuan.setFocusable(false);
         bind.opsiSatuan.setFocusableInTouchMode(false);
@@ -298,7 +287,8 @@ public class TambahProduk extends AppCompatActivity {
                     startActivity(new Intent(TambahProduk.this, MasterProduk.class));
                     finish();
                 } else {
-                    ErrorDialog.message(TambahProduk.this, getString(R.string.add_kategori_error), bind.getRoot());
+                    String message = Api.getError(response).message;
+                    ErrorDialog.message(TambahProduk.this,message, bind.getRoot());
                 }
                 inNama.setEnabled(true);
                 inKode.setEnabled(true);

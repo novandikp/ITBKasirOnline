@@ -87,7 +87,6 @@ public class LoginPegawai extends AppCompatActivity {
 
     public void LoginPeg(ModelLoginPegawai modelLoginPegawai){
         LoadingDialog.load(LoginPegawai.this);
-        //Toast.makeText(this, modelLoginPegawai.toString(), Toast.LENGTH_SHORT).show();
         SpHelper sp = new SpHelper(LoginPegawai.this);
         Call<LoginPegawaiResponse> loginPegawaiResponseCall = Api.Pegawai(LoginPegawai.this).loginPegawai(modelLoginPegawai);
         loginPegawaiResponseCall.enqueue(new Callback<LoginPegawaiResponse>() {

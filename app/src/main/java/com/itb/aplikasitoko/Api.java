@@ -4,6 +4,9 @@ import android.content.Context;
 
 import androidx.annotation.NonNull;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.itb.aplikasitoko.Model.ModelError;
 import com.itb.aplikasitoko.Service.BarangService;
 import com.itb.aplikasitoko.Service.KategoriService;
 import com.itb.aplikasitoko.Service.LaporanService;
@@ -55,18 +58,6 @@ public class Api {
         HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
         httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient okHttpClient = new OkHttpClient.Builder().addInterceptor(httpLoggingInterceptor).build();
-
-//        OkHttpClient okHttpClient = new OkHttpClient.Builder().addInterceptor(new Interceptor() {
-//            @NonNull
-//            @Override
-//            public Response intercept(@NonNull Chain chain) throws IOException {
-//                String token = sp.getToken();//ini ambil token dr response di postman
-//                Request newRequest = chain.request().newBuilder()
-//                        .addHeader("Authorization",token)
-//                        .build();
-//                return chain.proceed(newRequest);
-//            }
-//        }).build();
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
@@ -186,5 +177,24 @@ public class Api {
         LaporanService laporanService = getRetrofit(context).create(LaporanService.class);
 
         return laporanService;
+    }
+
+
+    public static ModelError getError(retrofit2.Response response){
+        Gson gson = new GsonBuilder().create();
+        ModelError errorResponse = new ModelError();
+        try {
+            errorResponse= gson.fromJson(response.errorBody().string(),ModelError.class);
+        } catch (IOException e) {
+            // handle failure to read error
+        }
+
+        if(errorResponse!=null){
+            String message = errorResponse.message;
+            message = message.substring(0,1).toUpperCase()+message.substring(1);
+            errorResponse.message = message;
+        }
+
+        return  errorResponse;
     }
 }

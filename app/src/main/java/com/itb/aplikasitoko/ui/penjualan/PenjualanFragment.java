@@ -140,12 +140,9 @@ public class PenjualanFragment extends Fragment {
                 @Override
                 public void onResponse(Call<PendapatanGetResp> call, Response<PendapatanGetResp> response) {
                     if (response.isSuccessful()){
-
                         data.clear();
                         data.addAll(response.body().getData());
                         adapter.notifyDataSetChanged();
-
-                        //Toast.makeText(LaporanPendapatan.this, String.valueOf(response.body().getData().size()), Toast.LENGTH_SHORT).show();
                     }
                 }
 

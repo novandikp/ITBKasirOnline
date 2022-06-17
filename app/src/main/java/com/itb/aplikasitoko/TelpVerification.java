@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.itb.aplikasitoko.Component.LoadingDialog;
 import com.itb.aplikasitoko.Model.ModelToko;
 import com.itb.aplikasitoko.Response.OtpResponse;
 import com.itb.aplikasitoko.SharedPref.SpHelper;
@@ -34,6 +35,7 @@ public class TelpVerification extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ModelToko modelToko = new ModelToko();
+                //ini perubahannya
                 modelToko.setNomer_toko(NoTelp.getText().toString().substring(0, 1).replace("08", "62")+NoTelp.getText().toString().substring(1));
                 sp.setValue(Config.phoneOTP, NoTelp.getText().toString()); //ini menyimpan notelpon ke dlm shared pref
                 MintaOtp(modelToko);
@@ -43,24 +45,27 @@ public class TelpVerification extends AppCompatActivity {
 
 
     public void MintaOtp(ModelToko modelToko) {
-        //kalau di file java pakainya this atau nama file(class).this, bukan pakaia context
-        Call<OtpResponse> OtpResponseCall = Api.getService(this).mintaOtp(modelToko); //ini pake getsrvice yg ada headernya
+        LoadingDialog.load(this);
+        Call<OtpResponse> OtpResponseCall = Api.getService(this).mintaOtp(modelToko);
         OtpResponseCall.enqueue(new Callback<OtpResponse>() {
             @Override
             public void onResponse(Call<OtpResponse> call, Response<OtpResponse> response) {
+                LoadingDialog.close();
                 if(response.isSuccessful()){
                     String message = "Kode OTP terkirim";
                     Toast.makeText(TelpVerification.this, message, Toast.LENGTH_LONG).show();
                     startActivity(new Intent(TelpVerification.this, OTPVerification.class));
-                    finish();
+
                 } else {
-                    String message = "Nomor telepon tidak valid";
-                    Toast.makeText(TelpVerification.this, String.valueOf(response.code()), Toast.LENGTH_LONG).show();
+
+                    String message = Api.getError(response).message;
+                    Toast.makeText(TelpVerification.this, message, Toast.LENGTH_LONG).show();
                 }
             }
 
             @Override
             public void onFailure(Call<OtpResponse> call, Throwable t) {
+                LoadingDialog.close();
                 String message = t.getLocalizedMessage();
                 Toast.makeText(TelpVerification.this, message, Toast.LENGTH_LONG).show();
             }
