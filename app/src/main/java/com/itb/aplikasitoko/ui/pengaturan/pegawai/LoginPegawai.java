@@ -40,6 +40,11 @@ public class LoginPegawai extends AppCompatActivity {
     List<String> pegawai = new ArrayList<>();
     List<String> idpegawai = new ArrayList<>();
     PegawaiRepository pegawaiRepository;
+    SpHelper sp;
+
+
+
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -47,6 +52,8 @@ public class LoginPegawai extends AppCompatActivity {
         bind = LoginPegawaiBinding.inflate(getLayoutInflater());
         super.onCreate(savedInstanceState);
         setContentView(bind.getRoot());
+
+        sp = new SpHelper(LoginPegawai.this);
 
         //Spinner prgawai
         pegawaiRepository = new PegawaiRepository(getApplication());
@@ -71,23 +78,26 @@ public class LoginPegawai extends AppCompatActivity {
         bind.btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("idpegawa",String.valueOf(idpegawai.size()));
+                Log.d("idpegawai",String.valueOf(idpegawai.size()));
                 String pegawai = idpegawai.get(bind.namaPegawai.getSelectedItemPosition());
                 String pin = bind.pin.getText().toString();
+
                 if (pin.isEmpty()) {
                     bind.pin.setError("Harap isi dengan benar");
 
                 } else {
                     ModelLoginPegawai mLP = new ModelLoginPegawai(pegawai, pin);
                     LoginPeg(mLP);
+
                 }
             }
         });
+
+
     }
 
     public void LoginPeg(ModelLoginPegawai modelLoginPegawai){
         LoadingDialog.load(LoginPegawai.this);
-        SpHelper sp = new SpHelper(LoginPegawai.this);
         Call<LoginPegawaiResponse> loginPegawaiResponseCall = Api.Pegawai(LoginPegawai.this).loginPegawai(modelLoginPegawai);
         loginPegawaiResponseCall.enqueue(new Callback<LoginPegawaiResponse>() {
             @Override
@@ -98,7 +108,7 @@ public class LoginPegawai extends AppCompatActivity {
                 } else {
                     sp.setIdPegawai(modelLoginPegawai.getIdpegawai());
                     SuccessDialog.message(LoginPegawai.this, "Login berhasil", bind.getRoot());
-
+                    sp.setRemember(bind.checkBox.isChecked());
                     startActivity(new Intent(LoginPegawai.this, HomePage.class));
                     finish();
                 }
