@@ -52,7 +52,7 @@ public class EditPegawai extends AppCompatActivity {
                 int id = getIntent().getIntExtra("idpegawai", 0); //ini hrs pake default valu, kalau gk bakal eror
                 String nama = inNama.getText().toString();
                 String alamat = inAlamat.getText().toString();
-                String telp = Modul.PhoneFormat(inTelp.getText().toString());
+                String telp = inTelp.getText().toString();
                 String pin = inPin.getText().toString();
 
                 if (nama.isEmpty() || alamat.isEmpty() || telp.isEmpty() || pin.isEmpty() || pin.length() < 4 || pin.length() > 4) {
@@ -62,7 +62,7 @@ public class EditPegawai extends AppCompatActivity {
                     inPin.setError("Harap isi dengan benar");
 
                 } else {
-                    ModelPegawai mp = new ModelPegawai(nama, alamat, telp, pin);
+                    ModelPegawai mp = new ModelPegawai(nama, alamat, Modul.phoneFormat(telp), pin);
                     mp.setIdpegawai(id);
                     UpdatePeg(mp.getIdpegawai(), mp);
                 }

@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,12 +32,14 @@ public class TelpVerification extends AppCompatActivity {
         setContentView(bind.getRoot());
         SpHelper sp = new SpHelper(this); //disimpan di minta otp
 
-        String NoTelp = bind.noTelp.getText().toString();
+
         bind.sendKodeOTP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String NoTelp = bind.noTelp.getText().toString();
+
                 ModelToko modelToko = new ModelToko();
-                modelToko.setNomer_toko(Modul.getDate(NoTelp));
+                modelToko.setNomer_toko(Modul.phoneFormat(NoTelp));
                 sp.setValue(Config.phoneOTP, NoTelp); //ini menyimpan notelpon ke dlm shared pref
                 MintaOtp(modelToko);
             }

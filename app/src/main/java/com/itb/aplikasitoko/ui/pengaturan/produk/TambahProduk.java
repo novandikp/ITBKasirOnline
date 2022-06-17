@@ -163,6 +163,7 @@ public class TambahProduk extends AppCompatActivity {
                     inNama.setError("Harap isi dengan benar");
                     inKode.setError("Harap isi dengan benar");
                     inHarga.setError("Harap isi dengan benar");
+                    inHargaBeli.setError("Harap isi dengan benar");
                     inStok.setError("Harap isi dengan benar");
                 } else {
                     //diubah ke double lagi buat ke db

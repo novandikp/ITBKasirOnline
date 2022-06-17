@@ -138,7 +138,7 @@ public class Modul {
         return formatBaru.format(tanggal1);
     }
 
-    public static String PhoneFormat(String telp) {
+    public static String phoneFormat(String telp) {
         String telpon = telp.substring(0,1).replace("0", "62")+telp.substring(1);
         return telpon;
     }

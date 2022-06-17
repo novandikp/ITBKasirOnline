@@ -56,14 +56,14 @@ public class TambahPelanggan extends AppCompatActivity {
             public void onClick(View view) {
                 String nama = inNama.getText().toString();
                 String alamat = inAlamat.getText().toString();
-                String telp = Modul.PhoneFormat(inTelp.getText().toString());
+                String telp = inTelp.getText().toString();
 
                 if (nama.isEmpty() || alamat.isEmpty() || telp.isEmpty()){
                     inNama.setError("Harap isi dengan benar");
                     inAlamat.setError("Harap isi dengan benar");
                     inTelp.setError("Harap isi dengan benar");
                 } else {
-                    ModelPelanggan mp = new ModelPelanggan(nama, alamat, telp);
+                    ModelPelanggan mp = new ModelPelanggan(nama, alamat, Modul.phoneFormat(telp));
                     PostPel(mp);
                 }
             }
