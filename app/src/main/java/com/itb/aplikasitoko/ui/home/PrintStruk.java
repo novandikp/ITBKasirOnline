@@ -46,6 +46,7 @@ import com.itb.aplikasitoko.Model.ModelToko;
 import com.itb.aplikasitoko.R;
 import com.itb.aplikasitoko.Response.DetailOrderResponse;
 import com.itb.aplikasitoko.Response.IdentitasGetResp;
+import com.itb.aplikasitoko.SharedPref.SpHelper;
 import com.itb.aplikasitoko.ViewModel.ModelViewStruk;
 import com.itb.aplikasitoko.databinding.ActivityPrintStrukBinding;
 import com.itb.aplikasitoko.util.Modul;
@@ -54,6 +55,9 @@ import com.novandikp.simplethermalprinter.AlignColumn;
 import com.novandikp.simplethermalprinter.Bluetooth.PrinterBTContext;
 import com.novandikp.simplethermalprinter.ColumnPrinter;
 import com.novandikp.simplethermalprinter.PrintTextBuilder;
+import com.novandikp.simplethermalprinter.Type.Printer58mm;
+import com.novandikp.simplethermalprinter.Type.Printer76mm;
+import com.novandikp.simplethermalprinter.TypePrinter;
 import com.novandikp.simplethermalprinter.USB.PrinterUSBContext;
 
 import java.io.File;
@@ -86,7 +90,7 @@ public class PrintStruk extends AppCompatActivity {
     PrintTextBuilder resultPrint;
     PrinterUSBContext printerUSBContext;
     PrinterBTContext printerBTContext;
-
+    SpHelper spHelper;
 
     TokoRepository tokoRepository;
     @Override
@@ -99,6 +103,7 @@ public class PrintStruk extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         tokoRepository = new TokoRepository(getApplication());
+        spHelper = new SpHelper(this);
         printerUSBContext = PrinterUSBContext.getInstance(this);
         printerBTContext = PrinterBTContext.getInstance(this);
         requestPermission();
@@ -209,10 +214,22 @@ public class PrintStruk extends AppCompatActivity {
 
 
     public void setPrinter(){
-
-        PrinterUSBContext.setTextBuilder(resultPrint);
+        String ukuran=  spHelper.getPrinter();
+        switch (ukuran){
+            case "76mm":
+                PrinterUSBContext.setTextBuilder(resultPrint,new Printer76mm());
+                printerBTContext.setTypePrinter(new Printer76mm());
+                break;
+            case "80mm":
+                PrinterUSBContext.setTextBuilder(resultPrint,new Printer80mm());
+                printerBTContext.setTypePrinter(new Printer80mm());
+                break;
+            default:
+                PrinterUSBContext.setTextBuilder(resultPrint,new Printer58mm());
+                printerBTContext.setTypePrinter(new Printer58mm());
+        }
         printerBTContext.setPrinterText(resultPrint);
-        
+
     }
 
 
@@ -519,5 +536,32 @@ public class PrintStruk extends AppCompatActivity {
             super.onPostExecute(s);
             txtPrinter.setText(s);
         }
+    }
+}
+
+class Printer80mm implements TypePrinter
+{
+    public static Printer80mm printer76mm;
+
+    public static Printer80mm device(){
+        if(Printer80mm.printer76mm == null){
+            Printer80mm.printer76mm = new Printer80mm();
+        }
+        return  Printer80mm.printer76mm;
+    }
+
+    @Override
+    public float getPrinterWidth() {
+        return 70f;
+    }
+
+    @Override
+    public int getPrinterDPI() {
+        return 231;
+    }
+
+    @Override
+    public int getMaxCharColumns() {
+        return 40;
     }
 }

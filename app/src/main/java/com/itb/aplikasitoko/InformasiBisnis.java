@@ -45,6 +45,8 @@ public class InformasiBisnis extends AppCompatActivity {
         //mySpinner.setAdapter(myAdapter);
         JenisUsaha.setAdapter(myAdapter);
          spHelper = new SpHelper(this);
+        spHelper.setValue(Config.lastPageSign,Config.PageSigned.PROFIL);
+
 
         bind.nextToTambahProduk.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,7 +56,7 @@ public class InformasiBisnis extends AppCompatActivity {
                 modelToko.setNama_toko(NamaUsaha.getText().toString());
                 modelToko.setAlamat_toko(Lokasi.getText().toString());
                 //modelToko.setJenis_toko(mySpinner.getSelectedItem().toString());
-                modelToko.setJenis_toko(JenisUsaha.toString());
+                modelToko.setJenis_toko(JenisUsaha.getText().toString());
                 MasukProfil(modelToko);
                
             }

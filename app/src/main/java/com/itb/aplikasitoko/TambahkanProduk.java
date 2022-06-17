@@ -8,9 +8,11 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.itb.aplikasitoko.SharedPref.SpHelper;
 import com.itb.aplikasitoko.ViewModel.ViewModelBarang;
 import com.itb.aplikasitoko.Response.RegisBarangResponse;
 import com.itb.aplikasitoko.databinding.ActivityTambahkanProdukBinding;
+import com.itb.aplikasitoko.ui.pengaturan.pegawai.LoginPegawai;
 import com.itb.aplikasitoko.util.Modul;
 import com.itb.aplikasitoko.util.NumberTextWatcher;
 
@@ -28,7 +30,8 @@ public class TambahkanProduk extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bind = ActivityTambahkanProdukBinding.inflate(getLayoutInflater());
         setContentView(bind.getRoot());
-
+        SpHelper spHelper = new SpHelper(this);
+        spHelper.setValue(Config.lastPageSign,Config.PageSigned.DASHBOARD);
         bind.harga.addTextChangedListener(new NumberTextWatcher(bind.harga, new Locale("id","ID"),0));
         bind.hargaJual.addTextChangedListener(new NumberTextWatcher(bind.hargaJual, new Locale("id","ID"),0));
         EditText idBarang = bind.kodeProduk;
@@ -65,7 +68,8 @@ public class TambahkanProduk extends AppCompatActivity {
                     String message = "Data berhasil ditambahkan";
                     Toast.makeText(TambahkanProduk.this, message , Toast.LENGTH_LONG).show();
 
-                    startActivity(new Intent(TambahkanProduk.this, HomePage.class));
+                    startActivity(new Intent(TambahkanProduk.this, LoginPegawai.class));
+                    finish();
                 } else {
                     String message = Api.getError(response).message;
                     Toast.makeText(TambahkanProduk.this, message , Toast.LENGTH_LONG).show();

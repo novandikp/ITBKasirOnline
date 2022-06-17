@@ -16,6 +16,7 @@ import com.itb.aplikasitoko.Response.LoginResponse;
 import com.itb.aplikasitoko.SharedPref.SpHelper;
 import com.itb.aplikasitoko.databinding.ActivityMainBinding;
 import com.itb.aplikasitoko.ui.load.LoadActivity;
+import com.itb.aplikasitoko.util.Modul;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -62,6 +63,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     sp.setValue(Config.lastPageSign, response.body().getPage()); //ini buat mencari pae
                     SuccessDialog.message(LoginActivity.this, message, bind.getRoot());
                     if (response.body().getPage().equals(Config.PageSigned.DASHBOARD)) {
+                        sp.setValue("isFirstLogin", Modul.getDate("yyyy-MM-dd"));
                         startActivity(new Intent(LoginActivity.this, LoadActivity.class));
                     } else if (response.body().getPage().equals(Config.PageSigned.OTP)) {
                         startActivity(new Intent(LoginActivity.this, TelpVerification.class));

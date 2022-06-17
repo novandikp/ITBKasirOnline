@@ -84,7 +84,7 @@ public class SpHelper {
     }
 
     public String getPrinter(){
-        return getValue("printer", "56mm");
+        return getValue("printer", "58mm");
     }
 
     public boolean getBoolean(String key){
