@@ -40,7 +40,7 @@ public class ProdukAdapter extends RecyclerView.Adapter<ProdukAdapter.ViewHolder
         ModelBarang mb = data.get(position);
         holder.tBarang.setText(mb.getBarang());
         holder.tKode.setText("Kode : "+mb.getIdbarang());
-        holder.tHj.setText(Modul.removeE(mb.getHargabeli()) +" - "+Modul.removeE(mb.getHarga()));
+        holder.tHj.setText(Modul.removeE(mb.getHargabeli()) +" • "+Modul.removeE(mb.getHarga()));
         holder.tHapus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
