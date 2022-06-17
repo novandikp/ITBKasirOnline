@@ -218,6 +218,7 @@
                     android:layout_marginRight="20dp"
                     android:paddingLeft="3dp"
                     android:text="Stok Awal"
+                    android:visibility="gone"
                     android:fontFamily="sans-serif-medium"
                     android:textAlignment="textStart"
                     android:textSize="@dimen/FS_type1a" />
@@ -230,6 +231,7 @@
                     android:layout_marginRight="20dp"
                     android:ems="10"
                     android:hint="Stok Awal"
+                    android:visibility="gone"
                     android:text="0"
                     android:inputType="number"
                     android:minHeight="48dp"
