@@ -60,7 +60,7 @@ public class TambahPegawai extends AppCompatActivity {
             public void onClick(View view) {
                 String nama = inNama.getText().toString();
                 String alamat = inAlamat.getText().toString();
-                String telp = Modul.PhoneFormat(inTelp.getText().toString());
+                String telp =inTelp.getText().toString();
                 String pin = inPin.getText().toString();
 
                 if (nama.isEmpty() || alamat.isEmpty() || telp.isEmpty() || pin.isEmpty() || pin.length() < 4 || pin.length() > 4) {
@@ -69,6 +69,7 @@ public class TambahPegawai extends AppCompatActivity {
                     inTelp.setError("Harap isi dengan benar");
                     inPin.setError("Harap isi dengan benar");
                 } else {
+                    telp= Modul.PhoneFormat(telp);
                     ModelPegawai mp = new ModelPegawai(nama, alamat, telp, pin);
                     PostPeg(mp);
                 }

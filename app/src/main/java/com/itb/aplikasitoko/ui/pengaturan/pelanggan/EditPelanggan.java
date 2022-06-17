@@ -50,13 +50,14 @@ public class EditPelanggan extends AppCompatActivity {
                 int id = getIntent().getIntExtra("idpelanggan", 0);
                 String nama = inNama.getText().toString();
                 String alamat = inAlamat.getText().toString();
-                String telp = Modul.PhoneFormat(inTelp.getText().toString());
+                String telp = inTelp.getText().toString();
                 if (nama.isEmpty() || alamat.isEmpty() || telp.isEmpty()){
                     inNama.setError("Harap isi dengan benar");
                     inAlamat.setError("Harap isi dengan benar");
                     inTelp.setError("Harap isi dengan benar");
                 } else {
                     //setiap update butuh id, tapi gk bisa lgsg dimasukkan ke parameter, jd hrs dipisah saat di inisiasi
+                    telp = Modul.PhoneFormat(telp);
                     ModelPelanggan mp = new ModelPelanggan(nama, alamat, telp);
                     mp.setIdpelanggan(id);
                     UpdatePel(mp.getIdpelanggan(), mp);

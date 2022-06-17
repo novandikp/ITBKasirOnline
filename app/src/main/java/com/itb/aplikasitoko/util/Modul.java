@@ -1,6 +1,7 @@
 package com.itb.aplikasitoko.util;
 
 import android.text.TextUtils;
+import android.util.Log;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
@@ -139,7 +140,10 @@ public class Modul {
     }
 
     public static String PhoneFormat(String telp) {
-        String telpon = telp.substring(0,1).replace("0", "62")+telp.substring(1);
-        return telpon;
+        String telp1 = telp.substring(0, 3);
+        String telp2 = telp.substring(3);
+        String telp3 = telp1.replace("08","628") + telp2;
+        Log.d("PHONE", "PhoneFormat: "+telp3);
+        return telp3;
     }
 }

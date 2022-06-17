@@ -32,13 +32,14 @@ public class TelpVerification extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(bind.getRoot());
         SpHelper sp = new SpHelper(this); //disimpan di minta otp
+        sp.setValue(Config.lastPageSign,Config.PageSigned.OTP);
 
-        String NoTelp = bind.noTelp.getText().toString();
         bind.sendKodeOTP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ModelToko modelToko = new ModelToko();
-                modelToko.setNomer_toko(Modul.getDate(NoTelp));
+                String NoTelp = bind.noTelp.getText().toString();
+                modelToko.setNomer_toko(Modul.PhoneFormat(NoTelp));
                 sp.setValue(Config.phoneOTP, NoTelp); //ini menyimpan notelpon ke dlm shared pref
                 MintaOtp(modelToko);
             }
