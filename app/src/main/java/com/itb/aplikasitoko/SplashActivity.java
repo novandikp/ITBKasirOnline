@@ -41,6 +41,8 @@ public class SplashActivity extends AppCompatActivity{
                         if(!sp.getValue("isFirstLogin","").equals(Modul.getDate("yyyy-MM-dd"))){
                             sp.setValue("isFirstLogin",Modul.getDate("yyyy-MM-dd"));
                             startActivity(new Intent(SplashActivity.this, LoadActivity.class));
+                        }else if(sp.getRemember()){
+                            startActivity(new Intent(SplashActivity.this, HomePage.class));
                         }else{
                             startActivity(new Intent(SplashActivity.this, LoginPegawai.class));
                         }

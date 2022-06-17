@@ -46,6 +46,22 @@ public class SpHelper {
         editor.commit();
     }
 
+    public void setRemember(boolean remember){
+        if(remember){
+            setValue("remember","y");
+        }else{
+            setValue("remember","n");
+        }
+
+    }
+    public boolean getRemember(){
+        if (getValue("remember","n").equals("y")){
+            return  true;
+        }
+
+        return false;
+
+    }
     public String getIdPegawai(){
         return getValue("idpegawai");
     }
