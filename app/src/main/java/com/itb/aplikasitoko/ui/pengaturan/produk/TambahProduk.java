@@ -272,7 +272,7 @@ public class TambahProduk extends AppCompatActivity {
             @Override
             public void onResponse(Call<BarangResponse> call, Response<BarangResponse> response) {
                 LoadingDialog.close();
-                if (response.isSuccessful() || response.body().isStatus()) {
+                if (response.isSuccessful()) {
                     SuccessDialog.message(TambahProduk.this, getString(R.string.success_added), bind.getRoot());
 
                     bind.namaProduk.getText().clear();

@@ -30,6 +30,7 @@ public class IdentitasToko extends AppCompatActivity {
     ActivityIdentitasBinding bind;
     private ModelToko data;
     private TokoRepository tokoRepository;
+
         
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,26 +105,10 @@ public class IdentitasToko extends AppCompatActivity {
                 updateProfil(modelToko);
             }
         });
+
+
     }
 
-//    public void MasukProfil(ModelToko modelToko){
-//        Call<InfoBisnisResponse> infoBisnisResponseCall = Api.getService(this).masukProfil(modelToko);
-//        infoBisnisResponseCall.enqueue(new Callback<InfoBisnisResponse>() {
-//            @Override
-//            public void onResponse(Call<InfoBisnisResponse> call, Response<InfoBisnisResponse> response) {
-//                if (response.isSuccessful()){
-//                    SuccessDialog.message(IdentitasToko.this,getString(R.string.success_added),bind.getRoot());
-//                } else {
-//                    ErrorDialog.message(IdentitasToko.this,getString(R.string.add_kategori_error),bind.getRoot());
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<InfoBisnisResponse> call, Throwable t) {
-//                Toast.makeText(IdentitasToko.this, t.getMessage(), Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//    }
 
     public void refreshData(){
         LoadingDialog.load(IdentitasToko.this);
@@ -153,6 +138,16 @@ public class IdentitasToko extends AppCompatActivity {
     }
 
     public void updateProfil(ModelToko modelToko){
+        if (bind.lokasiUsaha.getText().toString().isEmpty() || bind.namaUsaha.getText().toString().isEmpty() ||
+                bind.namaPemilik.getText().toString().isEmpty() || bind.JenisUsaha.getText().toString().isEmpty() || bind.ukuranPrinter.getText().toString().isEmpty()) {
+
+            bind.namaPemilik.setError("Tidak boleh kosong");
+            bind.namaUsaha.setError("Tidak boleh kosong");
+            bind.JenisUsaha.setError("Tidak boleh kosong");
+            bind.lokasiUsaha.setError("Tidak boleh kosong");
+            bind.ukuranPrinter.setError("Tidak boleh kosong");
+            return;
+        }
         LoadingDialog.load(IdentitasToko.this);
         Call<IdentitasResponse> identitasResponseCall = Api.Identitas(IdentitasToko.this).postIdentitas(modelToko);
         identitasResponseCall.enqueue(new Callback<IdentitasResponse>() {
@@ -160,11 +155,13 @@ public class IdentitasToko extends AppCompatActivity {
             public void onResponse(Call<IdentitasResponse> call, Response<IdentitasResponse> response) {
                 LoadingDialog.close();
                 tokoRepository.insert(modelToko);
+
                 if (response.isSuccessful()){
                     SuccessDialog.message(IdentitasToko.this,getString(R.string.updated_success),bind.getRoot());
                 } else {
                     ErrorDialog.message(IdentitasToko.this,getString(R.string.updated_error),bind.getRoot());
                 }
+
             }
 
             @Override

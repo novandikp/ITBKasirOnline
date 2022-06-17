@@ -45,6 +45,7 @@ public class HomePage extends AppCompatActivity {
 
         //mengatur email/username di sidebar
         SpHelper sp = new SpHelper(this);
+        sp.setValue(Config.lastPageSign,Config.PageSigned.DASHBOARD);
         TextView tvnama = headerView.findViewById(R.id.user);
         tvnama.setText(sp.getUsername());
         TextView tvEmail = headerView.findViewById(R.id.email);

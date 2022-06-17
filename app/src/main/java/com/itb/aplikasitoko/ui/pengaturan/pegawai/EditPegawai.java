@@ -18,6 +18,7 @@ import com.itb.aplikasitoko.Model.ModelPegawai;
 import com.itb.aplikasitoko.R;
 import com.itb.aplikasitoko.Response.PegawaiResponse;
 import com.itb.aplikasitoko.databinding.EditPegawaiBinding;
+import com.itb.aplikasitoko.util.Modul;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -51,7 +52,7 @@ public class EditPegawai extends AppCompatActivity {
                 int id = getIntent().getIntExtra("idpegawai", 0); //ini hrs pake default valu, kalau gk bakal eror
                 String nama = inNama.getText().toString();
                 String alamat = inAlamat.getText().toString();
-                String telp = inTelp.getText().toString();
+                String telp = Modul.PhoneFormat(inTelp.getText().toString());
                 String pin = inPin.getText().toString();
 
                 if (nama.isEmpty() || alamat.isEmpty() || telp.isEmpty() || pin.isEmpty() || pin.length() < 4 || pin.length() > 4) {

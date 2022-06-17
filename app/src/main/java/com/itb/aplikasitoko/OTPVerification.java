@@ -38,6 +38,8 @@ public class OTPVerification extends AppCompatActivity {
         NoHp = sp.getValue(Config.phoneOTP);
         EditText kode = bind.kodeOTP;
 
+        setResendTimer();
+
         bind.submitKodeOTP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -136,7 +138,7 @@ public class OTPVerification extends AppCompatActivity {
                 LoadingDialog.close();
                 if (response.isSuccessful()){
                     startActivity(new Intent(OTPVerification.this, InformasiBisnis.class));
-                    finish();
+
                 } else {
                     Toast.makeText(OTPVerification.this, "Masukkan kode OTP dengan benar", Toast.LENGTH_SHORT).show();
                 }

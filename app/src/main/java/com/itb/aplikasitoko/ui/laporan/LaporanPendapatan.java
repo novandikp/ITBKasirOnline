@@ -166,8 +166,8 @@ public class LaporanPendapatan extends AppCompatActivity {
                     LoadingDialog.close();
                     data.clear();
                     if (response.isSuccessful()){
-
                         data.addAll(response.body().getData());
+                    }else{
                     }
                     setTotal();
                     adapter.notifyDataSetChanged();

@@ -29,7 +29,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AuthApp"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true"
+        android:largeHeap="true"
+        android:hardwareAccelerated="false"
+        >
         <activity
             android:name=".ui.load.LoadActivity"
             android:exported="false" />
@@ -191,8 +194,6 @@
             android:name="com.itb.aplikasitoko.ui.pengaturan.toko.IdentitasToko"
             android:exported="false"
             android:parentActivityName="com.itb.aplikasitoko.ui.pengaturan.toko.IdentitasToko" />
-        <activity android:name="com.itb.aplikasitoko.ui.logout.LogoutToko" />
-        <activity android:name="com.itb.aplikasitoko.ui.logout.LogoutPegawai" />
     </application>
 
 </manifest>

@@ -17,6 +17,7 @@ import com.itb.aplikasitoko.Model.ModelPelanggan;
 import com.itb.aplikasitoko.R;
 import com.itb.aplikasitoko.Response.PelangganResponse;
 import com.itb.aplikasitoko.databinding.InsertPelangganBinding;
+import com.itb.aplikasitoko.util.Modul;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,7 +56,7 @@ public class TambahPelanggan extends AppCompatActivity {
             public void onClick(View view) {
                 String nama = inNama.getText().toString();
                 String alamat = inAlamat.getText().toString();
-                String telp = inTelp.getText().toString();
+                String telp = Modul.PhoneFormat(inTelp.getText().toString());
 
                 if (nama.isEmpty() || alamat.isEmpty() || telp.isEmpty()){
                     inNama.setError("Harap isi dengan benar");
@@ -81,7 +82,7 @@ public class TambahPelanggan extends AppCompatActivity {
             @Override
             public void onResponse(Call<PelangganResponse> call, Response<PelangganResponse> response) {
                 LoadingDialog.close();
-                if (response.isSuccessful() && response.body().isStatus()){
+                if (response.isSuccessful()){
                     SuccessDialog.message(TambahPelanggan.this, getString(R.string.success_added), bind.getRoot());
                     bind.inNama.getText().clear();
                     bind.inAlamat.getText().clear();

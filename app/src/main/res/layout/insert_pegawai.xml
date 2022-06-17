@@ -150,6 +150,7 @@
                     android:ems="10"
                     android:hint="Masukkan PIN"
                     android:inputType="number"
+                    android:maxLength="4"
                     android:minHeight="48dp"
                     android:textSize="@dimen/FS_type1a" />
             </LinearLayout>

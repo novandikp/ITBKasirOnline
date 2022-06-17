@@ -213,7 +213,7 @@ public class MasterDaftarKategori extends AppCompatActivity {
             public void onResponse(Call<KategoriResponse> call, Response<KategoriResponse> response) {
                 LoadingDialog.close();
 //                EditText inKategori = bind.eKategori;
-                if (response.isSuccessful() && response.body().isStatus()) {
+                if (response.isSuccessful()) {
                     SuccessDialog.message(MasterDaftarKategori.this,getString(R.string.success_added),bind.getRoot());
 
                     kategoriRepository.insert(modelKategori);

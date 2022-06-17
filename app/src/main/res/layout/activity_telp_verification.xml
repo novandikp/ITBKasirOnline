@@ -106,7 +106,16 @@
                     android:backgroundTint="@color/default1"
                     android:text="Send OTP Code"
                     android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/backToAdvance"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:backgroundTint="@color/default1"
+                    android:text="Kembali"
+                    android:textColor="#FFFFFF" />
             </LinearLayout>
+
 
             <!--                <ProgressBar-->
             <!--                    android:id="@+id/progressBar"-->
