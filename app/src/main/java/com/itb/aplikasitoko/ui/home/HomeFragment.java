@@ -337,6 +337,8 @@ public class HomeFragment extends Fragment {
             binding.tvJumlah.setTextColor(getContext().getColor(R.color.white));
             binding.tvTotal.setTextColor(getContext().getColor(R.color.white));
             binding.textviewtotal.setTextColor(getContext().getColor(R.color.white));
+            service.clearCart();
+            binding.viewTotal.setEnabled(false);
         } else {
             binding.viewTotal.setBackgroundColor(getContext().getColor(R.color.green));
             binding.tvJumlah.setTextColor(getContext().getColor(R.color.white));
