@@ -34,7 +34,7 @@ public class TelpVerification extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ModelToko modelToko = new ModelToko();
-                modelToko.setNomer_toko(NoTelp.getText().toString());
+                modelToko.setNomer_toko(NoTelp.getText().toString().substring(0, 1).replace("08", "62")+NoTelp.getText().toString().substring(1));
                 sp.setValue(Config.phoneOTP, NoTelp.getText().toString()); //ini menyimpan notelpon ke dlm shared pref
                 MintaOtp(modelToko);
             }
@@ -43,7 +43,7 @@ public class TelpVerification extends AppCompatActivity {
 
 
     public void MintaOtp(ModelToko modelToko) {
-        //kalau di file java pakainya this atau nama file.this, bukan pakaia context
+        //kalau di file java pakainya this atau nama file(class).this, bukan pakaia context
         Call<OtpResponse> OtpResponseCall = Api.getService(this).mintaOtp(modelToko); //ini pake getsrvice yg ada headernya
         OtpResponseCall.enqueue(new Callback<OtpResponse>() {
             @Override

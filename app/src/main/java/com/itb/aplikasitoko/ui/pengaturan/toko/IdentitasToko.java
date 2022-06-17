@@ -30,6 +30,7 @@ public class IdentitasToko extends AppCompatActivity {
     ActivityIdentitasBinding bind;
     private ModelToko data;
     private TokoRepository tokoRepository;
+
         
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,6 +105,18 @@ public class IdentitasToko extends AppCompatActivity {
                 updateProfil(modelToko);
             }
         });
+
+        if (bind.lokasiUsaha.getText().toString().isEmpty() || bind.namaUsaha.getText().toString().isEmpty() ||
+                bind.namaPemilik.getText().toString().isEmpty() || bind.JenisUsaha.getText().toString().isEmpty() || bind.ukuranPrinter.getText().toString().isEmpty()) {
+
+            bind.namaPemilik.setError("Tidak boleh kosong");
+            bind.namaUsaha.setError("Tidak boleh kosong");
+            bind.JenisUsaha.setError("Tidak boleh kosong");
+            bind.lokasiUsaha.setError("Tidak boleh kosong");
+            bind.ukuranPrinter.setError("Tidak boleh kosong");
+        }
+
+
     }
 
 //    public void MasukProfil(ModelToko modelToko){
