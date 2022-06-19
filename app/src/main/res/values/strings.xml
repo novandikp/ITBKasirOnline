@@ -6,6 +6,12 @@
         <item>Restoran</item>
     </string-array>
 
+    <string-array name="jenisUsaha2">
+        <item>Toko</item>
+        <item>Restoran</item>
+        <item>Kedai</item>
+    </string-array>
+
     <string-array name="ukuranPrinter">
         <item>58mm</item>
         <item>76mm</item>

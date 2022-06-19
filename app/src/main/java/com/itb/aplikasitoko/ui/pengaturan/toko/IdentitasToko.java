@@ -46,6 +46,8 @@ public class IdentitasToko extends AppCompatActivity {
         SpHelper sp = new SpHelper(IdentitasToko.this);
         bind.ukuranPrinter.setText(sp.getPrinter());
 
+        AutoCompleteTextView JenisUsaha = bind.JenisUsaha;
+        AutoCompleteTextView ukuranPrinter = bind.ukuranPrinter;
 
 
         tokoRepository.getToko().observe(this, new Observer<ModelToko>() {
@@ -55,16 +57,18 @@ public class IdentitasToko extends AppCompatActivity {
                     data = modelToko;
                     bind.namaPemilik.setText(modelToko.getNama_pemilik());
                     bind.namaUsaha.setText(modelToko.getNama_toko());
-
                     bind.JenisUsaha.setText(modelToko.getJenis_toko());
                     bind.lokasiUsaha.setText(modelToko.getAlamat_toko());
+
+                    ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(IdentitasToko.this,
+                            android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.jenisUsaha));
+                    myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    JenisUsaha.setAdapter(myAdapter);
+                    myAdapter.notifyDataSetChanged();
                 }
             }
         });
         refreshData();
-
-        AutoCompleteTextView JenisUsaha = bind.JenisUsaha;
-        AutoCompleteTextView ukuranPrinter = bind.ukuranPrinter;
 
         bind.JenisUsaha.setClickable(true);
         bind.JenisUsaha.setFocusable(false);
@@ -86,11 +90,8 @@ public class IdentitasToko extends AppCompatActivity {
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.ukuranPrinter));
         myAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         ukuranPrinter.setAdapter(myAdapter2);
-        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(IdentitasToko.this,
-                android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.jenisUsaha));
-        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        bind.JenisUsaha.setAdapter(myAdapter);
-        myAdapter.notifyDataSetChanged();
+        myAdapter2.notifyDataSetChanged();
+
 
 
         bind.btnSubmit.setOnClickListener(new View.OnClickListener() {
