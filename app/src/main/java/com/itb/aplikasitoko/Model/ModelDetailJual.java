@@ -11,14 +11,14 @@ public class ModelDetailJual
     private int iddetailjual;
     private int idjual;
     private String idbarang;
-    private int jumlahjual;
+    private double jumlahjual;
     private double hargajual;
 
     @Ignore
     private int idtoko;
 
 
-    public ModelDetailJual(int idjual, String idbarang, int jumlahjual, double hargajual) {
+    public ModelDetailJual(int idjual, String idbarang, double jumlahjual, double hargajual) {
         this.idjual = idjual;
         this.idbarang = idbarang;
         this.jumlahjual = jumlahjual;
@@ -49,11 +49,11 @@ public class ModelDetailJual
         this.idbarang = idbarang;
     }
 
-    public int getJumlahjual() {
+    public double getJumlahjual() {
         return jumlahjual;
     }
 
-    public void setJumlahjual(int jumlahjual) {
+    public void setJumlahjual(double jumlahjual) {
         this.jumlahjual = jumlahjual;
     }
 

@@ -31,10 +31,7 @@
             android:id="@+id/linearLayout1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="25dp"
-            android:background="@drawable/border_textview"
+            android:background="@color/default2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -47,7 +44,7 @@
                 android:padding="5.2dp"
                 android:text="Rp. 0"
                 android:textAlignment="center"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="@dimen/FS_type1a"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -59,9 +56,9 @@
             android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
             android:gravity="center_horizontal"
-            android:layout_marginStart="25dp"
-            android:layout_marginEnd="25dp"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -71,28 +68,27 @@
                 android:id="@+id/searchView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="8dp"
                 android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginRight="0dp"
-                android:background="@drawable/searchview_bg"
+                android:layout_marginBottom="8dp"
                 android:iconifiedByDefault="false"
                 android:queryHint="Cari Disini..."
                 android:theme="@style/FS_SearchView"
-                app:theme="@style/FS_SearchView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:theme="@style/FS_SearchView" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/linearLayout3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="3dp"
-            android:layout_marginEnd="25dp"
+            android:layout_marginEnd="8dp"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -100,7 +96,7 @@
 
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginRight="8dp"
                 android:layout_weight="1"
                 android:orientation="horizontal"
@@ -109,7 +105,9 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/eDateForm"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    app:boxBackgroundColor="#00FFFFFF"
+                    app:boxCollapsedPaddingTop="2dp">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/dateFrom"
@@ -123,7 +121,7 @@
 
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
                 android:layout_weight="1"
                 android:orientation="horizontal"
@@ -131,7 +129,9 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content"
+                    app:boxBackgroundColor="#00FFFFFF"
+                    app:boxCollapsedPaddingTop="2dp">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/dateTo"
@@ -195,6 +195,7 @@
                 android:text="Export Excel"
                 android:textAlignment="center"
                 android:textColor="#FFFFFF"
+                android:textSize="14dp"
                 app:iconTint="#FFFFFF" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

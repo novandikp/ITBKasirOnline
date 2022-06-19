@@ -1,10 +1,15 @@
 package com.itb.aplikasitoko.ui.home.bottom_nav.shopping;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.CompoundButton;
 
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -15,10 +20,13 @@ import com.itb.aplikasitoko.Model.ModelDetailJual;
 import com.itb.aplikasitoko.R;
 import com.itb.aplikasitoko.Service.OrderService;
 import com.itb.aplikasitoko.databinding.ActivityCartBinding;
+import com.itb.aplikasitoko.databinding.DialogKeteranganOrderBinding;
 import com.itb.aplikasitoko.util.Modul;
+import com.itb.aplikasitoko.util.NumberTextWatcher;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class ShoppingCart extends AppCompatActivity {
     private ActivityCartBinding bind;
@@ -26,7 +34,7 @@ public class ShoppingCart extends AppCompatActivity {
     private CartAdapter cartAdapter;
     private List<ModelDetailJual> modelDetailJualList = new ArrayList<>();
     private List<ModelBarang> modelBarangList = new ArrayList<>();
-
+    private OrderService service;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         bind = ActivityCartBinding.inflate(getLayoutInflater());
@@ -36,7 +44,7 @@ public class ShoppingCart extends AppCompatActivity {
         actionBar.setTitle("Keranjang");
         actionBar.setDisplayShowHomeEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
-
+        service = OrderService.getInstance();
         setContentView(bind.getRoot());
 
         //insiiasi db/repo
@@ -52,6 +60,69 @@ public class ShoppingCart extends AppCompatActivity {
 
     }
 
+    public void DialogTotal(ModelDetailJual modelDetailJual, ModelBarang modelBarang){
+
+        DialogKeteranganOrderBinding binder = DialogKeteranganOrderBinding.inflate(LayoutInflater.from(this));
+        AlertDialog.Builder alertBuilder = new AlertDialog.Builder(this);
+        alertBuilder.setView(binder.getRoot());
+        alertBuilder.setTitle("JUMLAH ORDER");
+        alertBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                double jumlah =Modul.strToDouble(binder.tvJumlah.getText().toString());
+                double hargaBaru = Modul.strToDouble(Modul.unnumberFormat(binder.eHarga.getText().toString()));
+                if(binder.tvJumlah.getText().toString().isEmpty()){
+                    binder.tvJumlah.setError("Harap isi dengan benar");
+                    return;
+                }
+
+                service.setJumlahBeli(modelBarang,  modelDetailJual.getJumlahjual(),jumlah,hargaBaru);
+                refreshData();
+            }
+        }).setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+        binder.eHarga.setText(Modul.toString(modelDetailJual.getHargajual()));
+        binder.eHarga.addTextChangedListener(new NumberTextWatcher(binder.eHarga, new Locale("id","ID"),0));
+        binder.cbHarga.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(b){
+                    binder.eHarga.setVisibility(View.VISIBLE);
+                }else{
+                    binder.eHarga.setVisibility(View.GONE);
+                }
+                binder.eHarga.setText(Modul.toString(modelDetailJual.getHargajual()));
+            }
+        });
+        binder.tvJumlah.setText(Modul.toString(modelDetailJual.getJumlahjual()));
+        binder.tambah.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int jumlah = Integer.parseInt(binder.tvJumlah.getText().toString());
+                jumlah++;
+                binder.tvJumlah.setText(String.valueOf(jumlah));
+            }
+        });
+        binder.kurang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int jumlah = Integer.parseInt(binder.tvJumlah.getText().toString());
+
+                if (jumlah == 1){
+                    binder.kurang.setEnabled(false);
+                    binder.kurang.setTextColor(getColor(R.color.darkgrey));
+                }
+                jumlah--;
+                binder.tvJumlah.setText(String.valueOf(jumlah));
+            }
+        });
+        AlertDialog dialog = alertBuilder.create();
+        dialog.show();
+    }
     public void refreshData(){
         OrderService orderService = OrderService.getInstance();
 

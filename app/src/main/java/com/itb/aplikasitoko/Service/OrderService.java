@@ -2,6 +2,7 @@ package com.itb.aplikasitoko.Service;
 
 import android.app.Application;
 import android.content.Intent;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.itb.aplikasitoko.Api;
@@ -100,11 +101,11 @@ public class OrderService {
     //OrderService service = OrderService.getInstance(); //ini buat sekai pengecekan / konstruksi biar gk makan memori dn gk bakal di destroy
     //
 
-    public int getJumlah(){
-        int jumlah = 0;
+    public double getJumlah(){
+        double jumlah = 0;
         for(ModelDetailJual detailJual : detail){
-            jumlah += detailJual.getJumlahjual();
-
+//            jumlah += detailJual.getJumlahjual();
+            jumlah += Math.round(detailJual.getJumlahjual()*100.0)/100.0;
         }
         return jumlah;
     }
@@ -177,9 +178,11 @@ public class OrderService {
         return this.detail;
     }
 
-    public void setJumlahBeli(ModelBarang modelBarang,int jumlahLama, int jumlahBeli,double hargaBaru){
+    public void setJumlahBeli(ModelBarang modelBarang,double jumlahLama, double jumlahBeli,double hargaBaru){
+        jumlahBeli = Math.round(jumlahBeli*100.0)/100.0;
         int posisi = getIndexBarang(modelBarang);
         if(posisi>=0) {
+            total -= modelBarang.getHarga() * jumlahLama;
             if (jumlahBeli == 0) {
                 modelBarangs.remove(posisi);
                 detail.remove(posisi);
@@ -187,9 +190,10 @@ public class OrderService {
 
                 ModelDetailJual detailJual = detail.get(posisi);
 
-                total -= modelBarang.getHarga() * jumlahLama;
+
                 detailJual.setHargajual(hargaBaru);
                 detailJual.setJumlahjual(jumlahBeli);
+                Log.d("DETAILJUAL",Modul.toString(jumlahBeli));
                 detail.set(getIndexBarang(modelBarang), detailJual);
                 total += detailJual.getHargajual() * jumlahBeli;
             }

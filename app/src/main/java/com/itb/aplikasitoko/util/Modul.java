@@ -63,8 +63,10 @@ public class Modul {
 
 
     public  static String toString(double doubleValue){
-        String rounded = String.format("%.0f", doubleValue);
-        return rounded;
+
+        String angka =doubleToStr(doubleValue).replace(".0","");
+//        String rounded = String.format("%.0f", doubleValue);
+        return angka;
     }
 
     public static String unnumberFormat(String df){

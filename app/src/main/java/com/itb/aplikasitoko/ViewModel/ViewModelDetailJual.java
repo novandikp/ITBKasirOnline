@@ -12,14 +12,14 @@ public class ViewModelDetailJual {
     private String nama_pelanggan;
     private String tanggal_jual;
     private String barang;
-    private int jumlahjual;
+    private double jumlahjual;
     private String nama_satuan;
     private double hargajual;
     private double hargabeli;
     private int idtoko;
     private double laba;
 
-    public ViewModelDetailJual(String fakturjual, String nama_pegawai, String nama_pelanggan, String tanggal_jual, String barang, int jumlahjual, String nama_satuan, double hargajual, double hargabeli, int idtoko, double laba) {
+    public ViewModelDetailJual(String fakturjual, String nama_pegawai, String nama_pelanggan, String tanggal_jual, String barang, double jumlahjual, String nama_satuan, double hargajual, double hargabeli, int idtoko, double laba) {
         this.fakturjual = fakturjual;
         this.nama_pegawai = nama_pegawai;
         this.nama_pelanggan = nama_pelanggan;
@@ -73,7 +73,7 @@ public class ViewModelDetailJual {
         this.barang = barang;
     }
 
-    public int getJumlahjual() {
+    public double getJumlahjual() {
         return jumlahjual;
     }
 

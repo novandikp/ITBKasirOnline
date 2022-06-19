@@ -262,7 +262,7 @@ public class LaporanPenjualan extends AppCompatActivity {
             ModulExcel.addLabel(sheet, col++, row, detailJual.getFakturjual());
             ModulExcel.addLabel(sheet, col++, row, detailJual.getNama_pelanggan());
             ModulExcel.addLabel(sheet, col++, row, detailJual.getBarang());
-            ModulExcel.addLabel(sheet, col++, row, Modul.intToStr(detailJual.getJumlahjual())+" "+detailJual.getNama_satuan());
+            ModulExcel.addLabel(sheet, col++, row, Modul.toString(detailJual.getJumlahjual())+" "+detailJual.getNama_satuan());
             ModulExcel.addLabel(sheet, col++, row, "Rp. "+Modul.removeE(detailJual.getHargajual()));
             ModulExcel.addLabel(sheet, col++, row, "Rp. "+Modul.removeE(detailJual.getLaba()));
             row++;

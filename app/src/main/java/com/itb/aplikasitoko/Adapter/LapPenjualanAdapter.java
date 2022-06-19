@@ -44,7 +44,7 @@ public class LapPenjualanAdapter extends RecyclerView.Adapter<LapPenjualanAdapte
         holder.pelanggan.setText(viewModelDetailJual.getNama_pelanggan());
         holder.pegawai.setText(viewModelDetailJual.getNama_pegawai());
         holder.barang.setText(viewModelDetailJual.getBarang());
-        holder.keterangan.setText(Modul.intToStr(viewModelDetailJual.getJumlahjual())+" "+viewModelDetailJual.getNama_satuan());
+        holder.keterangan.setText(Modul.toString(viewModelDetailJual.getJumlahjual())+" "+viewModelDetailJual.getNama_satuan());
         holder.keuntungan.setText(Modul.removeE(viewModelDetailJual.getLaba()));
     }
 

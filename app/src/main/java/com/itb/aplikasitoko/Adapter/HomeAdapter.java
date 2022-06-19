@@ -59,7 +59,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
             holder.tGambar.setTextColor(context.getColor(R.color.white)); //ganti warna teks
             holder.tHarga.setText(Modul.removeE(modelBarang.getHarga()));
         } else {
-            holder.tGambar.setText(String.valueOf(detail.getJumlahjual()));
+            holder.tGambar.setText(Modul.toString(detail.getJumlahjual()));
             holder.tGambar.setBackgroundColor(context.getColor(R.color.default2)); //ganti warna background
             holder.tGambar.setTextColor(context.getColor(R.color.white)); //ganti warna teks
             holder.linear.setBackgroundColor(context.getColor(R.color.default2));

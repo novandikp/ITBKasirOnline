@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.itb.aplikasitoko.Model.ModelBarang;
 import com.itb.aplikasitoko.Model.ModelDetailJual;
 import com.itb.aplikasitoko.R;
+import com.itb.aplikasitoko.ui.home.bottom_nav.shopping.ShoppingCart;
 import com.itb.aplikasitoko.util.Modul;
 
 import java.util.List;
@@ -40,7 +41,13 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder>{
         ModelBarang modelBarang = modelBarangList.get(position);
         ModelDetailJual detailJual = modelDetailJualList.get(position);
         holder.tNama.setText(Modul.upperCaseFirst(modelBarang.getBarang()));
-        holder.tjumlah.setText(String.valueOf(detailJual.getJumlahjual()));
+        holder.tjumlah.setText(Modul.toString(detailJual.getJumlahjual()));
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((ShoppingCart)context).DialogTotal(detailJual,modelBarang);
+            }
+        });
         holder.tHitung.setText(Modul.toString(detailJual.getJumlahjual())+" x "+ "Rp. "+Modul.removeE(detailJual.getHargajual())+" = Rp. "+Modul.removeE(detailJual.getHargajual()*detailJual.getJumlahjual()));
     }
 

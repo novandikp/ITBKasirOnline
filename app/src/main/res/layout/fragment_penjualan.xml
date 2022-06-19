@@ -10,11 +10,9 @@
         android:id="@+id/linearLayout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="25dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:background="@drawable/border_textview"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,15 +26,15 @@
 
             <androidx.appcompat.widget.SearchView
                 android:id="@+id/searchView"
-                android:theme="@style/FS_SearchView"
-                app:theme="@style/FS_SearchView" 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:theme="@style/FS_SearchView"
                 app:iconifiedByDefault="false"
                 app:layout_constraintEnd_toStartOf="@+id/QRCode"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:queryHint="Cari Transaksi" />
+                app:queryHint="Cari Transaksi"
+                app:theme="@style/FS_SearchView" />
         </LinearLayout>
 
     </LinearLayout>
@@ -45,9 +43,9 @@
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="25dp"
+        android:layout_marginEnd="8dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,7 +53,7 @@
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginRight="8dp"
             android:layout_weight="1"
             android:orientation="horizontal"
@@ -63,7 +61,9 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                app:boxBackgroundColor="#00FFFFFF"
+                app:boxCollapsedPaddingTop="2dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/dateFrom"
@@ -76,7 +76,7 @@
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:layout_weight="1"
             android:orientation="horizontal"
@@ -84,7 +84,9 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                app:boxBackgroundColor="#00FFFFFF"
+                app:boxCollapsedPaddingTop="2dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/dateTo"

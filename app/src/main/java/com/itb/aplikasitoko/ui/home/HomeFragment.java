@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -279,7 +280,8 @@ public class HomeFragment extends Fragment {
         alertBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                int jumlah =Modul.strToInt(binder.tvJumlah.getText().toString());
+                double jumlah =Modul.strToDouble(binder.tvJumlah.getText().toString());
+                Log.d("DETAILJUAL",Modul.toString(jumlah));
                 double hargaBaru = Modul.strToDouble(Modul.unnumberFormat(binder.eHarga.getText().toString()));
                 if(binder.tvJumlah.getText().toString().isEmpty()){
                     binder.tvJumlah.setError("Harap isi dengan benar");
@@ -309,7 +311,7 @@ public class HomeFragment extends Fragment {
                 binder.eHarga.setText(Modul.toString(modelDetailJual.getHargajual()));
             }
         });
-        binder.tvJumlah.setText(String.valueOf(modelDetailJual.getJumlahjual()));
+        binder.tvJumlah.setText(Modul.toString(modelDetailJual.getJumlahjual()));
         binder.tambah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -349,7 +351,7 @@ public class HomeFragment extends Fragment {
             binding.tvTotal.setTextColor(getContext().getColor(R.color.white));
             binding.textviewtotal.setTextColor(getContext().getColor(R.color.white));
         }
-        binding.tvJumlah.setText(String.valueOf(service.getJumlah()));
+        binding.tvJumlah.setText(Modul.toString(service.getJumlah()));
         binding.tvTotal.setText(Modul.removeE(service.getTotal()));
     }
 }
