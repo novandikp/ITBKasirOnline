@@ -48,11 +48,10 @@ import java.util.Locale;
         Bayar = Bayar + givenValue;
 
         inBayar.setText(kurensi.format(Modul.strToDouble(Bayar)));
+        if (inBayar.getText().toString() == "0"){
 
-        if (inBayar.getText() == "0"){
-            bind.inBayar.setTextColor(getColor(R.color.darkgrey));
         } else {
-            bind.inBayar.setTextColor(getColor(R.color.default1));
+
         }
 
         Double d = Modul.strToDouble(Bayar);
@@ -62,6 +61,7 @@ import java.util.Locale;
         } else {
             bind.tvNext.setEnabled(false);
             bind.tvNext.setTextColor(getColor(R.color.darkgrey));
+
         }
 
     }
