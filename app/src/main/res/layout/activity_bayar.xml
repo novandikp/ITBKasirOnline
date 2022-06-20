@@ -89,7 +89,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="65dp"
             android:layout_weight="1"
-            android:textColor="@color/darkgrey"
+            android:textColor="@color/default1"
             android:text="Rp 0"
             android:textAlignment="center"
             android:textSize="45sp"

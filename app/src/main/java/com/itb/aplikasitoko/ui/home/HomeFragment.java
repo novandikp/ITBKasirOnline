@@ -54,6 +54,7 @@ public class HomeFragment extends Fragment {
     BarangRepository barangRepository;
     HomeAdapter produkAdapter;
     private List<ModelBarang> data = new ArrayList<>();
+    private double jumlah;
 
     private static OrderService service;
 
@@ -298,6 +299,7 @@ public class HomeFragment extends Fragment {
 
             }
         });
+
         binder.eHarga.setText(Modul.toString(modelDetailJual.getHargajual()));
         binder.eHarga.addTextChangedListener(new NumberTextWatcher(binder.eHarga, new Locale("id","ID"),0));
         binder.cbHarga.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -311,11 +313,12 @@ public class HomeFragment extends Fragment {
                 binder.eHarga.setText(Modul.toString(modelDetailJual.getHargajual()));
             }
         });
+
         binder.tvJumlah.setText(Modul.toString(modelDetailJual.getJumlahjual()));
         binder.tambah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int jumlah = Integer.parseInt(binder.tvJumlah.getText().toString());
+                jumlah = Double.parseDouble(binder.tvJumlah.getText().toString());
                 jumlah++;
                 binder.tvJumlah.setText(String.valueOf(jumlah));
             }
@@ -323,14 +326,16 @@ public class HomeFragment extends Fragment {
         binder.kurang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int jumlah = Integer.parseInt(binder.tvJumlah.getText().toString());
-
-                if (jumlah == 1){
-                    binder.kurang.setEnabled(false);
-                    binder.kurang.setTextColor(getContext().getColor(R.color.darkgrey));
-                }
+                jumlah = Double.parseDouble(binder.tvJumlah.getText().toString());
                 jumlah--;
                 binder.tvJumlah.setText(String.valueOf(jumlah));
+                if (jumlah == 0){
+                    binder.kurang.setEnabled(false);
+                    binder.kurang.setTextColor(getContext().getColor(R.color.darkgrey));
+                } else {
+                    binder.kurang.setEnabled(true);
+                    binder.kurang.setTextColor(getContext().getColor(R.color.default1));
+                }
             }
         });
         AlertDialog dialog = alertBuilder.create();
