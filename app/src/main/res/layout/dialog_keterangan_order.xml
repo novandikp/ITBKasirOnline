@@ -73,7 +73,7 @@
             android:id="@+id/cbHarga"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ubah Harga Sementara" />
+            android:text="Ubah harga sementara" />
 
         <EditText
             android:id="@+id/eHarga"

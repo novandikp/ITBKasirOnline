@@ -157,7 +157,7 @@ public class MasterPelanggan extends AppCompatActivity {
     public void DeletePel(int id){
         AlertDialog.Builder alert = new AlertDialog.Builder(MasterPelanggan.this);
         alert.setTitle("Konfirmasi");
-        alert.setMessage("Apakah anda yakin untuk menghapus data ini ?");
+        alert.setMessage("Apakah anda ingin menghapus data pelanggan ini?");
         alert.setPositiveButton("Iya", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {

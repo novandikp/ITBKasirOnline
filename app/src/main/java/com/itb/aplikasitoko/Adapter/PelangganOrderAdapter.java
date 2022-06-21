@@ -48,7 +48,7 @@ public class PelangganOrderAdapter extends RecyclerView.Adapter<PelangganOrderAd
             public void onClick(View view) {
                 //holder.cv.setOutlineAmbientShadowColor(context.getColor(R.color.darkergrey));
                 AlertDialog.Builder alert = new AlertDialog.Builder(context);
-                alert.setTitle("Konfirmasi").setMessage("Apakah anda yakin untuk menambahkan "+mp.getNama_pelanggan()+" sebagai pelanggan?").setPositiveButton("Iya", new DialogInterface.OnClickListener() {
+                alert.setTitle("Konfirmasi").setMessage("Apakah "+mp.getNama_pelanggan()+" adalah pelanggan yang membeli?").setPositiveButton("Iya", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         OrderService.getInstance().setPelanggan(mp); //menyimpan nama pelanggan

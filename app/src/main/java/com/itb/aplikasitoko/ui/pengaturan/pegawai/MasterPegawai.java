@@ -155,7 +155,7 @@ public class MasterPegawai extends AppCompatActivity {
     public void DeletePeg(int id){
         AlertDialog.Builder alert = new AlertDialog.Builder(MasterPegawai.this);
         alert.setTitle("Konfirmasi");
-        alert.setMessage("Anda yakin ingin menghapus data ini?");
+        alert.setMessage("Apakah anda ingin menghapus data pegawai ini?");
         alert.setPositiveButton("iya", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
