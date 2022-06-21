@@ -315,6 +315,7 @@ public class HomeFragment extends Fragment {
         });
 
         binder.tvJumlah.setText(Modul.toString(modelDetailJual.getJumlahjual()));
+
         binder.tambah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -336,6 +337,7 @@ public class HomeFragment extends Fragment {
                     binder.kurang.setEnabled(true);
                     binder.kurang.setTextColor(getContext().getColor(R.color.default1));
                 }
+
             }
         });
         AlertDialog dialog = alertBuilder.create();
