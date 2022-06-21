@@ -26,7 +26,7 @@ public class LogoutPegawai extends Fragment {
 
         AlertDialog.Builder alert = new AlertDialog.Builder(getContext());
         alert.setTitle("Konfirmasi");
-        alert.setMessage("Apakah anda yakin ingin keluar ?");
+        alert.setMessage("Apakah anda yakin ingin keluar?");
         alert.setPositiveButton("Iya", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

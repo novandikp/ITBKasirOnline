@@ -371,6 +371,21 @@ public class PrintStruk extends AppCompatActivity {
     }
 
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(bind.spinnerMode.getSelectedItemPosition() == 0){
+            bind.tvPrinter.setText("Menyambung...");
+            new GetPrinterBTTask(printerBTContext).execute(bind.tvPrinter);
+            bind.cari.setVisibility(View.VISIBLE);
+        }else{
+            bind.tvPrinter.setText("Menyambung...");
+            new GetPrinterUSBTask(printerUSBContext).execute(bind.tvPrinter);
+            bind.cari.setVisibility(View.GONE);
+
+        }
+    }
+
     public void getData(){
         Call<DetailOrderResponse> call = Api.Order(this).getOrderDetail(getIntent().getStringExtra("idjual"));
         call.enqueue(new Callback<DetailOrderResponse>() {
@@ -407,7 +422,7 @@ public class PrintStruk extends AppCompatActivity {
                 e.printStackTrace();
             }
             bind.txtPelanggan.setText("Pelanggan : "+struk.getNama_pelanggan());
-            if(resultPrint==null && modelToko==null) {
+            if(resultPrint==null || modelToko==null) {
 //            atur struk
                 resultPrint = new PrintTextBuilder();
                 // Alamat bisnis
