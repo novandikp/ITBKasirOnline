@@ -110,7 +110,7 @@ public class MasterSatuan extends AppCompatActivity {
         DialogDetailSatuanBinding binder = DialogDetailSatuanBinding.inflate(LayoutInflater.from(this));
         AlertDialog.Builder alertBuilder = new AlertDialog.Builder(this);
         alertBuilder.setView(binder.getRoot());
-        alertBuilder.setTitle("EDIT SATUAN");
+        alertBuilder.setTitle("Edit Satuan");
         AlertDialog dialog = alertBuilder.create();
         binder.txtSatuan.setText(modelSatuan.getNama_satuan());
         binder.btnUpdate.setOnClickListener(new View.OnClickListener() {
@@ -135,7 +135,7 @@ public class MasterSatuan extends AppCompatActivity {
         DialogAddSatuanBinding binder = DialogAddSatuanBinding.inflate(LayoutInflater.from(this));
         AlertDialog.Builder alertBuilder = new AlertDialog.Builder(this);
         alertBuilder.setView(binder.getRoot());
-        alertBuilder.setTitle("ADD SATUAN");
+        alertBuilder.setTitle("Tambah Satuan");
         AlertDialog dialog = alertBuilder.create();
         binder.txtAddSatuan.setText(modelSatuan.getNama_satuan());
         binder.btnAddSatuan.setOnClickListener(new View.OnClickListener() {
@@ -228,7 +228,7 @@ public class MasterSatuan extends AppCompatActivity {
     public void DeleteSat(int id){
         AlertDialog.Builder alert = new AlertDialog.Builder(MasterSatuan.this);
         alert.setTitle("Konfirmasi");
-        alert.setMessage("Apakah anda yakin untuk menghapus data ini ?");
+        alert.setMessage("Apakah anda ingin menghapus satuan ini?");
         alert.setPositiveButton("Iya", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {

@@ -61,7 +61,7 @@ public class PrintPenjulanAdapter extends RecyclerView.Adapter<PrintPenjulanAdap
             public void onClick(View v) {
 
                 AlertDialog.Builder alert = new AlertDialog.Builder(context);
-                alert.setTitle("Konfirmasi").setMessage("Anda akan melakukan print struk ?").setPositiveButton("Iya", new DialogInterface.OnClickListener() {
+                alert.setTitle("Konfirmasi").setMessage("Anda ingin struk dari transaksi ini di print?").setPositiveButton("Iya", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         LoadingDialog.load(context);

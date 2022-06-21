@@ -202,7 +202,7 @@ public class HomeFragment extends Fragment {
 
     public void clearCart(){
         AlertDialog.Builder alert = new AlertDialog.Builder(getContext());
-        alert.setTitle("Konfirmasi").setMessage("Apakah anda yakin untuk mengosongkan keranjang ?").setPositiveButton("Iya", new DialogInterface.OnClickListener() {
+        alert.setTitle("Konfirmasi").setMessage("Apakah anda yakin ingin mengosongkan keranjang?").setPositiveButton("Iya", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 service.clearCart();
@@ -277,7 +277,7 @@ public class HomeFragment extends Fragment {
         DialogKeteranganOrderBinding binder = DialogKeteranganOrderBinding.inflate(LayoutInflater.from(getContext()));
         AlertDialog.Builder alertBuilder = new AlertDialog.Builder(getContext());
         alertBuilder.setView(binder.getRoot());
-        alertBuilder.setTitle("JUMLAH ORDER");
+        alertBuilder.setTitle("Jumlah Order");
         alertBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {

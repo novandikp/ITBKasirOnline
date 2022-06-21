@@ -156,7 +156,7 @@ public class MasterProduk extends AppCompatActivity {
     public void DeleteProduk(String id) {
         AlertDialog.Builder alert = new AlertDialog.Builder(MasterProduk.this);
         alert.setTitle("Konfirmasi");
-        alert.setMessage("Apakah anda yakin untuk menghapus data ini ?");
+        alert.setMessage("Apakah anda ingin menghapus produk ini?");
         alert.setPositiveButton("Iya", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {

@@ -102,7 +102,7 @@ public class ShoppingCart extends AppCompatActivity {
         binder.tambah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int jumlah = Integer.parseInt(binder.tvJumlah.getText().toString());
+                double jumlah = Double.parseDouble(binder.tvJumlah.getText().toString());
                 jumlah++;
                 binder.tvJumlah.setText(String.valueOf(jumlah));
             }
@@ -110,7 +110,7 @@ public class ShoppingCart extends AppCompatActivity {
         binder.kurang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int jumlah = Integer.parseInt(binder.tvJumlah.getText().toString());
+                double jumlah = Double.parseDouble(binder.tvJumlah.getText().toString());
 
                 if (jumlah == 1){
                     binder.kurang.setEnabled(false);
