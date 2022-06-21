@@ -46,9 +46,9 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="error_kategori_message">Kategori telah dipakai tidak dapat dihapus</string>
     <string name="error_satuan_message">Satuan telah dipakai tidak dapat dihapus</string>
-    <string name="error_pelanggan_message">Data Pelanggan tidak dapat dihapus</string>
-    <string name="error_pegawai_message">Data Pegawai tidak dapat dihapus</string>
-    <string name="error_produk_message">Data Barang tidak dapat dihapus</string>
+    <string name="error_pelanggan_message">Data pelanggan tidak dapat dihapus</string>
+    <string name="error_pegawai_message">Data pegawai tidak dapat dihapus</string>
+    <string name="error_produk_message">Data produk tidak dapat dihapus</string>
     <string name="add_kategori_error">Data gagal ditambahkan</string>
     <string name="success_added">Data berhasil ditambahkan</string>
     <string name="deleted_success">Data berhasil dihapus</string>
