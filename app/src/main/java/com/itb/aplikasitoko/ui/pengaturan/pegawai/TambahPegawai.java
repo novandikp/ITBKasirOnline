@@ -98,7 +98,6 @@ public class TambahPegawai extends AppCompatActivity {
 
                     pr.insert(modelPegawai);
 
-                    startActivity(new Intent(TambahPegawai.this, MasterPegawai.class));
                     finish();
 
                 } else {

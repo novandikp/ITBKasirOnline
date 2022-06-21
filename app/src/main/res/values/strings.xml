@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Aplikasi Toko</string>
+    <string name="app_name">ITBPos Online</string>
 
     <string-array name="jenisUsaha">
         <item>Toko</item>
