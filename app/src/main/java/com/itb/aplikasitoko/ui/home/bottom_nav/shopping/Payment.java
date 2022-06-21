@@ -97,7 +97,7 @@ import java.util.Locale;
             public void onClick(View v) {
 
                 AlertDialog.Builder alert = new AlertDialog.Builder(Payment.this);
-                alert.setTitle("Konfirmasi").setMessage("Apakah anda yakin untuk menyelesaikan transaksi ?").setPositiveButton("Iya", new DialogInterface.OnClickListener() {
+                alert.setTitle("Konfirmasi").setMessage("Apakah anda yakin ingin menyelesaikan transaksi ini?").setPositiveButton("Iya", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         LoadingDialog.load(Payment.this);

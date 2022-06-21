@@ -158,7 +158,7 @@ public class MasterDaftarKategori extends AppCompatActivity {
         DialogDetailKategoriBinding binder = DialogDetailKategoriBinding.inflate(LayoutInflater.from(this));
         AlertDialog.Builder alertBuilder = new AlertDialog.Builder(this);
         alertBuilder.setView(binder.getRoot());
-        alertBuilder.setTitle("EDIT KATEGORI");
+        alertBuilder.setTitle("Edit Kategori");
         AlertDialog dialog = alertBuilder.create();
         binder.txtKategori.setText(modelKategori.getNama_kategori());
         binder.btnUpdate.setOnClickListener(new View.OnClickListener() {
@@ -183,7 +183,7 @@ public class MasterDaftarKategori extends AppCompatActivity {
         DialogAddKategoriBinding binder = DialogAddKategoriBinding.inflate(LayoutInflater.from(this));
         AlertDialog.Builder alertBuilder = new AlertDialog.Builder(this);
         alertBuilder.setView(binder.getRoot());
-        alertBuilder.setTitle("ADD KATEGORI");
+        alertBuilder.setTitle("Tambah Kategori");
         AlertDialog dialog = alertBuilder.create();
         binder.txtAddKategori.setText(modelKategori.getNama_kategori());
         binder.btnAddKategori.setOnClickListener(new View.OnClickListener() {
@@ -237,7 +237,7 @@ public class MasterDaftarKategori extends AppCompatActivity {
     public void DeleteKat(int id){
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
         alert.setTitle("Konfirmasi");
-        alert.setMessage("Apakah anda yakin untuk menghapus data ini ?");
+        alert.setMessage("Apakah anda ingin menghapus kategori ini?");
         alert.setPositiveButton("Iya", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
