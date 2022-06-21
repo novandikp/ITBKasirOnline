@@ -8,6 +8,7 @@ import android.graphics.Point;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
@@ -79,14 +80,18 @@ public class HomeFragment extends Fragment {
         binding.titlePelanggan.setText(service.getPelanggan().getNama_pelanggan());
 
         //recyclerview
-        Display display = getActivity().getWindowManager(). getDefaultDisplay(); Point size = new Point(); display. getSize(size); int width = size. x;
+        DisplayMetrics metrics = new DisplayMetrics();
+        getActivity().getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        float yInches= metrics.heightPixels/metrics.ydpi;
+        float xInches= metrics.widthPixels/metrics.xdpi;
+        double width = (double) xInches;
         int span = 3;
-        if(width >1200){
+        if(width >9){
             span=6;
         }
-        else if (width > 1000) {
+        else if (width > 8) {
             span = 5;
-        }else if (width > 800) {
+        }else if (width > 7) {
             span = 4;
         }
         binding.item.setLayoutManager(new GridLayoutManager(getActivity(), span)); //buat grid biar 1 row ada 3 item
