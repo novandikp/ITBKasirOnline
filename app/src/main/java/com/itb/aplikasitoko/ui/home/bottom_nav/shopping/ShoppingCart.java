@@ -160,6 +160,7 @@ public class ShoppingCart extends AppCompatActivity {
             bind.item.setVisibility(View.GONE);
             bind.btnBayar.setBackgroundColor(getColor(R.color.darkgrey));
             bind.btnBayar.setEnabled(false);
+            bind.tvTotal.setText(Modul.removeE(0));
 
         } else {
             bind.tvTotal.setText(Modul.removeE(orderService.getTotal()));// menampilkan total harga
