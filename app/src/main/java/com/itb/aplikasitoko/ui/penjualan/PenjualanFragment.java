@@ -143,8 +143,9 @@ public class PenjualanFragment extends Fragment {
                     if (response.isSuccessful()){
 
                         data.addAll(response.body().getData());
-                        adapter.notifyDataSetChanged();
+
                     }
+                    adapter.notifyDataSetChanged();
                 }
 
                 @Override

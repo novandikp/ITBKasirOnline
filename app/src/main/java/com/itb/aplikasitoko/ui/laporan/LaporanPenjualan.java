@@ -176,9 +176,10 @@ public class LaporanPenjualan extends AppCompatActivity {
                         if (response.isSuccessful()){
                             data.addAll(response.body().getData());
                         }
-                        setTotal();
-                        adapter.notifyDataSetChanged();
+
                     }
+                    setTotal();
+                    adapter.notifyDataSetChanged();
                 }
 
                 @Override

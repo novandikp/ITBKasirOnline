@@ -176,9 +176,10 @@ public class RekapKategori extends AppCompatActivity {
 
                         data.addAll(response.body().getData());
 
-                        setTotal();
-                        adapter.notifyDataSetChanged();
                     }
+
+                    setTotal();
+                    adapter.notifyDataSetChanged();
                 }
 
                 @Override
