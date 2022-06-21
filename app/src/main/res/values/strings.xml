@@ -50,10 +50,10 @@
     <string name="error_pegawai_message">Data Pegawai tidak dapat dihapus</string>
     <string name="error_produk_message">Data Barang tidak dapat dihapus</string>
     <string name="add_kategori_error">Data gagal ditambahkan</string>
-    <string name="success_added">Data Berhasil ditambahkan</string>
+    <string name="success_added">Data berhasil ditambahkan</string>
     <string name="deleted_success">Data berhasil dihapus</string>
     <string name="error_fetch">Terjadi kesalahan harap coba lagi</string>
-    <string name="updated_success">Data Berhasil diubah</string>
+    <string name="updated_success">Data berhasil diubah</string>
     <string name="updated_error">Data gagal diubah</string>
     <string name="login_success">Login berhasil</string>
     <string name="login_error">Login gagal</string>

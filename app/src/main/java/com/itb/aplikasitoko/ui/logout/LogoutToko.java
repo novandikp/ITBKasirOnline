@@ -26,7 +26,7 @@ public class LogoutToko extends Fragment {
 
         AlertDialog.Builder alert = new AlertDialog.Builder(getContext());
         alert.setTitle("Konfirmasi");
-        alert.setMessage("Apakah anda ingin keluar dan menghapus data toko ini ?");
+        alert.setMessage("Apakah anda ingin keluar dari akun ini dan kembali ke Login Page?");
         alert.setPositiveButton("Iya", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
