@@ -91,7 +91,6 @@ public class TambahPelanggan extends AppCompatActivity {
 
                     pr.insert(modelPelanggan);
 
-                    startActivity(new Intent(TambahPelanggan.this, MasterPelanggan.class));
                     finish();
                 } else {
                     ErrorDialog.message(TambahPelanggan.this, getString(R.string.add_kategori_error), bind.getRoot());

@@ -285,7 +285,7 @@ public class TambahProduk extends AppCompatActivity {
                     //pakai fungsi dr repository sqlite
                     barangRepository.insert(modelBarang);
 
-                    startActivity(new Intent(TambahProduk.this, MasterProduk.class));
+
                     finish();
                 } else {
                     String message = Api.getError(response).message;

@@ -149,7 +149,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        binding.viewTotal.setOnClickListener(new View.OnClickListener() {
+        binding.constraintLayout2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getContext(), Payment.class));

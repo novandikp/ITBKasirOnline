@@ -47,7 +47,7 @@ import java.util.Locale;
     public void setBayar(String givenValue){
         Bayar = Bayar + givenValue;
 
-        inBayar.setText(kurensi.format(Modul.strToDouble(Bayar)));
+        inBayar.setText("Rp"+Modul.removeE(Modul.strToDouble(Bayar)));
         if (inBayar.getText().toString() == "0"){
 
         } else {
