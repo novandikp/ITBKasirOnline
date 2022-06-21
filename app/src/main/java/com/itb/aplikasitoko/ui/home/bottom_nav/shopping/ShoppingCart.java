@@ -3,6 +3,8 @@ package com.itb.aplikasitoko.ui.home.bottom_nav.shopping;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -98,26 +100,51 @@ public class ShoppingCart extends AppCompatActivity {
                 binder.eHarga.setText(Modul.toString(modelDetailJual.getHargajual()));
             }
         });
+        binder.tvJumlah.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                double jumlah = Modul.strToDouble(binder.tvJumlah.getText().toString());
+                if (Math.floor(jumlah) == 0){
+                    binder.kurang.setEnabled(false);
+                    binder.kurang.setTextColor(getColor(R.color.darkgrey));
+                } else {
+                    binder.kurang.setEnabled(true);
+                    binder.kurang.setTextColor(getColor(R.color.default1));
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
         binder.tvJumlah.setText(Modul.toString(modelDetailJual.getJumlahjual()));
         binder.tambah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int jumlah = Integer.parseInt(binder.tvJumlah.getText().toString());
+                double jumlah = Modul.strToDouble(binder.tvJumlah.getText().toString());
                 jumlah++;
-                binder.tvJumlah.setText(String.valueOf(jumlah));
+                binder.tvJumlah.setText(Modul.toString(jumlah));
             }
         });
         binder.kurang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int jumlah = Integer.parseInt(binder.tvJumlah.getText().toString());
-
-                if (jumlah == 1){
+                double jumlah = Modul.strToDouble(binder.tvJumlah.getText().toString());
+                jumlah--;
+                binder.tvJumlah.setText(Modul.toString(jumlah));
+                if (Math.floor(jumlah) == 0){
                     binder.kurang.setEnabled(false);
                     binder.kurang.setTextColor(getColor(R.color.darkgrey));
+                } else {
+                    binder.kurang.setEnabled(true);
+                    binder.kurang.setTextColor(getColor(R.color.default1));
                 }
-                jumlah--;
-                binder.tvJumlah.setText(String.valueOf(jumlah));
             }
         });
         AlertDialog dialog = alertBuilder.create();
