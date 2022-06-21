@@ -141,14 +141,15 @@ public class RekapPegawai extends AppCompatActivity {
         String mulai = bind.dateFrom.getText().toString(); 
         String sampai = bind.dateTo.getText().toString();
 
-        if (fetch){
+        if (true){
             Call<RekapPegawaiResp> rekapPegawaiRespCall = Api.RekapPegawai(RekapPegawai.this).getRekapPegawai(cari, mulai, sampai);
             rekapPegawaiRespCall.enqueue(new Callback<RekapPegawaiResp>() {
                 @Override
                 public void onResponse(Call<RekapPegawaiResp> call, Response<RekapPegawaiResp> response) {
                     LoadingDialog.close();
+                    data.clear();
                     if (response.isSuccessful()){
-                        data.clear();
+
                         data.addAll(response.body().getData());
 
                         setTotal();

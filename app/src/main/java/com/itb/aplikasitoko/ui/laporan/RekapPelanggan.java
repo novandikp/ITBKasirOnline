@@ -145,8 +145,9 @@ public class RekapPelanggan extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<RekapPelangganResp> call, Response<RekapPelangganResp> response) {
                     LoadingDialog.close();
+                    data.clear();
                     if (response.isSuccessful()){
-                        data.clear();
+
                         data.addAll(response.body().getData());
 
                         setTotal();

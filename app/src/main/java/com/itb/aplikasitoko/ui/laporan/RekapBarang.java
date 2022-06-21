@@ -160,8 +160,9 @@ public class RekapBarang extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<RekapBarangResp> call, Response<RekapBarangResp> response) {
                     LoadingDialog.close();
+                    data.clear();
                     if (response.isSuccessful()){
-                        data.clear();
+
                         data.addAll(response.body().getData());
 
                         setTotal();

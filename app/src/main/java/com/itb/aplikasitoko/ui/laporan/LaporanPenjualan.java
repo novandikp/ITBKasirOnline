@@ -170,8 +170,9 @@ public class LaporanPenjualan extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<PenjualanGetResp> call, Response<PenjualanGetResp> response) {
                     LoadingDialog.close();
+                    data.clear();
                     if (response.isSuccessful()){
-                        data.clear();
+
                         if (response.isSuccessful()){
                             data.addAll(response.body().getData());
                         }

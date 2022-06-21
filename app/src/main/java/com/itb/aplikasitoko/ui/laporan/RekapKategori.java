@@ -171,8 +171,9 @@ public class RekapKategori extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<RekapKategoriResp> call, Response<RekapKategoriResp> response) {
                     LoadingDialog.close();
+                    data.clear();
                     if (response.isSuccessful()){
-                        data.clear();
+
                         data.addAll(response.body().getData());
 
                         setTotal();
