@@ -4,10 +4,12 @@ import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -77,9 +79,20 @@ public class HomeFragment extends Fragment {
         binding.titlePelanggan.setText(service.getPelanggan().getNama_pelanggan());
 
         //recyclerview
-        binding.item.setLayoutManager(new GridLayoutManager(getActivity(), 3)); //buat grid biar 1 row ada 3 item
+        Display display = getActivity().getWindowManager(). getDefaultDisplay(); Point size = new Point(); display. getSize(size); int width = size. x;
+        int span = 3;
+        if(width >1200){
+            span=6;
+        }
+        else if (width > 1000) {
+            span = 5;
+        }else if (width > 800) {
+            span = 4;
+        }
+        binding.item.setLayoutManager(new GridLayoutManager(getActivity(), span)); //buat grid biar 1 row ada 3 item
         produkAdapter = new HomeAdapter(getActivity(), data, service, this);
         binding.item.setAdapter(produkAdapter);
+
 
         refreshData(true);
         setTotal();
