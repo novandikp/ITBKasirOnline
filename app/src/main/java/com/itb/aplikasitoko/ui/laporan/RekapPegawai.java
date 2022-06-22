@@ -132,6 +132,10 @@ public class RekapPegawai extends AppCompatActivity {
         for(ViewModelRekapPegawai jual:data){
             total+=Modul.strToDouble(jual.getTotal_pendapatan());
         }
+        if (data.size() == 0) {
+            bind.item.setVisibility(View.GONE);
+            bind.txtKosong.setVisibility(View.VISIBLE);
+        }
         bind.txtRekapPegawai.setText("Rp. "+Modul.removeE(total));
     }
 

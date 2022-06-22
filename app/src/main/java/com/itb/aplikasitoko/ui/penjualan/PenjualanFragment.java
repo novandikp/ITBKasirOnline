@@ -144,6 +144,9 @@ public class PenjualanFragment extends Fragment {
 
                         data.addAll(response.body().getData());
 
+                    } else {
+                        bind.itemPenjualan.setVisibility(View.GONE);
+                        bind.txtKosong.setVisibility(View.VISIBLE);
                     }
                     adapter.notifyDataSetChanged();
                 }

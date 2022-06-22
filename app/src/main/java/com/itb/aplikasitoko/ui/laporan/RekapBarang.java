@@ -146,6 +146,10 @@ public class RekapBarang extends AppCompatActivity {
         for(ViewModelRekapBarang jual:data){
             total+=Modul.strToDouble(jual.getTotal_pendapatan());
         }
+        if (data.size() == 0) {
+            bind.item.setVisibility(View.GONE);
+            bind.txtKosong.setVisibility(View.VISIBLE);
+        }
         bind.txtRekapBarang.setText("Rp. "+Modul.removeE(total));
     }
 
@@ -165,9 +169,10 @@ public class RekapBarang extends AppCompatActivity {
 
                         data.addAll(response.body().getData());
 
-                        setTotal();
-                        adapter.notifyDataSetChanged();
                     }
+                    setTotal();
+
+                    adapter.notifyDataSetChanged();
                 }
 
                 @Override

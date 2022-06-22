@@ -21,6 +21,7 @@
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/activity_load.xml" value="0.1" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/activity_master_daftar_kategori.xml" value="0.33" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/activity_master_pegawai.xml" value="0.165625" />
+        <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/activity_master_pelanggan.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/activity_master_produk.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/activity_master_satuan.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/activity_print_struk.xml" value="0.22" />
@@ -31,7 +32,8 @@
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/activity_tambahkan_produk.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/dialog_keterangan_order.xml" value="0.5" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/edit_produk.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/fragment_home.xml" value="0.67" />
+        <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/fragment_home.xml" value="0.2" />
+        <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/fragment_penjualan.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/fragment_print_penjualan.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/insert_produk.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/item_cart.xml" value="0.20416666666666666" />

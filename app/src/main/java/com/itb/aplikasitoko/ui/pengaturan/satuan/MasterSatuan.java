@@ -167,6 +167,7 @@ public class MasterSatuan extends AppCompatActivity {
                 LoadingDialog.close();
                 data.clear();
                 data.addAll(modelSatuans);
+                empty();
                 adapter.notifyDataSetChanged();
             }
         });
@@ -185,6 +186,7 @@ public class MasterSatuan extends AppCompatActivity {
                         //merefresh adapter
                         data.clear();
                         data.addAll(response.body().getData());
+                        empty();
                         adapter.notifyDataSetChanged();
                     }
                 }
@@ -198,6 +200,13 @@ public class MasterSatuan extends AppCompatActivity {
         }
     }
 
+
+    public void empty(){
+        if (data.size() == 0){
+            bind.item.setVisibility(View.GONE);
+            bind.txtKosong.setVisibility(View.VISIBLE);
+        }
+    }
 
     public void PostSat(ModelSatuan modelSatuan){
         LoadingDialog.load(this);

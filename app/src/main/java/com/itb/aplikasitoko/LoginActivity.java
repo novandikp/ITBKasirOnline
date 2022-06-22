@@ -37,7 +37,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 if(Validasi()) {
                     Toast.makeText(LoginActivity.this, "Email atau Password tidak valid", Toast.LENGTH_SHORT).show();
                 } else {
-                    String email = bind.email.getText().toString();
+                    String email = bind.email.getText().toString().trim();
                     String password = bind.password.getText().toString();
                     ModelLogin MLog = new ModelLogin(email,password);
                     LoginUser(MLog);

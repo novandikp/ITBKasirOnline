@@ -131,6 +131,10 @@ public class RekapPelanggan extends AppCompatActivity {
         for(ViewModelRekapPelanggan jual:data){
             total+=Modul.strToDouble(jual.getTotal_pendapatan());
         }
+        if (data.size() == 0) {
+            bind.item.setVisibility(View.GONE);
+            bind.txtKosong.setVisibility(View.VISIBLE);
+        }
         bind.txtRekapPelanggan.setText("Rp. "+Modul.removeE(total));
     }
 
@@ -149,8 +153,6 @@ public class RekapPelanggan extends AppCompatActivity {
                     if (response.isSuccessful()){
 
                         data.addAll(response.body().getData());
-
-
                     }
                     setTotal();
                     adapter.notifyDataSetChanged();

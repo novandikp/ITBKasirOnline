@@ -147,6 +147,10 @@ public class RekapKategori extends AppCompatActivity {
         for(ViewModelRekapKategori jual:data){
             total+=Modul.strToDouble(jual.getTotal_pendapatan());
         }
+        if (data.size() == 0) {
+            bind.item.setVisibility(View.GONE);
+            bind.txtKosong.setVisibility(View.VISIBLE);
+        }
         bind.txtRekapKategori.setText("Rp. "+Modul.removeE(total));
     }
 

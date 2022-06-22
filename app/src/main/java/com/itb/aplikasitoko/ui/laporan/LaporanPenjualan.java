@@ -173,9 +173,7 @@ public class LaporanPenjualan extends AppCompatActivity {
                     data.clear();
                     if (response.isSuccessful()){
 
-                        if (response.isSuccessful()){
-                            data.addAll(response.body().getData());
-                        }
+                        data.addAll(response.body().getData());
 
                     }
                     setTotal();
@@ -195,6 +193,11 @@ public class LaporanPenjualan extends AppCompatActivity {
         double total=0;
         for(ViewModelDetailJual jual:data){
             total+=jual.getLaba();
+        }
+
+        if (data.size() == 0) {
+            bind.itemPenjualan.setVisibility(View.GONE);
+            bind.txtKosong.setVisibility(View.VISIBLE);
         }
         bind.txtTotalPenjualan.setText("Rp. "+Modul.removeE(total));
     }
