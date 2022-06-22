@@ -49,8 +49,10 @@ import com.itb.aplikasitoko.Response.IdentitasGetResp;
 import com.itb.aplikasitoko.SharedPref.SpHelper;
 import com.itb.aplikasitoko.ViewModel.ModelViewStruk;
 import com.itb.aplikasitoko.databinding.ActivityPrintStrukBinding;
+import com.itb.aplikasitoko.ui.laporan.RekapKategori;
 import com.itb.aplikasitoko.util.Modul;
 import com.google.android.material.textfield.TextInputEditText;
+import com.itb.aplikasitoko.util.ModulExcel;
 import com.novandikp.simplethermalprinter.AlignColumn;
 import com.novandikp.simplethermalprinter.Bluetooth.PrinterBTContext;
 import com.novandikp.simplethermalprinter.ColumnPrinter;
@@ -113,6 +115,8 @@ public class PrintStruk extends AppCompatActivity {
         bind.struk.setVisibility(View.GONE);
 
         refreshData();
+
+        ModulExcel.askForPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE,0, PrintStruk.this,PrintStruk.this);
 
         bind.cari.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -321,7 +325,7 @@ public class PrintStruk extends AppCompatActivity {
                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, fOut);
                 fOut.flush();
                 fOut.close();
-                Uri contentUri = FileProvider.getUriForFile(this, "com.example.authapp.fileprovider", file);
+                Uri contentUri = FileProvider.getUriForFile(this, "com.itb.aplikasitoko.fileprovider", file);
                 if (contentUri != null) {
                     Intent shareIntent = new Intent();
                     shareIntent.setAction(Intent.ACTION_SEND);

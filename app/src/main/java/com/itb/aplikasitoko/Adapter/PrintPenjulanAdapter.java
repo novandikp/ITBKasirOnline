@@ -52,9 +52,13 @@ public class PrintPenjulanAdapter extends RecyclerView.Adapter<PrintPenjulanAdap
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
+        holder.pendapatan.setText("Rp. "+ Modul.removeE(viewModelJual.getTotal()));
+        holder.pegawai.setText(viewModelJual.getNama_pegawai());
+        holder.pelanggan.setText(viewModelJual.getNama_pelanggan());
+        holder.fakturJual.setText(viewModelJual.getFakturjual());
+        holder.print.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 AlertDialog.Builder alert = new AlertDialog.Builder(context);
                 alert.setTitle("Konfirmasi").setMessage("Anda ingin struk dari transaksi ini di print?").setPositiveButton("Iya", new DialogInterface.OnClickListener() {
                     @Override
@@ -71,16 +75,6 @@ public class PrintPenjulanAdapter extends RecyclerView.Adapter<PrintPenjulanAdap
 
                     }
                 }).show();
-            }
-        });
-        holder.pendapatan.setText("Rp. "+ Modul.removeE(viewModelJual.getTotal()));
-        holder.pegawai.setText(viewModelJual.getNama_pegawai());
-        holder.pelanggan.setText(viewModelJual.getNama_pelanggan());
-        holder.fakturJual.setText(viewModelJual.getFakturjual());
-        holder.print.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
 
             }
         });
