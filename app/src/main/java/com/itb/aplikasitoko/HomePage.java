@@ -67,7 +67,7 @@ public class HomePage extends AppCompatActivity {
                 if(id == R.id.nav_logout_toko) {
                     AlertDialog.Builder alert = new AlertDialog.Builder(HomePage.this);
                     alert.setTitle("Konfirmasi");
-                    alert.setMessage("Apakah anda ingin keluar dan menghapus data toko ini ?");
+                    alert.setMessage("Apakah anda ingin keluar dari akun ini dan kembali ke Login Page?");
                     alert.setPositiveButton("Iya", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
@@ -88,7 +88,7 @@ public class HomePage extends AppCompatActivity {
                 }else  if(id == R.id.nav_logout_pegawai) {
                     AlertDialog.Builder alert = new AlertDialog.Builder(HomePage.this);
                     alert.setTitle("Konfirmasi");
-                    alert.setMessage("Apakah anda yakin ingin keluar ?");
+                    alert.setMessage("Apakah anda yakin ingin keluar?");
                     alert.setPositiveButton("Iya", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
