@@ -5,21 +5,26 @@
       <map>
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/activity_pelanggan_order.xml" value="0.16750756811301715" />
-        <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/activity_print_struk.xml" value="0.1381340579710145" />
+        <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/activity_print_struk.xml" value="0.25" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/activity_rekap_pelanggan.xml" value="0.16750756811301715" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/edit_produk.xml" value="0.16750756811301715" />
+        <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/fragment_home.xml" value="0.264945652173913" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/fragment_print_penjualan.xml" value="0.16750756811301715" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/item_print_penjualan.xml" value="0.25" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/login_pegawai.xml" value="0.16750756811301715" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.147" />
+        <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/activity_bayar.xml" value="0.1" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/activity_cart.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/activity_identitas.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/activity_laporan_pendapatan.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/activity_laporan_penjualan.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/activity_load.xml" value="0.1" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/activity_master_daftar_kategori.xml" value="0.33" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/activity_master_pegawai.xml" value="0.165625" />
+        <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/activity_master_pelanggan.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/activity_master_produk.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/activity_master_satuan.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/activity_print_struk.xml" value="0.22" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/activity_rekap_barang.xml" value="0.22" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/activity_rekap_kategori.xml" value="0.18854166666666666" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/activity_rekap_pegawai.xml" value="0.20416666666666666" />
@@ -27,7 +32,8 @@
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/activity_tambahkan_produk.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/dialog_keterangan_order.xml" value="0.5" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/edit_produk.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/fragment_home.xml" value="0.67" />
+        <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/fragment_home.xml" value="0.2" />
+        <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/fragment_penjualan.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/fragment_print_penjualan.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/insert_produk.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Administrator/StudioProjects/ITBKasirOnline/app/src/main/res/layout/item_cart.xml" value="0.20416666666666666" />
@@ -157,7 +163,7 @@
         <entry key="..\:/Users/LEGION/AndroidStudioProjects/ITBKasirOnline/app/src/main/res/menu/activity_main_drawer.xml" value="0.4" />
         <entry key="..\:/Users/LEGION/AndroidStudioProjects/ITBKasirOnline/app/src/main/res/menu/home_page.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/LEGION/AndroidStudioProjects/ITBKasirOnline/app/src/main/res/menu/laporan_toolbar.xml" value="0.20052083333333334" />
-        <entry key="..\:/Users/LEGION/AndroidStudioProjects/ITBKasirOnline/app/src/main/res/menu/menu.xml" value="0.264" />
+        <entry key="..\:/Users/LEGION/AndroidStudioProjects/ITBKasirOnline/app/src/main/res/menu/menu.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/LEGION/AndroidStudioProjects/ITBKasirOnline/app/src/main/res/menu/menu_export.xml" value="0.20052083333333334" />
       </map>
     </option>

@@ -3,7 +3,6 @@
 
     <string-array name="jenisUsaha">
         <item>Toko</item>
-        <item>Restoran</item>
     </string-array>
 
     <string-array name="jenisUsaha2">

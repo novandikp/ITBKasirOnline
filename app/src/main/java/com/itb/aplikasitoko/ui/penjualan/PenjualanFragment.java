@@ -139,11 +139,16 @@ public class PenjualanFragment extends Fragment {
             pendapatanGetRespCall.enqueue(new Callback<PendapatanGetResp>() {
                 @Override
                 public void onResponse(Call<PendapatanGetResp> call, Response<PendapatanGetResp> response) {
+                    data.clear();
                     if (response.isSuccessful()){
-                        data.clear();
+
                         data.addAll(response.body().getData());
-                        adapter.notifyDataSetChanged();
+
+                    } else {
+                        bind.itemPenjualan.setVisibility(View.GONE);
+                        bind.txtKosong.setVisibility(View.VISIBLE);
                     }
+                    adapter.notifyDataSetChanged();
                 }
 
                 @Override

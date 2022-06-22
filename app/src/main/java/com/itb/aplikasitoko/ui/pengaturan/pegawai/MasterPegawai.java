@@ -121,6 +121,7 @@ public class MasterPegawai extends AppCompatActivity {
                 LoadingDialog.close();
                 data.clear();
                 data.addAll(modelPegawais);
+                empty();
                 pa.notifyDataSetChanged();
             }
         });
@@ -139,6 +140,7 @@ public class MasterPegawai extends AppCompatActivity {
                         //merefresh adapter
                         data.clear();
                         data.addAll(response.body().getData());
+                        empty();
                         pa.notifyDataSetChanged();
                     }
                 }
@@ -149,6 +151,13 @@ public class MasterPegawai extends AppCompatActivity {
                     Toast.makeText(MasterPegawai.this, t.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
+        }
+    }
+
+    public void empty(){
+        if (data.size() == 0){
+            bind.item.setVisibility(View.GONE);
+            bind.txtKosong.setVisibility(View.VISIBLE);
         }
     }
 

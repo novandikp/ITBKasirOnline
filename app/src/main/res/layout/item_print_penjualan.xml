@@ -36,8 +36,8 @@
 
                     <ImageView
                         android:id="@+id/ic_print"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
                         android:layout_margin="1dp"
                         android:layout_marginLeft="100dp"
                         android:paddingLeft="1dp"

@@ -170,14 +170,14 @@ public class LaporanPenjualan extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<PenjualanGetResp> call, Response<PenjualanGetResp> response) {
                     LoadingDialog.close();
+                    data.clear();
                     if (response.isSuccessful()){
-                        data.clear();
-                        if (response.isSuccessful()){
-                            data.addAll(response.body().getData());
-                        }
-                        setTotal();
-                        adapter.notifyDataSetChanged();
+
+                        data.addAll(response.body().getData());
+
                     }
+                    setTotal();
+                    adapter.notifyDataSetChanged();
                 }
 
                 @Override
@@ -193,6 +193,11 @@ public class LaporanPenjualan extends AppCompatActivity {
         double total=0;
         for(ViewModelDetailJual jual:data){
             total+=jual.getLaba();
+        }
+
+        if (data.size() == 0) {
+            bind.itemPenjualan.setVisibility(View.GONE);
+            bind.txtKosong.setVisibility(View.VISIBLE);
         }
         bind.txtTotalPenjualan.setText("Rp. "+Modul.removeE(total));
     }

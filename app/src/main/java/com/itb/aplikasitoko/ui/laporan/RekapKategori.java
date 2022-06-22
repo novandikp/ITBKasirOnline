@@ -147,6 +147,10 @@ public class RekapKategori extends AppCompatActivity {
         for(ViewModelRekapKategori jual:data){
             total+=Modul.strToDouble(jual.getTotal_pendapatan());
         }
+        if (data.size() == 0) {
+            bind.item.setVisibility(View.GONE);
+            bind.txtKosong.setVisibility(View.VISIBLE);
+        }
         bind.txtRekapKategori.setText("Rp. "+Modul.removeE(total));
     }
 
@@ -171,13 +175,15 @@ public class RekapKategori extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<RekapKategoriResp> call, Response<RekapKategoriResp> response) {
                     LoadingDialog.close();
+                    data.clear();
                     if (response.isSuccessful()){
-                        data.clear();
+
                         data.addAll(response.body().getData());
 
-                        setTotal();
-                        adapter.notifyDataSetChanged();
                     }
+
+                    setTotal();
+                    adapter.notifyDataSetChanged();
                 }
 
                 @Override

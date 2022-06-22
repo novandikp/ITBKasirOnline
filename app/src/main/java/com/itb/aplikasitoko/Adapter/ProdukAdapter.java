@@ -55,8 +55,8 @@ public class ProdukAdapter extends RecyclerView.Adapter<ProdukAdapter.ViewHolder
                 i.putExtra("idbarang", mb.getIdbarang());
                 i.putExtra("idkategori", mb.getIdkategori());
                 i.putExtra("idsatuan", mb.getIdsatuan());
-                i.putExtra("harga", Double.toString(mb.getHarga()));
-                i.putExtra("hargaBeli", Double.toString(mb.getHargabeli()));
+                i.putExtra("harga", Modul.toString(mb.getHarga()));
+                i.putExtra("hargaBeli", Modul.toString(mb.getHargabeli()));
                 i.putExtra("stok", Integer.toString((int) mb.getStok()));
                 context.startActivity(i);
             }

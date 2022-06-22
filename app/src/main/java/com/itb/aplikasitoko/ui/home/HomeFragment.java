@@ -255,6 +255,7 @@ public class HomeFragment extends Fragment {
             public void onChanged(List<ModelBarang> modelBarangs) {
                 data.clear();
                 data.addAll(modelBarangs);
+                empty();
                 produkAdapter.notifyDataSetChanged();
             }
         });
@@ -264,22 +265,23 @@ public class HomeFragment extends Fragment {
             barangGetRespCall.enqueue(new Callback<BarangGetResp>() {
                 @Override
                 public void onResponse(Call<BarangGetResp> call, Response<BarangGetResp> response) {
+                    //merefresh adapter
+                    data.clear();
                     if (response.isSuccessful()){
                         if (data.size() != response.body().getData().size() || !data.equals(response.body().getData())){
 
-                            if (response.body().getData().size() == 0) {
-                                binding.txtKosong.setVisibility(View.VISIBLE);
-                                binding.item.setVisibility(View.GONE);
-                            }
                             //memasukkan ke repo / db
                             barangRepository.insertAll(response.body().getData(), true);
 
-                            //merefresh adapter
-                            data.clear();
+
                             data.addAll(response.body().getData());
-                            produkAdapter.notifyDataSetChanged();
+
                         }
+
                     }
+
+                    empty();
+                    produkAdapter.notifyDataSetChanged();
                 }
 
                 @Override
@@ -290,7 +292,12 @@ public class HomeFragment extends Fragment {
         }
     }
 
-
+    public void empty(){
+        if (data.size() == 0){
+            binding.item.setVisibility(View.GONE);
+            binding.txtKosong.setVisibility(View.VISIBLE);
+        }
+    }
 
     public void DialogTotal(ModelDetailJual modelDetailJual, ModelBarang modelBarang){
 
@@ -359,6 +366,7 @@ public class HomeFragment extends Fragment {
         });
 
         binder.tvJumlah.setText(Modul.toString(modelDetailJual.getJumlahjual()));
+
         binder.tambah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -380,6 +388,7 @@ public class HomeFragment extends Fragment {
                     binder.kurang.setEnabled(true);
                     binder.kurang.setTextColor(getContext().getColor(R.color.default1));
                 }
+
             }
         });
         AlertDialog dialog = alertBuilder.create();

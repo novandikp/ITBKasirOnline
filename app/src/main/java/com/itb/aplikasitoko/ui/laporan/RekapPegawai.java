@@ -132,6 +132,10 @@ public class RekapPegawai extends AppCompatActivity {
         for(ViewModelRekapPegawai jual:data){
             total+=Modul.strToDouble(jual.getTotal_pendapatan());
         }
+        if (data.size() == 0) {
+            bind.item.setVisibility(View.GONE);
+            bind.txtKosong.setVisibility(View.VISIBLE);
+        }
         bind.txtRekapPegawai.setText("Rp. "+Modul.removeE(total));
     }
 
@@ -141,19 +145,21 @@ public class RekapPegawai extends AppCompatActivity {
         String mulai = bind.dateFrom.getText().toString(); 
         String sampai = bind.dateTo.getText().toString();
 
-        if (fetch){
+        if (true){
             Call<RekapPegawaiResp> rekapPegawaiRespCall = Api.RekapPegawai(RekapPegawai.this).getRekapPegawai(cari, mulai, sampai);
             rekapPegawaiRespCall.enqueue(new Callback<RekapPegawaiResp>() {
                 @Override
                 public void onResponse(Call<RekapPegawaiResp> call, Response<RekapPegawaiResp> response) {
                     LoadingDialog.close();
+                    data.clear();
                     if (response.isSuccessful()){
-                        data.clear();
+
                         data.addAll(response.body().getData());
 
-                        setTotal();
-                        adapter.notifyDataSetChanged();
                     }
+
+                    setTotal();
+                    adapter.notifyDataSetChanged();
                 }
 
                 @Override

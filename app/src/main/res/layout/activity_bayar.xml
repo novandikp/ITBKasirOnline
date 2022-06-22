@@ -340,6 +340,8 @@
                 android:background="@null"
                 android:textSize="25sp"
                 android:text="."
+                android:enabled="false"
+                android:visibility="invisible"
                 />
         </LinearLayout>
 

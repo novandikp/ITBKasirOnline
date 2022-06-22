@@ -121,6 +121,7 @@ public class MasterDaftarKategori extends AppCompatActivity {
                 LoadingDialog.close();
                 data.clear();
                 data.addAll(kategoris);
+                empty();
                 adapter.notifyDataSetChanged();
             }
         });
@@ -139,6 +140,7 @@ public class MasterDaftarKategori extends AppCompatActivity {
                             // Refresh adapter
                             data.clear();
                             data.addAll(response.body().getData());
+                            empty();
                             adapter.notifyDataSetChanged();
                         }
                     }
@@ -153,6 +155,12 @@ public class MasterDaftarKategori extends AppCompatActivity {
         }
     }
 
+    public void empty(){
+        if (data.size() == 0){
+            bind.item.setVisibility(View.GONE);
+            bind.txtKosong.setVisibility(View.VISIBLE);
+        }
+    }
 
     public void dialogEditKategori(ModelKategori modelKategori){
         DialogDetailKategoriBinding binder = DialogDetailKategoriBinding.inflate(LayoutInflater.from(this));

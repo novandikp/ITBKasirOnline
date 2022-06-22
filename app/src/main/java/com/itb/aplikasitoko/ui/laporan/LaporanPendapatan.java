@@ -136,6 +136,10 @@ public class LaporanPendapatan extends AppCompatActivity {
         for(ViewModelJual jual:data){
             total+=jual.getTotal();
         }
+        if (data.size() == 0) {
+            bind.itemPendapatan.setVisibility(View.GONE);
+            bind.txtKosong.setVisibility(View.VISIBLE);
+        }
         bind.txtTotalPendapatan.setText("Rp. "+Modul.removeE(total));
     }
 
@@ -167,7 +171,6 @@ public class LaporanPendapatan extends AppCompatActivity {
                     data.clear();
                     if (response.isSuccessful()){
                         data.addAll(response.body().getData());
-                    }else{
                     }
                     setTotal();
                     adapter.notifyDataSetChanged();

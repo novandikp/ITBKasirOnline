@@ -66,8 +66,8 @@ public class EditProduk extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         bind = EditProdukBinding.inflate(getLayoutInflater());
         super.onCreate(savedInstanceState);
-        bind.hargaAwal.addTextChangedListener(new NumberTextWatcher(bind.hargaAwal, new Locale("id","ID"),0));
-        bind.hargaJual.addTextChangedListener(new NumberTextWatcher(bind.hargaJual, new Locale("id","ID"),0));
+        bind.hargaAwal.addTextChangedListener(new NumberTextWatcher(bind.hargaAwal, new Locale("id","ID"), 0));
+        bind.hargaJual.addTextChangedListener(new NumberTextWatcher(bind.hargaJual, new Locale("id","ID"), 0));
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Edit Detail Produk");
         actionBar.setDisplayShowHomeEnabled(true);
@@ -210,12 +210,10 @@ public class EditProduk extends AppCompatActivity {
         String idsatuan = getIntent().getStringExtra("idsatuan");
         inKategori.setText(idkategori);
         inSatuan.setText(idsatuan);
-
-
-//        inSatuan;
         inHarga.setText(getIntent().getStringExtra("harga"));
         inhargaBeli.setText(getIntent().getStringExtra("hargaBeli"));
         inStok.setText(getIntent().getStringExtra("stok"));
+
 
 
     }

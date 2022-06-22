@@ -122,6 +122,7 @@ public class MasterProduk extends AppCompatActivity {
                 LoadingDialog.close();
                 data.clear();
                 data.addAll(modelBarangs);
+                empty();
                 pa.notifyDataSetChanged();
             }
         });
@@ -140,6 +141,7 @@ public class MasterProduk extends AppCompatActivity {
                         //merefresh adapter
                         data.clear();
                         data.addAll(response.body().getData());
+                        empty();
                         pa.notifyDataSetChanged();
                     }
                 }
@@ -150,6 +152,13 @@ public class MasterProduk extends AppCompatActivity {
                     Toast.makeText(MasterProduk.this, t.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
+        }
+    }
+
+    public void empty(){
+        if (data.size() == 0){
+            bind.item.setVisibility(View.GONE);
+            bind.txtKosong.setVisibility(View.VISIBLE);
         }
     }
 
