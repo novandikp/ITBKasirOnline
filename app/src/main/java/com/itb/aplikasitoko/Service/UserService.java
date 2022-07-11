@@ -22,7 +22,7 @@ public interface UserService {
     Call<LoginResponse> loginUser(@Body ModelLogin modelLogin);
 
     //REGISTER
-    @POST("auth/register")
+    @POST("auth/register/v2")
     Call<RegisterResponse> registerUsers(@Body ModelRegister modelRegister);
 
     //MINTA OTP(ini butuh token yg hrs dimasukkan dulu lewat okhttp)

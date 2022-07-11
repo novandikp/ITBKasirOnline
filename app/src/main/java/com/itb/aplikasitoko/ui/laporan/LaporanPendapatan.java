@@ -139,6 +139,9 @@ public class LaporanPendapatan extends AppCompatActivity {
         if (data.size() == 0) {
             bind.itemPendapatan.setVisibility(View.GONE);
             bind.txtKosong.setVisibility(View.VISIBLE);
+        }else{
+            bind.itemPendapatan.setVisibility(View.VISIBLE);
+            bind.txtKosong.setVisibility(View.GONE);
         }
         bind.txtTotalPendapatan.setText("Rp. "+Modul.removeE(total));
     }

@@ -159,6 +159,9 @@ public class MasterDaftarKategori extends AppCompatActivity {
         if (data.size() == 0){
             bind.item.setVisibility(View.GONE);
             bind.txtKosong.setVisibility(View.VISIBLE);
+        }else{
+            bind.item.setVisibility(View.VISIBLE);
+            bind.txtKosong.setVisibility(View.GONE);
         }
     }
 

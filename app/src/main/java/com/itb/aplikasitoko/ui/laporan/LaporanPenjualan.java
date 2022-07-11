@@ -198,6 +198,10 @@ public class LaporanPenjualan extends AppCompatActivity {
         if (data.size() == 0) {
             bind.itemPenjualan.setVisibility(View.GONE);
             bind.txtKosong.setVisibility(View.VISIBLE);
+        }else{
+            bind.itemPenjualan.setVisibility(View.VISIBLE);
+            bind.txtKosong.setVisibility(View.GONE);
+
         }
         bind.txtTotalPenjualan.setText("Rp. "+Modul.removeE(total));
     }

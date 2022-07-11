@@ -1,7 +1,9 @@
 package com.itb.aplikasitoko;
 
+import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,6 +16,8 @@ import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -22,7 +26,10 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.itb.aplikasitoko.databinding.ActivityHomePageBinding;
+import com.itb.aplikasitoko.ui.home.ScanDevice;
 import com.itb.aplikasitoko.ui.pengaturan.pegawai.LoginPegawai;
+
+import java.util.Objects;
 
 public class HomePage extends AppCompatActivity {
 
@@ -50,6 +57,8 @@ public class HomePage extends AppCompatActivity {
         tvnama.setText(sp.getUsername());
         TextView tvEmail = headerView.findViewById(R.id.email);
         tvEmail.setText(sp.getEmail());
+
+
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(

@@ -1,6 +1,9 @@
 package com.itb.aplikasitoko.ui.pengaturan.pegawai;
 
+import android.Manifest;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -8,7 +11,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.lifecycle.Observer;
 
 import com.itb.aplikasitoko.Api;
@@ -27,6 +33,7 @@ import com.itb.aplikasitoko.databinding.LoginPegawaiBinding;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -54,7 +61,25 @@ public class LoginPegawai extends AppCompatActivity {
         setContentView(bind.getRoot());
 
         sp = new SpHelper(LoginPegawai.this);
+        SpHelper spHelper = sp;
+        if (Objects.equals(spHelper.getValue("izinbt2", ""), "")){
+            AlertDialog.Builder alert = new AlertDialog.Builder(this);
+            alert.setTitle("Notifikasi").setMessage("ITBPOS Online collects location data to enable below features even when the app is closed or not in use.\n" +
+                    "1. Find Device Printer when not pair\n" +
+                    "2. Efficiency finding printer not pair\n" +
+                    "When you allow background location, it will give you more earnings.");
+            alert.setNegativeButton("Tutup", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    if (ContextCompat.checkSelfPermission(LoginPegawai.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                        ActivityCompat.requestPermissions(LoginPegawai.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 0);
 
+                    }
+                }
+            }).setCancelable(false).show();
+
+            spHelper.setValue("izinbt2","oke");
+        }
         //Spinner prgawai
         pegawaiRepository = new PegawaiRepository(getApplication());
         pegawaiRepository.getAllPegawai().observe(this, new Observer<List<ModelPegawai>>() {

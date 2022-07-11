@@ -39,6 +39,9 @@ public class TelpVerification extends AppCompatActivity {
             public void onClick(View v) {
                 ModelToko modelToko = new ModelToko();
                 String NoTelp = bind.noTelp.getText().toString();
+                if(NoTelp.substring(0,2).equals("08")){
+                    NoTelp = "62"+NoTelp.substring(1,NoTelp.length());
+                }
                 modelToko.setNomer_toko(Modul.PhoneFormat(NoTelp));
                 sp.setValue(Config.phoneOTP, NoTelp); //ini menyimpan notelpon ke dlm shared pref
                 MintaOtp(modelToko);

@@ -296,6 +296,9 @@ public class HomeFragment extends Fragment {
         if (data.size() == 0){
             binding.item.setVisibility(View.GONE);
             binding.txtKosong.setVisibility(View.VISIBLE);
+        }else{
+            binding.item.setVisibility(View.VISIBLE);
+            binding.txtKosong.setVisibility(View.GONE);
         }
     }
 

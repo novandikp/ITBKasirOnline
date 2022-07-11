@@ -4,9 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/activity_otpverification.xml" value="0.34479166666666666" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/activity_pelanggan_order.xml" value="0.16750756811301715" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/activity_print_struk.xml" value="0.25" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/activity_rekap_pelanggan.xml" value="0.16750756811301715" />
+        <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/activity_scan_devicebt.xml" value="0.26403985507246375" />
+        <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/activity_user_register.xml" value="0.34479166666666666" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/edit_produk.xml" value="0.16750756811301715" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/fragment_home.xml" value="0.264945652173913" />
         <entry key="..\:/KasirOnlineAndroid/app/src/main/res/layout/fragment_print_penjualan.xml" value="0.16750756811301715" />

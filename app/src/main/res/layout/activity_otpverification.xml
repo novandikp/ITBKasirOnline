@@ -124,6 +124,15 @@
                     android:textSize="@dimen/FS_type1a"
                     android:textColor="#A30000"
                     android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/ubah"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:onClick="ubahNomer"
+                    android:text="Ubah Nomer Telepon"
+                    android:textStyle="bold"/>
             </LinearLayout>
 
             <!--                <ProgressBar-->

@@ -7,6 +7,15 @@ public class ModelRegister {
     private String NamaPemilik;
     private String Lokasi;
     private String JenisUsaha;
+    private String nomer_toko;
+
+    public String getNomer_toko() {
+        return nomer_toko;
+    }
+
+    public void setNomer_toko(String nomer_toko) {
+        this.nomer_toko = nomer_toko;
+    }
 
     public String getJenisUsaha() {
         return JenisUsaha;

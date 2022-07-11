@@ -143,10 +143,21 @@ public class PenjualanFragment extends Fragment {
                     if (response.isSuccessful()){
 
                         data.addAll(response.body().getData());
-
+                        if(data.size()==0){
+                            bind.itemPenjualan.setVisibility(View.GONE);
+                            bind.txtKosong.setVisibility(View.VISIBLE);
+                        }else{
+                            bind.itemPenjualan.setVisibility(View.VISIBLE);
+                            bind.txtKosong.setVisibility(View.GONE);
+                        }
                     } else {
-                        bind.itemPenjualan.setVisibility(View.GONE);
-                        bind.txtKosong.setVisibility(View.VISIBLE);
+                        if(data.size()==0){
+                            bind.itemPenjualan.setVisibility(View.GONE);
+                            bind.txtKosong.setVisibility(View.VISIBLE);
+                        }else{
+                            bind.itemPenjualan.setVisibility(View.VISIBLE);
+                            bind.txtKosong.setVisibility(View.GONE);
+                        }
                     }
                     adapter.notifyDataSetChanged();
                 }

@@ -4,9 +4,11 @@ import android.Manifest;
 import android.app.ProgressDialog;
 import android.bluetooth.BluetoothAdapter;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,6 +17,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -23,12 +26,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.itb.aplikasitoko.HomePage;
 import com.itb.aplikasitoko.R;
+import com.itb.aplikasitoko.SharedPref.SpHelper;
 import com.novandikp.simplethermalprinter.Bluetooth.DeviceBT;
 import com.novandikp.simplethermalprinter.Bluetooth.PrinterBTContext;
 import com.novandikp.simplethermalprinter.Bluetooth.State_Bluetooth;
 import com.novandikp.simplethermalprinter.PrintTextBuilder;
 
 import java.util.List;
+import java.util.Objects;
 
 public class ScanDevice extends AppCompatActivity {
     RecyclerView list;
@@ -88,13 +93,37 @@ public class ScanDevice extends AppCompatActivity {
         }
     }
 
-    public void requestPermission() {
+    @Override
+    protected void onResume() {
+        super.onResume();
+        refreshData();
+    }
 
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, FINE_LOCATION);
-        }else if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, BACKGROUND_LOCATION);
-        }else if (ContextCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH) != PackageManager.PERMISSION_GRANTED) {
+    public void requestPermission() {
+        SpHelper spHelper = new SpHelper(this);
+//        if (Objects.equals(spHelper.getValue("izinbt2", ""), "")){
+//            AlertDialog.Builder alert = new AlertDialog.Builder(this);
+//            alert.setTitle("Notifikasi").setMessage("ITBPOS Online membutuhkan izin lokasi selama aplikasi digunakan untuk mencari printer bluetooth. Jika izin lokasi tidak diaktifkan maka printer bluetooth tidak terdeteksi");
+//            alert.setNegativeButton("Tutup", new DialogInterface.OnClickListener() {
+//                @Override
+//                public void onClick(DialogInterface dialogInterface, int i) {
+//                    if (ContextCompat.checkSelfPermission(ScanDevice.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+//                        ActivityCompat.requestPermissions(ScanDevice.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, FINE_LOCATION);
+//
+//                    }
+//                }
+//            }).setCancelable(false).show();
+//
+//            spHelper.setValue("izinbt2","oke");
+//        }else{
+//            if (ContextCompat.checkSelfPermission(ScanDevice.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+//                ActivityCompat.requestPermissions(ScanDevice.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, FINE_LOCATION);
+//            }
+//        }
+        if (ContextCompat.checkSelfPermission(ScanDevice.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                        ActivityCompat.requestPermissions(ScanDevice.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, FINE_LOCATION);
+        }
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.BLUETOOTH}, PERMISSION_BLUETOOTH);
         } else if (ContextCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_ADMIN) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.BLUETOOTH_ADMIN}, PERMISSION_BLUETOOTH_ADMIN);
@@ -126,6 +155,7 @@ public class ScanDevice extends AppCompatActivity {
                 });
             }
         }
+
     }
 
 
@@ -138,6 +168,10 @@ public class ScanDevice extends AppCompatActivity {
     public void refreshData(){
         DeviceRecylerView adapter = new DeviceRecylerView(this, printerBTContext.getListBluetoothDevice(),printerBTContext);
         list.setAdapter(adapter);
+    }
+
+    public void scan(View view) {
+        startActivity(new Intent(Settings.ACTION_BLUETOOTH_SETTINGS));
     }
 }
 
